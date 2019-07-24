@@ -1,0 +1,542 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* -------------------------------------------------- ** 
+
+   home.css for [ Exastro Community Site ]
+
+** -------------------------------------------------- */
+
+/* Background Canvas */
+#backgroundFull {
+position: fixed;
+top: 0; left: 0;
+z-index: -1;
+overflow: hidden;
+width: 100%; height: 100%;
+background-color: #000;
+}
+#backgroundCanvas {
+width: 100%; height: 100%;
+background: url("../img/main_image_back.jpg") center center no-repeat #000;
+background-size: cover;
+transition-duration: 0.3s;
+}
+
+/* Start Area */
+#startArea {
+position: relative;
+height: 100vh;
+overflow: hidden;
+}
+#startArea #title {
+position: absolute;
+left: 0; top: 0;
+z-index: 100;
+width: 100%; height: 35%;
+}
+#startArea h1 {
+padding: 0 64px;
+}
+#startArea h1 img {
+width: 100%; height: auto;
+max-width: 480px;
+margin-bottom: 16px;
+}
+#startArea p {
+line-height: 1.5;
+letter-spacing: 0.1em;
+font-size: 16px;
+font-weight: 400;
+color: #FFF;
+text-shadow: 0 0 4px rgba( 0, 0, 0, 0.3 );
+}
+#startArea #startMenu {
+position: absolute;
+left: 0; bottom: 0;
+z-index: 100;
+width: 100%; height: 35%;
+letter-spacing: -0.4em;
+}
+#startArea #startMenu li {
+display: inline-block;
+width: 50%;
+padding: 0 16px 0 8px;
+letter-spacing: 0;
+text-align: left;
+}
+#startArea #startMenu li:nth-child(1) {
+padding: 0 8px 0 16px;
+text-align: right;
+}
+#startArea #startMenu a {
+display: inline-block;
+width: 100%; max-width: 240px;
+padding: 16px 0;
+border: 1px solid #FFF;
+text-decoration: none;
+letter-spacing: 0.1em;
+text-align: center;
+font-size: 22px;
+color: #FFF;
+transition-duration: 0.3s;
+}
+#startArea #startMenu a.hover {
+background-color: #FFF;
+color: #000;
+}
+#startArea #title .titleInner,
+#startArea #startMenu ul {
+position: absolute;
+left: 0; top: 50%;
+transform: translateY(-50%);
+width: 100%;
+text-align: center;
+font-family: 'Roboto', sans-serif;
+font-weight: 900;
+}
+#startArea #startLogo {
+position: absolute;
+left: 0; top: 35%;
+z-index: 90;
+width: 100%; height: 30%;
+text-align: center;
+}
+#startArea #startLogo img {
+width: auto; height: 100%;
+transition-duration: 0.3s;
+animation: startLogoAnimation 30s linear infinite;
+}
+@keyframes startLogoAnimation {
+  0% { transform: rotate( 0deg ); }
+100% { transform: rotate( -360deg ); }
+}
+#startArea #startLogo .startLogoInner {
+position: absolute;
+left: 0; top: 50%;
+width: 100%; height: 100%;
+transform: translateY(-50%);
+transition-duration: 0.3s;
+}
+#startArea #startLogo .startLogoInner::before,
+#startArea #startLogo .startLogoInner::after {
+content: '';
+position: absolute;
+left: 0; top: 0;
+z-index: -1;
+display: block;
+width: 100%;
+height: 100%;
+background: url("../img/start_logo2.png") center center no-repeat;
+background-size: contain;
+}
+#startArea #startLogo .startLogoInner::before {
+z-index: 2;
+background-image: url("../img/start_logo3.png");
+animation: startLogoGearAnimation 30s linear infinite;
+}
+@keyframes startLogoGearAnimation {
+  0% { transform: rotate( 0deg ); }
+100% { transform: rotate( 360deg ); }
+}
+
+/* Terminal Body */
+#terminalBody {
+background: url(../img/content_back.png);
+}
+#terminalBody section {
+padding: 96px 16px;
+border-bottom: 1px solid #CCD5E0;
+text-align: center;
+}
+#terminalBody section#why .sectionInner {
+max-width: 1280px;
+margin: 0 auto;
+}
+#terminalBody section::after {
+content: '';
+display: block;
+clear: both;
+}
+#terminalBody section:nth-of-type( even ) {
+background-color: rgba( 0, 43, 98, 0.05 );
+}
+#terminalBody section:last-child {
+margin-bottom: 0;
+border-bottom: none;
+}
+#terminalBody h2 {
+font-size: 40px;
+}
+#terminalBody h2 span {
+display: inline-block;
+margin-bottom: 32px; padding: 0 4px 16px;
+border-bottom: 4px solid #8095B0;
+text-align: center;
+line-height: 1;
+color: #002B62;
+}
+#terminalBody h2 em {
+font-size: 130%;
+font-family: 'Roboto', sans-serif;
+font-weight: 900;
+font-style: normal;
+}
+#terminalBody .systemLifeCycle {
+float: left;
+position: relative;
+width: 50%;
+}
+#terminalBody .systemLifeCycleInner {
+width: 100%;
+padding-bottom: 75%;
+}
+#terminalBody .systemLifeCycle img {
+position: absolute;
+top: 0; left: 0;
+z-index: 1;
+width: 100%; height: auto;
+}
+#terminalBody .systemLifeCycle::before {
+content: '';
+display: block;
+position: absolute;
+top: 0; left: 12.5%;
+z-index: 0;
+width: 75%;
+background-color: #FFFFDD;
+padding-bottom: 75%;
+border-radius: 50%;
+animation: 2s systemLifeCycle infinite;
+filter: blur(5px);
+}
+@keyframes systemLifeCycle {
+0% { transform: scale(0.5); opacity: 0; }
+50% { transform: scale(1.1); opacity: 0.9; }
+100% { transform: scale(1.2); opacity: 0; }
+}
+#terminalBody p {
+text-align: center;
+line-height: 1.75;
+font-size: 24px;
+color: #444;
+}
+#terminalBody #why p {
+margin: 32px 0 0 50%;
+text-align: left;
+}
+#terminalBody #why p.link a {
+    display: inline-block;
+    min-width: 240px;
+    padding: 8px 32px;
+    background-color: #60C60D;
+    border-radius: 8px;
+    box-shadow: 0 0 0 rgba( 0,0,0,0 );
+    text-align: center;
+    text-decoration: none;
+    color: #FFF;
+    transition-duration: 0.1s;
+}
+#terminalBody #why p.link a:hover {
+opacity: 0.8;
+}
+#terminalBody ul {
+max-width: 1280px;
+margin: 0 auto;
+list-style: none;
+}
+#terminalBody li {
+margin: 32px 128px 64px 0; padding: 32px;
+background-color: rgba( 255,255,255,0.85 );
+border-radius: 4px;
+box-shadow: 0 0 16px rgba( 0,0,0,0.1 );
+}
+#terminalBody li:nth-of-type(even) {
+margin-right: 0;
+margin-left: 128px;
+}
+#terminalBody li:last-child {
+margin-bottom: 0!important;
+}
+#terminalBody dl::after {
+content: '';
+display: block;
+clear: both;
+}
+#terminalBody dl {
+background: url("../img/series_back_ita.png") right bottom no-repeat;
+}
+#terminalBody #playbookCollection dl {
+background-image: url("../img/series_back_pc.png");
+}
+#terminalBody #OASE dl {
+background-image: url("../img/series_back_oase.png");
+}
+.en #terminalBody dl {
+background: url("../img/en_series_back_ita.png") right bottom no-repeat;
+}
+.en #terminalBody #playbookCollection dl {
+background-image: url("../img/en_series_back_pc.png");
+}
+.en #terminalBody #OASE dl {
+background-image: url("../img/en_series_back_oase.png");
+}
+#terminalBody #andMore dl {
+background-image: none;
+}
+#terminalBody dt {
+margin-bottom: 24px; padding: 16px 32px;
+background-color: #002B62;
+border-radius: 4px;
+text-align: left;
+line-height: 1;
+letter-spacing: 0.05em;
+font-size: 24px;
+font-weight: bold;
+color: #F2F4F7;
+}
+#terminalBody #playbookCollection dt {
+background-color: #C80000;
+}
+#terminalBody #OASE dt {
+background-color: #00B5B8;
+}
+#terminalBody dt em {
+font-size: 32px;
+font-family: 'Roboto', sans-serif;
+font-weight: 900;
+font-style: normal;
+}
+#terminalBody dd.image {
+float: left;
+overflow: hidden;
+width: 48%;
+border-radius: 4px;
+}
+#terminalBody dd.image img {
+width: 100%; height: auto;
+vertical-align: top;
+}
+#terminalBody dd.text {
+text-shadow: 1px 1px 2px #FFF,
+ 1px  1px 0 #FFF,
+-1px -1px 0 #FFF,
+-1px  1px 0 #FFF,
+ 1px -1px 0 #FFF;
+}
+#terminalBody dd.text,
+#terminalBody dd.link {
+margin: 0 0 32px 52%;
+text-align: justify;
+line-height: 1.8;
+font-size: 18px;
+color: #555;
+}
+.en #terminalBody dd.text,
+.en #terminalBody dd.link {
+text-align: left;
+}
+#terminalBody dd.link {
+margin-bottom: 0;
+}
+#terminalBody dd.link a,
+#terminalBody dd.link span.nolink {
+display: inline-block;
+min-width: 240px;
+padding: 8px 32px;
+background-color: #FF640A;
+border-radius: 8px;
+box-shadow: 0 0 0 4px #FDFDFD;
+text-align: center;
+text-decoration: none;
+color: #FFF;
+transition-duration: 0.1s;
+}
+#terminalBody dd.link span.nolink {
+background-color: #EEE;
+color: #CCC;
+}
+#terminalBody dd.link a.hover {
+box-shadow: 0 0 8px rgba( 0,0,0,0.3 );
+transform: scale(1.1);
+}
+#terminalBody #andMore {
+background-color: transparent;
+box-shadow: 0 0 16px rgba( 0,0,0,0.05 );
+}
+#terminalBody #andMore dt {
+background-color: #B2BFD0;
+}
+#terminalBody #andMore dd {
+display: inline-block;
+padding: 24px;
+text-align: center;
+letter-spacing: 0.05em;
+line-height: 1.5;
+font-size: 20px;
+color: #999;
+}
+#terminalBody #andMore dd em {
+font-weight: bold;
+font-style: normal;
+}
+#terminalBody #andMore dd::after {
+content: '';
+display: inline-block;
+width: 8px; height: 1em;
+border-right: 1px solid #999;
+vertical-align: middle;
+animation: andmore 1s infinite;
+}
+@keyframes andmore {
+  0% { opacity: 1; }
+ 45% { opacity: 1; }
+ 50% { opacity: 0; }
+ 95% { opacity: 0; }
+100% { opacity: 1; }
+}
+#snsArea {
+max-width: 980px;
+margin: 0 auto;
+}
+#snsArea::after {
+content: '';
+display: block;
+clear: both;
+}
+#twitterTimeline,
+#facebookTimeline {
+width: 50%;
+float: left;
+}
+#twitterTimeline {
+padding-right: 16px;
+}
+#facebookTimeline {
+padding-left: 16px;
+}
+
+@media screen and ( max-width: 1280px ){
+
+#terminalBody p {
+font-size: 2vw;
+}
+#terminalBody li,
+#terminalBody li:nth-of-type(even) {
+margin-right: 0;
+margin-left: 0;
+margin-bottom: 16px;
+}
+
+}/* /1280px */
+
+@media screen and ( max-width: 960px ){
+
+#terminalBody section {
+padding: 64px 16px;
+}
+#terminalBody p {
+text-align: left;
+font-size: 2.8vw;
+}
+#terminalBody dt {
+font-size: 2.8vw;
+}
+#terminalBody dt em {
+font-size: 3.3vw;
+}
+#terminalBody dd.text {
+font-size: 2vw;
+}
+
+}
+
+@media screen and ( max-width: 640px ){
+
+#terminalBody .systemLifeCycle {
+float: none;
+width: 100%;
+}
+#terminalBody #why p {
+margin-left: 0; padding: 0 16px;
+font-size: 3.5vw;
+}
+#terminalBody #why p br {
+display: none;
+}
+#terminalBody #why p.link {
+text-align: center;
+}
+
+#startArea p {
+font-size: 3vw;
+}
+#startArea #startMenu a {
+font-size: 4vw;
+}
+#terminalBody section {
+padding: 48px 16px;
+}
+#terminalBody h2 {
+margin-bottom: 16px;
+font-size: 5vw;
+}
+#terminalBody li {
+padding: 24px; margin-top: 16px;
+}
+#terminalBody dl {
+background-size: 40% auto;
+}
+#terminalBody dt {
+padding: 16px 24px;
+}
+#terminalBody dd.image {
+float: none;
+width: 100%;
+margin: 0 0 16px;
+}
+#terminalBody dd.text {
+margin: 0 0 16px;
+font-size: 3vw;
+}
+#terminalBody dd.link {
+margin: 0;
+}
+#terminalBody dd.link a,
+#terminalBody dd.link span.nolink {
+margin: 0;
+min-width: 50%;
+font-size: 3vw;
+}
+#twitterTimeline {
+margin-bottom: 16px;
+}
+#twitterTimeline,
+#facebookTimeline {
+width: 100%;
+float: none;
+padding: 0;
+}
+
+}/* /640px */
+
+@media screen and ( max-width: 480px ){
+
+#startArea h1 {
+padding: 0 32px;
+}
+#startArea #startMenu li {
+display: block;
+width: 100%;
+margin: 0 0 16px;
+padding: 0!important;
+text-align: center!important;
+}
+#terminalBody dt {
+padding: 12px 16px;
+}
+#terminalBody li {
+padding: 16px;
+}
+
+}/* /480px */
