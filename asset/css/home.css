@@ -484,7 +484,8 @@ font-size: 5vw;
 #terminalBody li {
 padding: 24px; margin-top: 16px;
 }
-#terminalBody dl {
+#terminalBody dl,
+.en #terminalBody dl {
 background-size: 40% auto;
 }
 #terminalBody dt {
