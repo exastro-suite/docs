@@ -55,6 +55,7 @@ $(function(){
             $('header').css('top', 0 );
         } else {
             $('header').css('top', '-80px' );
+            $('#suiteList').fadeOut( 300 );
         }
         if ( windowScrollTop < headerHeight ){
           var opacityNum = ( 1 - ( windowScrollTop / headerHeight ) ).toFixed( 5 );

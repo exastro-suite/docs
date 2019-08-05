@@ -134,6 +134,76 @@ width: auto; height: 28px;
 margin: 2px 0;
 vertical-align: bottom;
 }
+#suiteList {
+overflow: hidden;
+display: none;
+position: fixed;
+top: 48px; left: 8px;
+z-index: 100;
+border: 1px solid #CCC;
+border-radius: 4px;
+box-shadow: 0 2px 8px rgba( 0,0,0,0.2 );
+}
+#suiteList li {
+border-bottom: 1px solid #CCC;
+}
+#suiteList li:last-child {
+border-bottom: none;
+}
+#suiteList a,
+#suiteList span {
+display: block;
+position: relative;
+padding: 16px 48px 16px 24px;
+background-color: #FFF;
+text-decoration: none;
+white-space: nowrap;
+font-size: 150%;
+color: #333;
+letter-spacing: 0.05em;
+line-height: 1;
+transition-duration: 0.3s;
+}
+#suiteList span {
+background-color: #EFEFEF;
+color: #999;
+cursor: default;
+}
+#suiteList a:hover {
+background-color: #F8F8F8;
+}
+#suiteList a::after {
+content: '\f138';
+position: absolute;
+display: inline-block;
+right: 24px;
+font-family: 'Font Awesome 5 Free';
+font-weight: bold;
+color: #002B62;
+transition-duration: 0.3s;
+}
+#suiteList a:hover::after {
+right: 20px;
+}
+.exastro #suiteList .exastro a,
+.ita #suiteList .ita a {
+color: #666;
+cursor: default;
+}
+.exastro #suiteList .exastro a::after,
+.ita #suiteList .ita a::after {
+content: '\f00c';
+color: #60C60D;
+}
+.exastro #suiteList .exastro a:hover,
+.ita #suiteList .ita a:hover {
+background-color: #FFF;
+}
+.exastro #suiteList .exastro a:hover::after,
+.ita #suiteList .ita a:hover::after {
+right: 24px;
+}
+
 
 /* Main Menu */
 nav {
@@ -530,6 +600,13 @@ padding: 0 4px 0 8px;
 }
 #logo img {
 height: 24px;
+}
+#suiteList {
+width: calc( 100% - 16px );
+}
+#suiteList a,
+#suiteList span {
+font-size: 4vw;
 }
 #mainTitle a {
 font-size: 18px;

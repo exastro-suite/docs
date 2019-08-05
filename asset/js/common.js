@@ -2,6 +2,20 @@
 
 $(function(){
 
+// Suite List
+$('#logo a').on('click', function( e ){
+  e.preventDefault();
+  $('#suiteList').fadeToggle( 300 );
+});
+// 要素外をクリックで消す
+$( document ).on('mousedown', function( e ){
+    if ( $('#suiteList').is(':visible') ) {
+        if ( !$( e.target ).closest('#suiteList, #logo a').length ) {
+            $('#suiteList').fadeToggle( 300 );
+        }
+    }
+});
+
 // Add overlay
 $('#container').append('<div id="overlay"></div>');
 
@@ -50,7 +64,7 @@ $('.touch').on('touchstart mouseenter', function(){
 });
 
 // Anker scroll
-$('a[href^="#"]').not('.tabMenu a').on('touchstart mousedown click', function( e ){
+$('a[href^="#"]').not('#logo a, .tabMenu a').on('touchstart mousedown click', function( e ){
     e.preventDefault();
 }).on('touchend mouseup', function( e ){
     e.preventDefault();
