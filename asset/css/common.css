@@ -236,6 +236,7 @@ font-weight: 900;
 #mainMenu a:hover {
 background-color: #4D4D4D;
 }
+#article.asset #mainMenu a.asset,
 #website.home #mainMenu a.home,
 #article.overview #mainMenu a.overview,
 #article.learn #mainMenu a.learn,
@@ -250,6 +251,7 @@ text-shadow: none;
 #article.documents #mainMenu a.documents i,
 #article.downloads #mainMenu a.downloads i {
 }
+#article.asset #mainMenu a.asset:hover,
 #website.home #mainMenu a.home:hover,
 #article.overview #mainMenu a.overview:hover,
 #article.learn #mainMenu a.learn:hover,
@@ -866,6 +868,50 @@ font-size: 3.5vw;
 
 ** -------------------------------------------------- */
 
+
+#articleBody h3.toggleHeading {
+position: relative;
+margin: 16px 0;
+padding-right: 48px;
+}
+#articleBody h3.toggleHeading::after {
+font-family: "Font Awesome 5 Free";
+font-weight: 900;
+content: "\f078";
+position: absolute;
+right: 16px; top: 50%;
+transform: translateY(-50%);
+transition-duration: 0.2s;
+font-size: 60%;
+color: #FFEE00;
+}
+#articleBody h3.toggleHeading:hover {
+cursor: pointer;
+background-color: #194072;
+background-image: none;
+}
+#articleBody h3.toggleHeading:hover::after {
+transform: translateY(-35%);
+}
+#articleBody h3.toggleHeading.open::after {
+transform:  translateY(-50%) rotateX(-180deg);
+color: #FFFFFF;
+}
+#articleBody h3.toggleHeading.open:hover::after {
+transform:  translateY(-65%) rotateX(-180deg);
+}
+#articleBody div.toggleText {
+display: none;
+margin: 24px 0 48px;
+}
+#articleBody div.toggleText p:first-child {
+margin-top: 0;
+}
+#articleBody div.toggleText p:last-child {
+margin-bottom: 0;
+}
+
+
 #overlay {
 display: none;
 }
@@ -917,4 +963,83 @@ display: inline-block;
 width: 50%;
 }
 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* -------------------------------------------------- **
+
+   Asset
+
+** -------------------------------------------------- */
+
+#articleBody .sectionInner ul.exastroLogoList {
+margin: 0; padding: 0;
+list-style: none;
+letter-spacing: -0.4em;
+}
+#articleBody .sectionInner ul.exastroLogoList li {
+display: inline-block;
+width: 33.33333%;
+vertical-align: top;
+letter-spacing: normal;
+}
+#articleBody .sectionInner ul.exastroLogoList dl {
+margin: 0 16px; padding: 8px;
+background-color: #E6E6E6;
+}
+#articleBody .sectionInner ul.exastroLogoList dt {
+position: relative;
+background-color: white;
+}
+#articleBody .sectionInner ul.exastroLogoList dt.white {
+background-color: black;
+}
+#articleBody .sectionInner ul.exastroLogoList dt::after {
+content: '';
+display: block;
+padding-top: 75%;
+}
+#articleBody .sectionInner ul.exastroLogoList dt img {
+max-width: 95%;
+position: absolute;
+top: 50%; left: 50%;
+transform: translate(-50%,-50%);
+vertical-align: bottom;
+}
+#articleBody .sectionInner ul.exastroLogoList dd {
+padding: 16px 0;
+}
+#articleBody .sectionInner ul.exastroLogoList dd ul {
+margin: 0; padding: 0;
+list-style: none;
+letter-spacing: -0.4em;
+text-align: center;
+}
+#articleBody .sectionInner ul.exastroLogoList dd li {
+width: auto;
+}
+#articleBody .sectionInner ul.exastroLogoList dd li::after {
+content: '|';
+padding: 0 0.5em;
+color: #999;
+}
+#articleBody .sectionInner ul.exastroLogoList dd li:last-child::after {
+content: '';
+padding: 0;
+}
+#articleBody .sectionInner ul.exastroLogoList a {
+text-decoration: none;
+}
+#articleBody .sectionInner ul.exastroLogoList a:hover {
+text-decoration: underline;
 }
