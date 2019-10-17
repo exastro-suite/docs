@@ -106,4 +106,44 @@ $('div.slideView').on('click', function(){
   
 });
 
+// Toggle Text Area
+$('.toggleHeading').on('click', function(){
+  $( this ).toggleClass('open');
+  $( this ).next('.toggleText').slideToggle( 100 );
+});
+
+// Toggle Menu
+$('.toggleMenu span').on('click', function(){
+  const $this = $( this ),
+        $window = $( window );
+  let positionTop = $this.offset().top + $this.outerHeight() + 4 - $window.scrollTop(),
+      positionLeft = $this.offset().left - $window.scrollLeft();
+  
+  const change = function(){
+    if( $this.find('i').is('.fa-times') ) {
+      $this.find('i').removeClass('fa-times').addClass('fa-angle-down');
+      $this.next('ul').removeClass('open over').hide();
+    } else {
+      $this.next('ul').addClass('open').removeClass('over').stop(0,0).slideDown( 50, function(){
+        $this.find('i').removeClass('fa-angle-down').addClass('fa-times');
+          $( window ).on('scroll.navMenu resize.navMenu', function(){
+            $( window ).off('scroll.navMenu resize.navMenu');
+            change();
+          });
+      } );
+    }
+  }
+  change();
+  
+  // Window size position over check
+  if( $window.width() < positionLeft + $this.next('ul').outerWidth() ) $this.next('ul').addClass('over');
+  if( positionLeft < 4 ) positionLeft = 4;
+  
+  $this.next('ul').css({
+    'top' : positionTop,
+    'left': positionLeft,
+  });
+  
+});
+
 });
