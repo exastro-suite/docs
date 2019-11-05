@@ -61,8 +61,10 @@ $(function(){
           var opacityNum = ( 1 - ( windowScrollTop / headerHeight ) ).toFixed( 5 );
           $('#topMove').css('bottom', '-64px' );
           $('#startArea,#backgroundFull').css('opacity', opacityNum );
+          $('canvas').show();
         } else {
           $('#topMove').css('bottom', '8px' );
+          $('canvas').hide();
         }
     }
     $( window ).scroll( function(){

@@ -5,15 +5,15 @@ $(function(){
 // Suite List
 $('#logo a').on('click', function( e ){
   e.preventDefault();
-  $('#suiteList').fadeToggle( 300 );
+  $('#suiteList').stop(0,0).fadeToggle( 300 );
 });
 // 要素外をクリックで消す
-$( document ).on('mousedown', function( e ){
-    if ( $('#suiteList').is(':visible') ) {
-        if ( !$( e.target ).closest('#suiteList, #logo a').length ) {
-            $('#suiteList').fadeToggle( 300 );
-        }
-    }
+$( document ).on('mousedown.suitelist', function( e ){
+  if ( $('#suiteList').is(':visible') ) {
+      if ( !$( e.target ).closest('#suiteList, #logo a').length ) {
+          $('#suiteList').fadeToggle( 300 );
+      }
+  }
 });
 
 // Add overlay
@@ -57,24 +57,59 @@ $('span.language').on('click', function(){
 });
 
 // Hover and touch
-$('.touch').on('touchstart mouseenter', function(){
-    $( this ).addClass('hover');
-}).on('touchend mouseleave', function(){
-    $( this ).removeClass('hover');
+$('.touch').on({
+  'touchstart mouseenter': function(){
+      $( this ).addClass('hover');
+  },
+  'touchend mouseleave': function(){
+      $( this ).removeClass('hover');
+  }
 });
 
 // Anker scroll
-$('a[href^="#"]').not('#logo a, .tabMenu a').on('touchstart mousedown click', function( e ){
+$('a[href^="#"]').not('#logo a, .tabMenu a').on({
+  'click' : function( e ){
     e.preventDefault();
-}).on('touchend mouseup', function( e ){
+  },
+  'touchstart mousedown': function( e ){
     e.preventDefault();
+    
     if ( e.which !== 3 ) {
-        var speed = 300,
-            href = $(this).attr('href');
-        var target = $ ( href == '#' || href == '' ? 'html' : href );
-        var position = target.offset().top;
-        $('body, html').animate({ scrollTop : position }, speed, 'swing' );
+      var href = $( this ).attr('href'),
+          actionType = e.type,
+          moveRange = 0;
+
+      if( actionType === 'mousedown' ){
+        var startPointX = e.pageX,
+            startPointY = e.pageY;
+      } else {
+        var startPointX = e.originalEvent.touches[0].pageX,
+            startPointY = e.originalEvent.touches[0].pageY;
+      }
+
+      $( window ).on({
+        'touchmove.anker mousemove.anker': function( e ){
+          if( actionType === 'mousedown' ){
+            var movePointX = e.pageX - startPointX,
+                movePointY = e.pageY - startPointY;
+          } else {
+            var movePointX = e.originalEvent.changedTouches[0].pageX - startPointX,
+                movePointY = e.originalEvent.changedTouches[0].pageY - startPointY;
+          }
+          moveRange = Math.floor( Math.sqrt( Math.pow( movePointX, 2 ) + Math.pow( movePointY, 2 )));
+          if( moveRange > 30 ) $( this ).off('touchend.anker mouseup.anker touchmove.anker mousemove.anker');
+        },
+        'touchend.anker mouseup.anker': function( e ){
+          e.preventDefault();
+          $( this ).off('touchend.anker mouseup.anker touchmove.anker mousemove.anker');
+          var speed = 300,
+              target = $ ( href == '#' || href == '' ? 'html' : href ),
+              position = target.offset().top;
+          $('body, html').animate({ scrollTop : position }, speed, 'swing' );
+        }
+      });
     }
+  }
 });
 
 // Tab Contents
