@@ -3,7 +3,7 @@
 
 /* -------------------------------------------------- ** 
 
-   home.css for [ Exastro Community Site ]
+   Exastro
 
 ** -------------------------------------------------- */
 
@@ -541,3 +541,290 @@ padding: 16px;
 }
 
 }/* /480px */
+
+
+
+
+
+/* -------------------------------------------------- **
+
+   Asset
+
+** -------------------------------------------------- */
+
+#article.asset #articleTitle .background {
+  background-image: url("../img/header_asset.jpg");
+}
+
+#articleBody .sectionInner ul.exastroLogoList {
+  margin: 0; padding: 0;
+  list-style: none;
+  letter-spacing: -0.4em;
+}
+#articleBody .sectionInner ul.exastroLogoList li {
+  display: inline-block;
+  width: 25%;
+  vertical-align: top;
+  letter-spacing: normal;
+}
+#articleBody .sectionInner ul.exastroLogoList dl {
+  margin: 0 8px; padding: 8px;
+  background-color: #FFF;
+  box-shadow: 0 0 8px rgba( 0,0,0,0.1);
+}
+#articleBody .sectionInner ul.exastroLogoList dt {
+  position: relative;
+  background-color: #F2F2F2;
+  background-image: linear-gradient( 45deg, #FFF 25%, transparent 25%, transparent 75%, #FFF 75%),
+  linear-gradient( 45deg, #FFF 25%, transparent 25%, transparent 75%, #FFF 75%);
+  background-size: 32px 32px;
+  background-position: 0 0, 16px 16px;
+  box-shadow: 0 0 16px rgba( 0,0,0,0.1) inset;
+}
+#articleBody .sectionInner ul.exastroLogoList dt.white {
+  background-color: #555;
+  background-image: linear-gradient( 45deg, #666 25%, transparent 25%, transparent 75%, #666 75%),
+  linear-gradient( 45deg, #666 25%, transparent 25%, transparent 75%, #666 75%);
+  background-size: 32px 32px;
+  background-position: 0 0, 16px 16px;
+  box-shadow: 0 0 16px rgba( 0,0,0,0.3) inset;
+}
+#articleBody .sectionInner ul.exastroLogoList dt::after {
+  content: '';
+  display: block;
+  padding-top: 75%;
+}
+#articleBody .sectionInner ul.exastroLogoList dt img {
+  max-width: 95%;
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%,-50%);
+  vertical-align: bottom;
+}
+#articleBody .sectionInner ul.exastroLogoList dd {
+  padding: 8px 0 0;
+}
+#articleBody .sectionInner ul.exastroLogoList dd ul {
+  display: table;
+  table-layout: fixed;
+  border-collapse: collapse;
+  width: 100%;
+  margin: 0; padding: 0;
+  list-style: none;
+  letter-spacing: -0.4em;
+  text-align: center;
+}
+#articleBody .sectionInner ul.exastroLogoList dd li {
+  display: table-cell;
+  border: 1px solid #DDD;
+}
+#articleBody .sectionInner ul.exastroLogoList a {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  padding: 4px;
+  background-color: #FFF;
+  text-decoration: none;
+  font-size: 0.84rem;
+  color: #666;
+  transition-duration: 0.3s;
+}
+#articleBody .sectionInner ul.exastroLogoList a::after {
+  content: '\f019';
+  position: absolute;
+  top: -100%; left: 0;
+  width: 100%; height: 100%;
+  padding: 4px;
+  background-color: #F2F2F2;
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  font-size: 0.84rem;
+  color: #666;
+  transition-duration: 0.3s;
+}
+#articleBody .sectionInner ul.exastroLogoList a.hover {
+  color: #FFF;
+}
+#articleBody .sectionInner ul.exastroLogoList a.hover::after {
+  top: 0;
+}
+
+@media screen and (max-width: 640px) {
+
+  #articleBody .sectionInner ul.exastroLogoList li {
+    width: 50%;
+  }
+
+}/* /640px */
+
+
+
+
+
+/* -------------------------------------------------- **
+
+   News Room
+
+** -------------------------------------------------- */
+
+#article.newsroom #articleTitle .background {
+  background-image: url("../img/header_newsroom.jpg");
+}
+
+#article.newsroom #newsList ul {
+  margin: 0; padding: 0;
+  list-style: none;
+}
+#article.newsroom #newsList li {
+  margin: 32px 0; padding: 24px;
+  background-color: #FFF;
+  border-radius: 4px;
+  box-shadow: 0 0 8px rgba( 0,0,0,0.2 );
+}
+#article.newsroom #newsList li:last-child {
+  margin-bottom: 0;
+}
+#article.newsroom #newsList a {
+  text-decoration: none;
+  color: #333;
+}
+#article.newsroom #newsList a:hover {
+  text-decoration: underline;
+  color: #444;
+}
+#article.newsroom #newsList dl::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+#article.newsroom #newsList dt {
+  float: left;
+  overflow: hidden;
+  width: 30%;
+}
+#article.newsroom #newsList dt a {
+  display: block;
+  background-color: #000;
+}
+#article.newsroom #newsList dt img {
+  max-width: 100%;
+  transition-duration: 0.3s;
+  vertical-align: middle;
+}
+#article.newsroom #newsList dt a.hover img {
+  opacity: 0.8;
+}
+#article.newsroom #newsList dd {
+  margin-left: 33%;
+}
+#article.newsroom #newsList dd:last-child {
+  margin-bottom: 0!important;
+}
+#article.newsroom #newsList dd.tag {
+  margin-bottom: 12px;
+}
+#article.newsroom #newsList dd.tag ul {
+  margin-left: 1.5em;
+}
+#article.newsroom #newsList dd.tag i {
+  float: left;
+  font-size: 1rem;
+  color: #CCC;
+}
+#article.newsroom #newsList dd.tag li {
+  display: inline-block;
+  margin: 0; padding: 0;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  vertical-align: top;
+}
+#article.newsroom #newsList dd.tag li div {
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  font-family: "Lucida Console", Monaco, "monospace";
+  color: #FFF;
+}
+#article.newsroom #newsList dd.tag li .ita { background-color: #002B62; }
+#article.newsroom #newsList dd.tag li .pc { background-color: #C80000; }
+#article.newsroom #newsList dd.tag li .oase { background-color: #00B5B8; }
+
+#article.newsroom #newsList dd.title {
+  padding-bottom: 12px;
+  line-height: 1.3;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+#article.newsroom #newsList dd.title::after {
+  content: '';
+  display: block;
+  width: 100%; height: 4px;
+  margin-top: 8px;
+  background-color: #EFEFEF;
+}
+#article.newsroom #newsList dd.meta {
+  margin-bottom: 16px;
+  font-size: 0.84rem;
+  color: #666;
+}
+#article.newsroom #newsList div.media {
+  display: inline-block;
+}
+#article.newsroom #newsList div.date {
+  float: right;
+}
+#article.newsroom #newsList dd.text {
+  font-size: 0.9rem;
+  color: #444;
+}
+#article.newsroom #newsList dd.document {
+  margin-top: 4px;
+  font-size: 0.84rem;
+}
+#article.newsroom #newsList dd.document a {
+  display: block;
+  padding: 4px 8px;
+  border: 1px solid #DDD;
+  color: #666;
+}
+#article.newsroom #newsList dd.document a:hover {
+  background-color: #F9F9F9;
+  border-color: #BBB;
+  text-decoration: none;
+  color: #333;
+}
+#article.newsroom #newsList dd.document .fa-file-pdf { color: #FF0000; }
+
+#article.newsroom #newsList dd.note {
+  margin-top: -16px;
+  text-align: right;
+  font-size: 0.6rem;
+  color: #999;
+}
+
+@media screen and (max-width: 640px) {
+
+  #article.newsroom #newsList dt {
+    float: none;
+    width: 100%;
+    margin-bottom: 24px;
+  }
+  #article.newsroom #newsList dd {
+    margin-left: 0;
+  }
+  #article.newsroom #newsList dd.tag i {
+    font-size: 2.8vw;
+  }
+  #article.newsroom #newsList dd.tag li div {
+    font-size: 2vw;
+  }
+  #article.newsroom #newsList dd.title {
+    font-size: 3.5vw;
+  }
+  #article.newsroom #newsList dd.meta,
+  #article.newsroom #newsList dd.document {
+    font-size: 2.3vw;
+  }
+
+}/* /640px */

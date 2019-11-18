@@ -52,18 +52,18 @@ $(function(){
         var windowScrollTop = $( this ).scrollTop();
 
         if ( windowScrollTop > headerHeight / 2 ){
-            $('header').css('top', 0 );
+            $('header').css('transform', 'translateY(0)' );
         } else {
-            $('header').css('top', '-80px' );
+            $('header').css('transform', 'translateY(-80px)' );
             $('#suiteList').fadeOut( 300 );
         }
         if ( windowScrollTop < headerHeight ){
           var opacityNum = ( 1 - ( windowScrollTop / headerHeight ) ).toFixed( 5 );
-          $('#topMove').css('bottom', '-64px' );
+          $('#topMove').css('transform', 'translateY(8px)' );
           $('#startArea,#backgroundFull').css('opacity', opacityNum );
           $('canvas').show();
         } else {
-          $('#topMove').css('bottom', '8px' );
+          $('#topMove').css('transform', 'translateY(-72px)' );
           $('canvas').hide();
         }
     }

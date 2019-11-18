@@ -1,5 +1,29 @@
 // JavaScript Document
 
+
+// HASH
+var locationHash = window.location.hash;
+window.location.hash = "";
+console.log( locationHash );
+
+// LOAD
+$('html').addClass('loadWait');
+$( window ).on('load', function(){
+  $('html').removeClass('loadWait');
+  
+  // Anker scroll
+  if( locationHash != '') {
+    var headerHeight = $('header').outerHeight(),
+        scrollPosition = $( locationHash ).offset().top - headerHeight - 8;
+    $('html, body').animate({ scrollTop: scrollPosition }, 100, 'swing');
+    window.location.hash = locationHash;
+    if( $( locationHash ).is('.toggleHeading') ) {
+      $( locationHash ).click();
+    }
+  }
+});
+
+// DOM
 $(function(){
 
 // Suite List
@@ -18,6 +42,9 @@ $( document ).on('mousedown.suitelist', function( e ){
 
 // Add overlay
 $('#container').append('<div id="overlay"></div>');
+
+// Add image box back
+$('body').append('<div id="imageBox"><div class="imageBoxInner"><i class="fas fa-times-circle"></i><div class="bt"><div class="cl"><div class="ci"></div></div></div></div></div>');
 
 // Menu
 $('#header').append('<div id="menuBtn" class="touch"><span></span></div>');
@@ -66,6 +93,8 @@ $('.touch').on({
   }
 });
 
+
+
 // Anker scroll
 $('a[href^="#"]').not('#logo a, .tabMenu a').on({
   'click' : function( e ){
@@ -77,24 +106,26 @@ $('a[href^="#"]').not('#logo a, .tabMenu a').on({
     if ( e.which !== 3 ) {
       var href = $( this ).attr('href'),
           actionType = e.type,
-          moveRange = 0;
+          moveRange = 0,
+          startPointX = 0, movePointX = 0,
+          startPointY = 0, movePointY = 0;
 
       if( actionType === 'mousedown' ){
-        var startPointX = e.pageX,
-            startPointY = e.pageY;
+        startPointX = e.pageX,
+        startPointY = e.pageY;
       } else {
-        var startPointX = e.originalEvent.touches[0].pageX,
-            startPointY = e.originalEvent.touches[0].pageY;
+        startPointX = e.originalEvent.touches[0].pageX,
+        startPointY = e.originalEvent.touches[0].pageY;
       }
 
       $( window ).on({
         'touchmove.anker mousemove.anker': function( e ){
           if( actionType === 'mousedown' ){
-            var movePointX = e.pageX - startPointX,
-                movePointY = e.pageY - startPointY;
+            movePointX = e.pageX - startPointX,
+            movePointY = e.pageY - startPointY;
           } else {
-            var movePointX = e.originalEvent.changedTouches[0].pageX - startPointX,
-                movePointY = e.originalEvent.changedTouches[0].pageY - startPointY;
+            movePointX = e.originalEvent.changedTouches[0].pageX - startPointX,
+            movePointY = e.originalEvent.changedTouches[0].pageY - startPointY;
           }
           moveRange = Math.floor( Math.sqrt( Math.pow( movePointX, 2 ) + Math.pow( movePointY, 2 )));
           if( moveRange > 30 ) $( this ).off('touchend.anker mouseup.anker touchmove.anker mousemove.anker');
@@ -123,6 +154,21 @@ $('.tabContents .tabMenu a').on('click', function( e ){
     var openTab = $( this ).attr('href');
     $( this ).addClass('tabOpen');
     $( openTab ).addClass('tabOpen');
+});
+
+// Image
+$('.loupe').on('click', function(){
+var imageClone = $( this ).find('img').clone();
+
+$('body').addClass('imageOpen');
+$('#imageBox .ci').append( imageClone );
+
+$('#imageBox i').on('click', function(){
+  $( this ).off();
+  $('#imageBox .ci').html('');
+  $('body').removeClass('imageOpen');
+});
+
 });
 
 // Slide Loading
@@ -182,3 +228,81 @@ $('.toggleMenu span').on('click', function(){
 });
 
 });
+
+
+// Features SVG LINE
+function featuresSvgLineDraw() {
+  
+  $( window ).on('load', function(){
+
+    var $featuresList = $('#featuresList li'),
+        $svgArea = $('#svgArea');
+
+    var featuresSvgLine = function() {
+      $featuresList.each( function( i ){
+        // Path Position
+        var $feature = $(this),
+            exastroPositionX = 50,
+            exastroPositionY = $('#featuresList').outerHeight() / 2,
+            thisPositionX = $feature.position().left + 2,
+            thisPositionY = $feature.position().top + ( $feature.outerHeight() / 2 );
+
+        // Path Data
+        var pathDotted = $( document.createElementNS('http://www.w3.org/2000/svg', 'path') ),
+            pathBack = $( document.createElementNS('http://www.w3.org/2000/svg', 'path') ),
+            pathD = 'M ' + exastroPositionX + ',' + exastroPositionY + ' Q ' + (( thisPositionX - exastroPositionX) / 2 ) + ',' + thisPositionY + ' ' + thisPositionX + ',' + thisPositionY;
+        pathBack.attr({'id' : 'svgPathBack' + i, 'class' : 'pathBack', 'd' : pathD});
+        pathDotted.attr({'id' : 'svgPathDotted' + i, 'class' : 'pathDotted', 'd' : pathD });
+
+        // Append Path
+        $svgArea.append( pathBack, pathDotted );
+
+        var index = 0;
+        $featuresList.on({
+          'touchstart mouseenter': function(){
+              index = $featuresList.index( this );
+              $('#svgPathBack' + index ).css('stroke','#FFB285');
+              $('#svgPathDotted' + index ).css('stroke','#FF640A');
+          },
+          'touchend mouseleave': function(){
+              $('#svgPathBack' + index ).css('stroke','#999');
+              $('#svgPathDotted' + index ).css('stroke','#002B62');
+          }
+        });
+
+      });
+
+      // Dotted Animation
+      var pathAnime = function() {
+        $('.pathDotted').animate({'stroke-dashoffset' : 0 }, 2000, 'linear', function(){
+          $( this ).css('stroke-dashoffset', 100 );
+          pathAnime();
+        } );
+      }
+      pathAnime();
+
+    }
+    featuresSvgLine();
+
+    // Window Resize
+    var currentWidth = $( window ).innerWidth();
+
+    var timer = false;    
+    $( window ).resize( function() {
+        if ( currentWidth == $( window ).innerWidth() && $( window ).innerWidth() < 640 ) {
+            return;
+        }
+        $('.pathBack, .pathDotted').remove();
+        if ( timer !== false ) {
+            clearTimeout( timer );
+        }
+        timer = setTimeout( function(){
+          featuresSvgLine();
+          currentWidth = $( window ).innerWidth();
+        }, 500 );
+    });
+
+  });
+}
+
+
