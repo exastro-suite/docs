@@ -1243,6 +1243,10 @@ font-style: normal;
 #articleBody p {
 margin: 24px 0 24px 24px;
 }
+#articleBody p.center {
+margin: 24px 0;
+text-align: center!important;
+}
 .ja #articleBody p {
 text-align: justify;
 }
@@ -2132,6 +2136,11 @@ position: relative;
 padding-bottom: 75%;
 cursor: pointer;
 }
+.slide.only {
+float: none;
+width: 100%; max-width: 800px;
+margin: 0 auto 32px;
+}
 .slide.wide .slideView {
 padding-bottom: 56.25%;
 }
@@ -2139,11 +2148,11 @@ padding-bottom: 56.25%;
 cursor: default;
 }
 .slide .slideView.done {
-padding-bottom: 81.2%;
+padding-bottom: calc( 75% + 29px );
 cursor: default;
 }
 .slide.wide .slideView.done {
-padding-bottom: 56.25%;
+padding-bottom: calc( 56.25% + 29px );
 }
 .slide .slideView iframe,
 .slide .slideView img {
