@@ -1816,20 +1816,20 @@ color: #F00;
 color: #60c60d;
 }
 /* Features */
-#articleBody #features #featuresList {
+.ja #articleBody #features #featuresList {
 position: relative;
 }
-#articleBody #features #featuresList svg {
+.ja #articleBody #features #featuresList svg {
 position: absolute;
 top: 0; left: 0;
 transition-duration: 1s;
 stroke-width: 3;
 fill: transparent;
 }
-#articleBody #features #featuresList svg path.pathBack {
+.ja #articleBody #features #featuresList svg path.pathBack {
 stroke: #999;
 }
-#articleBody #features #featuresList svg path.pathDotted {
+.ja #articleBody #features #featuresList svg path.pathDotted {
 stroke: #002B62;
 stroke-linecap: round;
 stroke-linejoin: round;
@@ -1843,11 +1843,11 @@ stroke-dashoffset: 80;
 100% { stroke-dashoffset: 0; }
 }
 */
-#articleBody #features ol {
+.ja #articleBody #features ol {
 width: 100%;
 margin: 0 0 0 auto; padding: 0 0 0 20%;
 }
-#articleBody #features ol::after {
+.ja #articleBody #features ol::after {
 content: '';
 display: block;
 width: 240px; height: 180px;
@@ -1858,18 +1858,18 @@ transform: translate(-30%,-50%);
 background: url("../img/features_exastro.png") no-repeat;
 background-size: contain;
 }
-#articleBody #features li {
+.ja #articleBody #features li {
 margin: 0 0 16px;
 list-style: none;
 }
-#articleBody #features li:nth-child(1),
-#articleBody #features li:nth-child(7) { transform: translateX(-10%); }
-#articleBody #features li:nth-child(2),
-#articleBody #features li:nth-child(6) { transform: translateX(-5%); }
-#articleBody #features li:nth-child(3),
-#articleBody #features li:nth-child(5) { transform: translateX( 0 ); }
-#articleBody #features li:nth-child(4) { transform: translateX( 5% ); }
-#articleBody #features li a {
+.ja #articleBody #features li:nth-child(1),
+.ja #articleBody #features li:nth-child(7) { transform: translateX(-10%); }
+.ja #articleBody #features li:nth-child(2),
+.ja #articleBody #features li:nth-child(6) { transform: translateX(-5%); }
+.ja #articleBody #features li:nth-child(3),
+.ja #articleBody #features li:nth-child(5) { transform: translateX( 0 ); }
+.ja #articleBody #features li:nth-child(4) { transform: translateX( 5% ); }
+.ja #articleBody #features li a {
 overflow: hidden;
 display: block;
 padding: 12px 16px;
@@ -1886,13 +1886,13 @@ transition-duration: 0.2s;
 white-space: nowrap;
 text-overflow: ellipsis;
 }
-#articleBody #features li a:hover {
+.ja #articleBody #features li a:hover {
 padding-left: 24px;
 background-image: linear-gradient( #FFF, #FFF7F3 );
 border-color: #FF640A;
 color: #FF640A;
 }
-#articleBody #features li i {
+.ja #articleBody #features li i {
 color: #002B62;
 animation: gearAnimation 4s linear infinite;
 }
@@ -1900,52 +1900,45 @@ animation: gearAnimation 4s linear infinite;
   0% { transform: scale(1.2) rotate(0deg); }
 100% { transform: scale(1.2) rotate(360deg); }
 }
-#articleBody #features li a:hover i {
+.ja #articleBody #features li a:hover i {
 color: #FF640A;
 }
 
-#articleBody #features li a:hover i {
-
-}
-/*
-
-old features list
-
-#articleBody #features ul {
+.en #articleBody #features ul {
 padding: 0;
 letter-spacing: -0.4em;
 }
-#articleBody #features li {
+.en #articleBody #features li {
 letter-spacing: normal;
 display: inline-block;
 width: 50%;
 vertical-align: top;
 }
-#articleBody #features li:nth-of-type( odd ) {
+.en #articleBody #features li:nth-of-type( odd ) {
 padding-right: 24px;
 }
-#articleBody #features li:nth-of-type( even ) {
+.en #articleBody #features li:nth-of-type( even ) {
 padding-left: 24px;
 }
-#articleBody #features dt {
+.en #articleBody #features dt {
 margin-bottom: 16px;
 font-weight: bold;
 color: #002B62;
 font-size: 20px;
 line-height: 1.5;
 }
-#articleBody #features dd {
+.en #articleBody #features dd {
 margin-bottom: 32px;
 line-height: 1.5
 }
-#articleBody #features dt i {
+.en #articleBody #features dt i {
 animation: gearAnimation 5s linear infinite;
 }
 @keyframes gearAnimation {
   0% { transform: rotate(   0deg); }
 100% { transform: rotate( 360deg); }
 }
-*/
+
 
 @media screen and ( max-width: 1260px ){
 
@@ -1967,13 +1960,13 @@ height: 400px;
 #articleBody #why li {
 width: 50%;
 }
-#articleBody #features li:nth-child(1),
-#articleBody #features li:nth-child(7) { transform: translateX( 0 ); }
-#articleBody #features li:nth-child(2),
-#articleBody #features li:nth-child(6) { transform: translateX( 0 ); }
-#articleBody #features li:nth-child(3),
-#articleBody #features li:nth-child(5) { transform: translateX( 0 ); }
-#articleBody #features li:nth-child(4) { transform: translateX( 0 ); }
+.ja #articleBody #features li:nth-child(1),
+.ja #articleBody #features li:nth-child(7) { transform: translateX( 0 ); }
+.ja #articleBody #features li:nth-child(2),
+.ja #articleBody #features li:nth-child(6) { transform: translateX( 0 ); }
+.ja #articleBody #features li:nth-child(3),
+.ja #articleBody #features li:nth-child(5) { transform: translateX( 0 ); }
+.ja #articleBody #features li:nth-child(4) { transform: translateX( 0 ); }
 
 } /* /1024px */
 
@@ -1982,14 +1975,14 @@ width: 50%;
 #website.index #articleTitle section .sectionInner {
 padding-top: 24px;
 }
-#articleBody #features ol {
+.ja #articleBody #features ol {
 padding-left: 96px;
 }
-#articleBody #features ol::after {
+.ja #articleBody #features ol::after {
 width: 80px; height: 60px; 
 transform: translate(0,-50%);
 }
-#articleBody #features li a {
+.ja #articleBody #features li a {
 padding: 8px 12px;
 font-size: 2.8vw;
 }
@@ -2042,22 +2035,21 @@ margin-bottom: 8px;
 display: none;
 }
 
-/*
-#articleBody #features li {
+.en #articleBody #features li {
 width: 100%;
 }
-#articleBody #features li:nth-of-type( even ),
-#articleBody #features li:nth-of-type( odd ) {
+.en #articleBody #features li:nth-of-type( even ),
+.en #articleBody #features li:nth-of-type( odd ) {
 padding: 0;
 }
-*/
-#articleBody #features dt {
+.en #articleBody #features dt {
 margin-bottom: 8px;
 font-size: 3.5vw;
 }
-#articleBody #features dd {
+.en #articleBody #features dd {
 font-size: 3vw;
 }
+
 #website.index #articleBody p {
 margin: 32px 0;
 font-size: 3vw;
@@ -2073,14 +2065,14 @@ padding: 0;
 
 @media screen and ( max-width: 480px ){
 
-#articleBody #features ol {
+.ja #articleBody #features ol {
 padding-left: 0;
 }
-#articleBody #features svg,
-#articleBody #features ol::after {
+.ja #articleBody #features svg,
+.ja #articleBody #features ol::after {
 display: none;
 }
-#articleBody #features li {
+.ja #articleBody #features li {
 margin-bottom: 8px;
 }
 
