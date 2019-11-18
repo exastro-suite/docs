@@ -3,8 +3,7 @@
 
 // HASH
 var locationHash = window.location.hash;
-window.location.hash = "";
-console.log( locationHash );
+if( locationHash != '') window.location.hash = "";
 
 // LOAD
 $('html').addClass('loadWait');
