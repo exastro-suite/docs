@@ -395,6 +395,41 @@ animation: andmore 1s infinite;
  95% { opacity: 0; }
 100% { opacity: 1; }
 }
+#terminalBody .handoutList {
+margin: 0 auto; padding: 8px 0 0 0;
+letter-spacing: -0.4em;
+list-style: none;
+text-align: center;
+}
+#terminalBody .handoutList li {
+display: inline-block;
+width: 33.33333%;
+margin: 0; padding: 0;
+background-color: #FFF;
+box-shadow: 0 0 16px rgba( 0,0,0,0.1 );
+border: 1px solid #CCC;
+border-radius: 4px;
+letter-spacing: normal;
+text-align: center;
+}
+#terminalBody .handoutList li a {
+display: block;
+padding: 16px;
+text-decoration: none;
+color: #333;
+}
+#terminalBody .handoutList li a:hover {
+background-color: #E5EAEF;
+}
+#terminalBody .handoutList li img {
+width: calc( 50% - 16px ); height: auto;
+margin: 0 8px;
+box-shadow: 0 0 12px rgba( 0,0,0,0.3 );
+vertical-align: bottom;
+}
+#terminalBody .handoutList li a:hover img {
+opacity: 0.8;
+}
 #snsArea {
 max-width: 980px;
 margin: 0 auto;
