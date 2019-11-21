@@ -260,12 +260,12 @@ function featuresSvgLineDraw() {
         $featuresList.on({
           'touchstart mouseenter': function(){
               index = $featuresList.index( this );
-              $('#svgPathBack' + index ).css('stroke','#FFB285');
-              $('#svgPathDotted' + index ).css('stroke','#FF640A');
+              $('#svgPathBack' + index ).attr('class', 'pathBack hover');
+              $('#svgPathDotted' + index ).attr('class', 'pathDotted hover');
           },
           'touchend mouseleave': function(){
-              $('#svgPathBack' + index ).css('stroke','#999');
-              $('#svgPathDotted' + index ).css('stroke','#002B62');
+              $('#svgPathBack' + index ).attr('class', 'pathBack');
+              $('#svgPathDotted' + index ).attr('class', 'pathDotted');
           }
         });
 
