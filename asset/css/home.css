@@ -483,6 +483,9 @@ font-size: 3.3vw;
 #terminalBody dd.text {
 font-size: 2vw;
 }
+#terminalBody .handoutList li {
+width: 50%;
+}
 
 }
 
@@ -573,6 +576,9 @@ padding: 12px 16px;
 }
 #terminalBody li {
 padding: 16px;
+}
+#terminalBody .handoutList li {
+width: 100%;
 }
 
 }/* /480px */
