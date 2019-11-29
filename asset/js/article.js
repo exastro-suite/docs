@@ -3,11 +3,11 @@
 $(function(){
     var topMoveHeight;
 
-    // title background image
+    // Title background image.
     $('#articleTitle').append('<div class="background"></div>');
     if( $('#website.index').length ) $('.background').html('<div class="monitor"><div><ul><li></li><li></li><li></li></ul></div></div>');
     
-    // resize window
+    // Resize window.
     var resizeWindow = function() {
         topMoveHeight = $('#articleBody').offset();
     }
@@ -33,4 +33,80 @@ $(function(){
             $('#topMove').css('bottom', '8px' );
         }
     });
+
+/* -------------------------------------------------- **
+
+   Clipborad copy
+
+** -------------------------------------------------- */ 
+    $('.clipboard-copy').on('click', function(){
+      
+      
+      var clickInterval = 1000; // Click interval.
+      var $this = $( this );
+
+      if( !$this.is('.copy') ){
+
+        var $dummyElm = $('<textarea class="dummy" />'),
+            text = '';
+        
+        // Line feed check.
+        text = $( this ).text();
+        text = text.replace(/\r/g, '\n');
+        if( text.slice( -1) !== '\n' ) text += '\n';
+        text = text.replace(/\n+$/, '\n');
+
+        // Add text to dummy element and select.
+        $this.after( $dummyElm );
+        $dummyElm.text( text ).focus().select();
+
+        // Selected text to clipboard.
+        document.execCommand('copy');
+
+        // Dummy element remove.
+        $dummyElm.remove();
+        
+        // Leave an interval.
+        $this.addClass('copy');
+        setTimeout( function(){
+          $this.removeClass('copy');
+        }, clickInterval );
+
+      }
+    });
+
+/* -------------------------------------------------- **
+
+   Slide tab menu change.
+
+** -------------------------------------------------- */  
+    var $slideMenu = $('.slideMenu');
+
+    // Menu On
+    $slideMenu.each( function(){
+      $( this ).find('li').eq(0).addClass('on');
+    });
+
+    $slideMenu.find('li').on('click', function(){
+      var $this = $( this );
+      if( !$this.is('.on') ){
+
+        var $slide = $( this ).closest('.slide'),
+            index = $slide.find('li').index( $this );
+
+        // Slide view adjust height.
+        if( $slide.find('.on').is('.viewSlide') ){
+          var height = $slide.find('.slideView').outerHeight();
+          $slide.children().not('.slideMenu').css('height', height );
+        }
+
+        $slide.find('.on').removeClass('on');
+        $this.addClass('on');
+
+        $slide.children().not('.slideMenu').hide();
+        $slide.children().eq( index ).show();
+
+      }
+    });    
+    
 });

@@ -2182,8 +2182,100 @@ opacity: 0.2;
 .slide .slideView.done img {
 display: none;
 }
+#articleBody .slideMenu ul {
+display: table;
+table-layout: fixed;
+border-collapse: collapse;
+width: 100%; height: 16px;
+margin: 4px 0 0 0; padding: 0;
+}
+#articleBody .slideMenu li {
+display: table-cell;
+padding: 4px;
+background-color: #F8F8F8;
+background-image: linear-gradient(#F8F8F8, #EEE);
+border: 1px solid #AAA;
+text-align: center;
+vertical-align: middle;
+font-size: 0.84rem;color: #555;
+}
+#articleBody .slideMenu li.hover {
+background-color: #EEE;
+background-image: linear-gradient(#EEE, #DFDFDF);
+}
+#articleBody .slideMenu li.on {
+border-top: none;
+background-color: #FFF;
+background-image: linear-gradient(#FFF 25%, #F8F8F8);
+}
+#articleBody .slideMenu li.on.hover {
+background-color: #FFF;
+cursor: default;
+}
+#articleBody .slideCode {
+overflow: auto;
+display: none;
+padding: 8px;
+border: 1px solid #CCC;
+}
+#articleBody .slideCode dt {
+margin-bottom: 8px; padding: 4px 8px;
+border-left: 10px solid #002B62;
+}
+#articleBody .slideCode dd {
+margin: 8px 0;
+}
+#articleBody .slideCode dd.note {
+font-size: 11px;
+padding-left: 1em;
+text-indent: -1em;
+}
+#articleBody .slideCode pre.playbook {
+margin: 0; padding: 8px;
+background-color: #333;
+border-radius: 0;
+font-family: Consolas, "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", "sans-serif";
+color: #DDD;
+font-size: 0.9rem;
+}
+#articleBody .slideCode .any {
+color: #F33;
+}
 
 
+.clipboard-copy {
+  cursor: copy;
+  transition-duration: 0.2s;
+}
+.clipboard-copy:hover {
+  color: #888;
+}
+.clipboard-copy.copy {
+  display: block;
+  position: relative;
+  animation: clipboardCopy 0.3s;
+}
+.clipboard-copy::after {
+content: '';
+display: inline-block;
+position: absolute;
+left: 0; top: 0;
+padding: 4px 16px;
+background-color: rgba( 0,0,0,0.8 );
+text-align: center;
+transition-duration: 0.1s;
+font-size: 10px;
+color: #FFF;
+opacity: 0;
+}
+.clipboard-copy.copy::after {
+content: 'Copied to clipboard.';
+opacity: 1;
+}
+@keyframes clipboardCopy {
+  0% { transform: scale( 0.97 ); opacity: 0.8; }
+  100% { transform: scale( 1 ); opacity: 1; }
+}
 
 
 @media screen and ( max-width: 1024px ) {
