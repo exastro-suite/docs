@@ -11,70 +11,105 @@ window.cancelAnimFrame = ( function() {
     return window.cancelAnimationFrame = window.cancelAnimationFrame || window.mozcancelAnimationFrame || window.webkitcancelAnimationFrame || window.mscancelAnimationFrame;
 })();
 
-$(function(){
-    var $canvas = $('#backgroundCanvas'),
-        areaSize;
-    var headerWidth,
-        headerHeight,
-        currentWidth = $( window ).innerWidth();
+$('html').addClass('loadStart');
+$( window ).on('load', function(){
 
-    // resize canvas
-    var resizeCanvas = function() {
-    
-        headerWidth = $( window ).innerWidth();
-        headerHeight = $( window ).innerHeight();
-        areaSize = headerWidth * headerHeight / 2000;
-        $('#startArea').css('height', headerHeight );
-        $canvas.attr({'width': headerWidth, 'height': headerHeight });
-    
-    }
-    var timer = false;    
-    $( window ).resize( function() {
-        if ( currentWidth == $( window ).innerWidth() && $( window ).innerWidth() < 640 ) {
-            return;
-        }
-        if ( timer !== false ) {
-            clearTimeout( timer );
-        }
-        timer = setTimeout( function(){
-            $canvas.fadeOut( 300, function(){
-                cancelAnimFrame( requestId );
-                resizeCanvas();
-                starAnimation( areaSize );
-                $( this ).fadeIn( 300 );
-                currentWidth = $( window ).innerWidth();
-            });
-        }, 500 );
-    });
-    
-    // Header Menu
-    var scrollCheck = function(){
-        var windowScrollTop = $( this ).scrollTop();
+    var loadCompleatDelay = 100,
+        loadCompleatWait = 800,
+        canvasFadeAnimationTime = 300;
 
-        if ( windowScrollTop > headerHeight / 2 ){
-            $('header').css('transform', 'translateY(0)' );
-        } else {
-            $('header').css('transform', 'translateY(-80px)' );
-            $('#suiteList').fadeOut( 300 );
+    setTimeout(function(){
+      
+      $('html, body').scrollTop( 0 );
+      $('html').addClass('loadCompleat');
+      
+      setTimeout(function(){
+      
+        $('html').removeClass('loadStart').addClass('loadEnd');
+
+        var $canvas = $('#backgroundCanvas'),
+            $window = $( window ),
+            areaSize;
+        var headerWidth,
+            headerHeight,
+            currentWidth = $window.innerWidth();
+
+        // resize canvas
+        var resizeCanvas = function() {
+
+            headerWidth = $window.innerWidth();
+            headerHeight = $window.innerHeight();
+            areaSize = headerWidth * headerHeight / 2000;
+            $('#startArea').css('height', headerHeight );
+            $canvas.attr({'width': headerWidth, 'height': headerHeight });
+
         }
-        if ( windowScrollTop < headerHeight ){
-          var opacityNum = ( 1 - ( windowScrollTop / headerHeight ) ).toFixed( 5 );
-          $('#topMove').css('transform', 'translateY(8px)' );
-          $('#startArea,#backgroundFull').css('opacity', opacityNum );
-          $('canvas').show();
-        } else {
-          $('#topMove').css('transform', 'translateY(-72px)' );
-          $('canvas').hide();
+        var resizeAndMore = function() {
+
+          $('#andMore').find('.text').css('height', $('#andMore').find('.image').height() );
+
         }
-    }
-    $( window ).scroll( function(){
+        var timer = false;    
+        $window.resize( function() {
+            if ( currentWidth == $window.innerWidth() && $window.innerWidth() < 640 ) {
+                return;
+            }
+            if ( timer !== false ) {
+                clearTimeout( timer );
+            }
+            timer = setTimeout( function(){
+                $canvas.fadeOut( canvasFadeAnimationTime, function(){
+                    cancelAnimFrame( requestId );
+                    resizeCanvas();
+                    resizeAndMore();
+                    starAnimation( areaSize );
+                    $( this ).fadeIn( canvasFadeAnimationTime );
+                    currentWidth = $window.innerWidth();
+                });
+            }, 500 );
+        });
+
+        // Header Menu
+        var scrollCheck = function(){
+            var windowScrollTop = $( this ).scrollTop();
+
+            if ( windowScrollTop > headerHeight / 2 ){
+                $('header').css('transform', 'translateY(0)' );
+            } else {
+                $('header').css('transform', 'translateY(-80px)' );
+                $('#suiteList').fadeOut( canvasFadeAnimationTime );
+            }
+            if ( windowScrollTop < headerHeight ){
+              //var opacityNum = ( 1 - ( windowScrollTop / headerHeight ) ).toFixed( 5 );
+              $('#topMove').css('transform', 'translateY(8px)' );
+              //$('#startArea,#backgroundFull').css('opacity', opacityNum );
+              $('canvas').show();
+            } else {
+              $('#topMove').css('transform', 'translateY(-72px)' );
+              $('canvas').hide();
+            }
+        }
+        $window.scroll( function(){
+            scrollCheck();
+        });
+
+        // Initialized
+        resizeCanvas();
+        resizeAndMore();
+        starAnimation( areaSize );
         scrollCheck();
-    });
+        
+      }, loadCompleatWait );      
+    }, loadCompleatDelay );
     
-    // Initialized
-    resizeCanvas();
-    starAnimation( areaSize );
-    scrollCheck();
+});
+
+$(function(){
+    
+    // Add loading
+    $('#container').append('<div id="loading"></div>');
+
+  
 });
 
 
