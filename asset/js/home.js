@@ -26,6 +26,7 @@ $( window ).on('load', function(){
       setTimeout(function(){
       
         $('html').removeClass('loadStart').addClass('loadEnd');
+        $('#loading').remove();
 
         var $canvas = $('#backgroundCanvas'),
             $window = $( window ),
@@ -108,7 +109,6 @@ $(function(){
     
     // Add loading
     $('#container').append('<div id="loading"></div>');
-
   
 });
 

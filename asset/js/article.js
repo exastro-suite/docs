@@ -25,7 +25,8 @@ $(function(){
     
     $( window ).scroll( function(){
         var windowScrollTop = $( this ).scrollTop();
-        var windowBackgroundPosition = windowScrollTop / 2;
+        var headerHeight = $('header').outerHeight();
+        var windowBackgroundPosition = windowScrollTop / 2 + headerHeight;
         if ( windowScrollTop < topMoveHeight.top ){
             $('#topMove').css('bottom', '-64px' );
             $('#articleTitle .background').css('top', windowBackgroundPosition + 'px' );

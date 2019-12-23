@@ -71,6 +71,7 @@ width: 100%; height: 100%;
 background-color: rgba( 255,255,255,1 );
 background-image: linear-gradient( rgba( 0,0,0,0.9 ) 50%, transparent 50% ),radial-gradient( #666, #000 );
 background-size: 2px 2px, 100% 100%;
+will-change: transform opacity;
 }
 @keyframes loading {
 0% { opacity: 0; }
@@ -1096,9 +1097,9 @@ opacity: 0;
 #articleTitle .background {
 content: attr(backgroundimage);
 display: block;
-width: 100%; height: 100%;
+width: 100%; height: calc( 100% - 40px );
 position: absolute;
-top: 0; left: 0;
+top: 40px; left: 0;
 z-index: -1;
 background: center center no-repeat #000;
 background-size: cover;
