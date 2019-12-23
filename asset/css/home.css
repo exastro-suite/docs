@@ -362,7 +362,7 @@ width: 100%; max-width: none;
 }
 #terminalBody .suiteList li {
 margin: 32px 0 56px; padding: 8px 0;
-background-color: rgba( 255,255,250,0.5 );
+/*background-color: rgba( 255,255,250,0.5 );*/
 transition-duration: 0.8s;
 transition-timing-function: linear;
 transform-style: preserve-3d;
@@ -394,7 +394,7 @@ display: block;
 clear: both;
 }
 #terminalBody .suiteList li.show {
-background-color: rgba( 0,0,0,0 );
+/*background-color: rgba( 0,0,0,0 );*/
 }
 #terminalBody .suiteList li.show .suiteContent {
 opacity: 1;
