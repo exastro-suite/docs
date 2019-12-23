@@ -132,7 +132,7 @@ display: block;
 animation: loadingCompleat 0.8s linear forwards !important;
 }
 .loadCompleat #loading::before {
-content: 'Compleat!';
+content: 'Complete!';
 animation: none!important;
 color: #60C60D;
 }
