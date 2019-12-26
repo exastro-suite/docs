@@ -712,7 +712,9 @@ display: none;
 #terminalBody #why p.link {
 text-align: center;
 }
-
+#terminalBody .handoutList {
+padding: 0 16px;
+}
 #startArea p {
 font-size: 3vw;
 }
@@ -783,6 +785,9 @@ margin-bottom: 16px;
 width: 100%;
 float: none;
 padding: 0;
+}
+#snsArea {
+padding: 0 16px;
 }
 
 }/* /640px */

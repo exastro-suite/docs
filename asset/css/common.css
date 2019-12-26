@@ -1458,6 +1458,10 @@ float: left;
 width: 50%;
 margin: 0 48px 32px 0;
 }
+#articleBody .rightImage.image33,
+#articleBody .leftImage.image33 {
+width: 33.33333%;
+}
 #articleBody .rightImage.image25,
 #articleBody .leftImage.image25 {
 width: 25%;
@@ -2872,6 +2876,9 @@ margin: 0 auto;
 width: 55%;
 padding-right: 16px;
 }
+.caseContentBodyBlock02.full {
+width: 100%;
+}
 .caseResult {
 padding-left: 16px;
 }
@@ -3099,7 +3106,7 @@ box-shadow: 0 0 16px rgba( 0,0,0,0.1 ) inset;
 .caseContentBody .result .inner::before {
 content: '';
 display: block;
-width: 27.5%;
+width: 180px;
 padding-bottom: 27.5%;
 background: url("../../../it-automation-docs/asset/case/common/problem.svg") center center no-repeat;
 background-size: 80% 80%;
@@ -3181,14 +3188,37 @@ font-weight: bold;
 font-size: 0.8rem;
 color: #707070;
 }
-#articleBody .caseContentBody p {
-width: 72.5%;
+#articleBody .caseContentBody .caseContentText {
+width: calc( 100% - 180px );
 margin: 0; padding: 32px 32px 32px 8px;
 letter-spacing: 0.05em;
 line-height: 1.75;
 font-size: 1rem;
 color: #2B2B2B;
 }
+#articleBody .caseContentBody .caseContentText h5 {
+margin: 2em 0 1em; padding-bottom: 4px;
+border-bottom: 2px solid #CCC;
+font-weight: normal;
+font-size: 1.2rem;
+color: #2B2B2B;
+}
+#articleBody .caseContentBody .caseContentText h5:first-child {
+margin-top: 0!important;
+}
+#articleBody .caseContentBody .caseContentText h6 {
+display: inline-block;
+margin: 0 0 0.6em;; padding: 6px 12px 4px;
+background-color: #BBB;
+line-height: 1;
+font-size: 1rem;
+color: #FFF;
+}
+#articleBody .caseContentBody .caseContentText p {
+margin: 0 0 1.5em; padding: 0;
+}
+
+
 #articleBody .caseContentBody p em {
 background-image: linear-gradient( transparent 60%, #FFFF99 60% );
 color: #2B2B2B;
