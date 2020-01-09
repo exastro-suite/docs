@@ -2857,11 +2857,15 @@ margin: 0 auto;
 }
 .caseOutline {
 display: flex;
-align-items: center;
+align-items: top;
 }
 .caseOutlineText {
 width: 55%;
-padding: 0 16px;
+padding: 16px 16px 0;
+}
+.caseOutlineText.space {
+background: url("../../../it-automation-docs/asset/case/common/building_t.png") center bottom no-repeat;
+background-size: contain;
 }
 .caseOutlineImage {
 width: 45%;
