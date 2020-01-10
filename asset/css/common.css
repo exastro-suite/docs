@@ -3321,7 +3321,7 @@ margin-top: 48px;
 #articleBody .caseContentHeader .title li {
 font-size: 2vw;
 }
-#articleBody .caseContentBody p {
+#articleBody .caseContentBody .caseContentText {
 padding: 24px 24px 24px 0;
 }
 #articleBody .caseContentBody th, #articleBody .caseContentBody td {
@@ -3350,9 +3350,24 @@ width: calc( 100% - 8px ); height: calc( 100% - 8px );
 margin: 4px;
 }
 
-#articleBody .caseContentBody p {
+#articleBody .caseContentBody .caseContentText {
 width: 100%;
 padding: 24px 16px 16px 0;
+}
+.caseContentBody .problem .inner::before,
+.caseContentBody .solve .inner::before,
+.caseContentBody .result .inner::before {
+width: 120px;
+}
+.caseContentBody .full .result .inner::before {
+display: none;
+}
+#articleBody .caseContentBody .full .caseContentText {
+width: 100%;
+padding: 24px 16px 16px;
+}
+#articleBody .rightImage.image33, #articleBody .leftImage.image33 {
+width: 80%;
 }
 
 }
