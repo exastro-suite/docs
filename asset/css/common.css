@@ -2497,12 +2497,22 @@ justify-content: space-between;
 flex-wrap: wrap;
 margin: 0 -64px 0; padding: 0;
 list-style: none;
+animation: caseListShow 0.3s linear forwards;
+transform-origin: center top;
+}
+.loadWait #articleBody .sectionInner #caseList {
+visibility: hidden;
+}
+@keyframes caseListShow {
+0% { opacity: 0; }
+100% { opacity: 1; }
 }
 #articleBody .sectionInner #caseList > li {
 width: calc( 33.333% - 24px );
 max-width: 350px;
 margin: 24px 0; padding: 0;
 }
+
 /* justify-content: Align last row left. */
 #articleBody .sectionInner #caseList::after {
 content: '';
@@ -3293,6 +3303,12 @@ font-size: 3.7vw;
 #articleBody .caseContentBody h4 {
 min-width: inherit;
 font-size: 2.8vw;
+}
+#articleBody .caseContentBody .caseContentText h5 {
+font-size: 2.7vw;
+}
+#articleBody .caseContentBody .caseContentText h6 {
+font-size: 2.6vw;
 }
 #articleBody .caseContentBody p {
 font-size: 2.4vw;
