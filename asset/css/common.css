@@ -2975,7 +2975,7 @@ text-align: center;
 }
 #articleBody .caseContentHeader .title h2 {
 width: 100%;
-margin: 0 auto 24px; padding: 0;
+margin: 0 auto 24px; padding: 0 16px;
 border: none;
 line-height: 1.75;
 letter-spacing: 0.1em;
@@ -3312,7 +3312,8 @@ font-size: 2.7vw;
 #articleBody .caseContentBody .caseContentText h6 {
 font-size: 2.6vw;
 }
-#articleBody .caseContentBody p {
+#articleBody .caseContentBody p,
+#articleBody .caseContentBody ul {
 font-size: 2.4vw;
 }
 
@@ -3335,6 +3336,9 @@ margin: 16px;
 }
 .caseOutlineImage {
 margin-top: 48px;
+}
+#articleBody .caseContentHeader .title dt {
+font-size: 10px;
 }
 #articleBody .caseContentHeader .title li {
 font-size: 2vw;
