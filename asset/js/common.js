@@ -240,22 +240,6 @@ $('.loupe').on('click', function(){
   
 });
 
-// Slide Loading
-$('div.slideView').on('click', function(){
-  var $slideView = $( this ),
-      $iframe = $( this ).find('iframe'),
-      url = $( this ).attr('data-slide-url');
-  
-  $slideView.off('click').addClass('loading');
-  $iframe.attr('src', url );
-  
-  $iframe.load( function(){
-    $slideView.removeClass('loading').addClass('done');
-    $( this ).fadeIn( 300 );
-  });
-  
-});
-
 // Toggle Text Area
 $('.toggleHeading').on('click', function(){
   $( this ).toggleClass('open');
