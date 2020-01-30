@@ -22,7 +22,7 @@ $(function(){
 			$.ajax({
 
 				url: jsonURL,
-				type: 'POST',
+				type: 'GET',
 				dataType: 'text'
 
 			}).done( function( data ){
