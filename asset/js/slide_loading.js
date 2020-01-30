@@ -2,7 +2,7 @@
 
 $(function(){
 
-		var jsonURL = './asset/json/google_slide_urls.json',
+		var jsonURL = 'https://exastro-suite.github.io/it-automation-docs/asset/json/google_slide_urls.json',
 				language = '';
 
 		var $body = $('body');
