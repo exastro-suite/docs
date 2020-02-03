@@ -1272,12 +1272,22 @@ clear: both;
 #articleBody section {
 padding: 48px 16px;
 }
+#articleBody section.iframe {
+padding: 0;
+}
 #articleBody section:nth-of-type( even ) {
 background-color: rgba( 0, 43, 98, 0.05 );
 }
 #articleBody .sectionInner {
 max-width: 980px;
 margin: 0 auto;
+}
+#articleBody section.iframe .sectionInner {
+max-width: none;
+}
+#articleBody iframe {
+width: 100%; height: 640px;
+vertical-align: bottom;
 }
 #articleBody .sectionInner::after {
 content: '';
