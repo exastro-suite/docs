@@ -1286,7 +1286,7 @@ margin: 0 auto;
 max-width: none;
 }
 #articleBody iframe {
-width: 100%; height: 640px;
+width: 100%;
 vertical-align: bottom;
 }
 #articleBody .sectionInner::after {
