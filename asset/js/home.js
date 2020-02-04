@@ -42,6 +42,9 @@ $( window ).on('load', function(){
             headerHeight = $window.innerHeight();
             areaSize = headerWidth * headerHeight / 2000;
             $('#startArea').css('height', headerHeight );
+            // IEで画像のサイズの取得がおかしい時の対策
+            $('#startLogo').find('img').css('height', 'auto');
+            $('#startLogo').find('img').css('height', '100%');
             $canvas.attr({'width': headerWidth, 'height': headerHeight });
 
         }

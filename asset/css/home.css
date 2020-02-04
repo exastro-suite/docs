@@ -129,25 +129,18 @@ font-weight: 900;
 }
 #startArea #startLogo {
 position: absolute;
-left: 0; top: 35%;
+left: 50%; top: 35%;
 z-index: 90;
-width: 100%; height: 30%;
+transform: translateX(-50%);
+width: auto; height: 30%;
 text-align: center;
-}
-#startArea #startLogo img {
-width: auto; height: 100%;
-transition-duration: 0.3s;
-animation: startLogoAnimation 30s linear infinite;
 }
 @keyframes startLogoAnimation {
   0% { transform: rotate( 0deg ); }
 100% { transform: rotate( -360deg ); }
 }
 #startArea #startLogo .startLogoInner {
-position: absolute;
-left: 0; top: 50%;
-width: 100%; height: 100%;
-transform: translateY(-50%);
+height: 100%;
 transition-duration: 0.3s;
 }
 #startArea #startLogo .startLogoInner::before,
@@ -155,7 +148,7 @@ transition-duration: 0.3s;
 content: '';
 position: absolute;
 left: 0; top: 0;
-z-index: -1;
+z-index: 1;
 display: block;
 width: 100%;
 height: 100%;
@@ -170,6 +163,11 @@ animation: startLogoGearAnimation 30s linear infinite;
 @keyframes startLogoGearAnimation {
   0% { transform: rotate( 0deg ); }
 100% { transform: rotate( 360deg ); }
+}
+#startArea #startLogo img {
+width: auto; height: 100%;
+transition-duration: 0.3s;
+animation: startLogoAnimation 30s linear infinite;
 }
 
 /* Terminal Body */
