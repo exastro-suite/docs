@@ -211,7 +211,7 @@ $('.loupe').on('click', function(){
 
     // Zoom in or out
     $('#imageBox').find('button.zoomIn, button.zoomOut').on('click.zoom', function(){
-
+      
       var imageBoxScale = Number( $image.attr('data-scale') );
 
       if( $( this ).is('.zoomIn') ){
@@ -226,8 +226,12 @@ $('.loupe').on('click', function(){
 
     });
     // Close click close
-    $('#imageBox').find('button.close').on('click.close', function(){
+    $('#imageBox').find('button.close, .imageBoxInner').on('click', function(){
       closeImageBox();
+    });
+    // stopPropagation
+    $('#imageBox').find('.imageBoxMenu, img').on('click', function( e ){
+      e.stopPropagation();
     });
     // Esc click close
     $( document ).on('keydown.closeImg', function( e ){
@@ -235,7 +239,6 @@ $('.loupe').on('click', function(){
         closeImageBox();
       }
     });
-
   });
   
 });
