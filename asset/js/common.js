@@ -42,14 +42,21 @@ $('#logo a').on('click', function( e ){
   e.preventDefault();
   $('#suiteList').stop(0,0).fadeToggle( 300 );
 });
-$( document ).on('mousedown.suitelist', function( e ){
+$( window ).on('mousedown.suitelist', function( e ){
   if ( $('#suiteList').is(':visible') ) {
       if ( !$( e.target ).closest('#suiteList, #logo a').length ) {
           $('#suiteList').fadeToggle( 300 );
       }
   }
 });
-
+$('iframe').on('load', function () {console.log('!2');
+  $( this ).contents().on('mousedown.suitelist', function() {
+    $('#suiteList').fadeToggle( 300 );
+    console.log('!');
+  });
+});
+	
+	
 // Menu
 $('#header').append('<div id="menuBtn" class="touch"><span></span></div>');
 $('#menuBtn').on('click', function(){
