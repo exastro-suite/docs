@@ -49,10 +49,10 @@ $( window ).on('mousedown.suitelist', function( e ){
       }
   }
 });
-$('iframe').on('load', function () {console.log('!2');
+// in iframe mousedown
+$('iframe').on('load', function () {
   $( this ).contents().on('mousedown.suitelist', function() {
     $('#suiteList').fadeToggle( 300 );
-    console.log('!');
   });
 });
 	
