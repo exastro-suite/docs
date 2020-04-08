@@ -52,7 +52,7 @@ $( window ).on('mousedown.suitelist', function( e ){
 // in iframe mousedown
 $('iframe').on('load', function () {
   $( this ).contents().on('mousedown.suitelist', function() {
-    $('#suiteList').fadeToggle( 300 );
+    $('#suiteList').fadeOut( 300 );
   });
 });
 	
