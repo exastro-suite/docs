@@ -1,11 +1,9 @@
 // JavaScript Document
 
-$(function(){
+function slideLoading( jsonURL ) {
 
-		var jsonURL = 'https://exastro-suite.github.io/it-automation-docs/asset/json/google_slide_urls.json',
-				language = '';
-
-		var $body = $('body');
+		var language = '',
+        $body = $('body');
 
 		// 言語をbodyのclassから判定
 		if ( $body.is('.en') ) {
@@ -40,7 +38,7 @@ $(function(){
 					var $thisSlidView = $( this ),
 							slideHTML = '',
 							slideName = $thisSlidView.attr('data-slide-name');
-					if ( googleSlideURLs[ slideName ] == "none" ) {
+					if ( googleSlideURLs[ slideName ] === "none" ) {
 						slideHTML = '<img src="asset/img/under_construction.jpg" alt="Under Construction" style="vertical-align: middle;">';
 						$thisSlidView.closest('.slide').html( slideHTML );
 					} else {
@@ -85,5 +83,5 @@ $(function(){
 			window.console.error('Failed to get language.');
 			
 		}
-	
-});
+
+}
