@@ -2259,7 +2259,8 @@ padding-right: 0.5em;
 }
 
 /* Slide Image */
-.slide {
+.slide,
+.pdfjs {
 float: right;
 width: 50%;
 margin: 0 0 32px 32px; padding: 8px;
@@ -2268,45 +2269,122 @@ border-radius: 4px;
 background-color: #FFF;
 box-shadow: 0 0 4px rgba( 0, 0, 0, 0.3 );
 }
-.slide.only {
+.slide.only,
+.pdfjs.only {
 float: none;
 width: 100%; max-width: 800px;
 margin: 0 auto 32px;
 }
-.slideView {
+.slideView,
+.pdfView {
 position: relative;
+z-index: 0;
 padding-bottom: 75%;
 cursor: pointer;
 }
-.slideView.wide {
+.slideView.wide,
+.pdfView.wide {
 padding-bottom: 56.25%;
 }
-.slideView.loading {
+.slideView.loading,
+.pdfView.loading {
 cursor: default;
+}
+.viewToolBar {
+display: none;
+position: relative;
+width: 100%; height: 32px;
+background-color: #474747;
+background-image: linear-gradient(hsla(0,0%,32%,.99), hsla(0,0%,27%,.95));
+border-top: 1px solid #111;
+border-bottom: 1px solid #111;
+}
+#articleBody .sectionInner .viewToolBar ul {
+width: 100%; height: 30px;
+margin: 0; padding: 0 8px;
+list-style: none;
+letter-spacing: -0.4em;
+}
+#articleBody .sectionInner .viewToolBar li {
+display: inline-block;
+height: 24px;
+margin: 3px 2px 0; padding: 0;
+vertical-align: top;
+letter-spacing: normal;
+line-height: 1;
+}
+#articleBody .sectionInner .viewToolBar button {
+display: block;
+height: 24px;
+padding: 0 8px;
+background-color: transparent;
+border: 1px solid transparent;
+border-radius: 2px;
+vertical-align: middle;
+line-height: 22px;
+font-size: 11px;
+text-decoration: none;
+color: hsla(0,0%,100%,.8);
+}
+#articleBody .sectionInner .viewToolBar button.hover,
+#articleBody .sectionInner .viewToolBar button:focus{
+background-color: hsla(0,0%,0%,.12);
+background-image: linear-gradient(hsla(0,0%,100%,.05), hsla(0,0%,100%,0));
+border: 1px solid hsla(0,0%,0%,.35);
+border-color: hsla(0,0%,0%,.32) hsla(0,0%,0%,.38) hsla(0,0%,0%,.42);
+box-shadow: 0 1px 0 hsla(0,0%,100%,.05) inset, 0 0 1px hsla(0,0%,100%,.15) inset, 0 1px 0 hsla(0,0%,100%,.05);
+outline: none;
+}
+#articleBody .sectionInner .viewToolBar button.hover:active {
+background-color: hsla(0,0%,0%,.2);
+background-image: linear-gradient(hsla(0,0%,100%,.05), hsla(0,0%,100%,0));
+border-color: hsla(0,0%,0%,.35) hsla(0,0%,0%,.4) hsla(0,0%,0%,.45);
+box-shadow: 0 1px 1px hsla(0,0%,0%,.1) inset, 0 0 1px hsla(0,0%,0%,.2) inset, 0 1px 0 hsla(0,0%,100%,.05);
+outline: none;
 }
 .slideView.done {
-padding-bottom: calc( 75% + 29px );
+padding-bottom: calc( 75% + 61px );
 cursor: default;
 }
+.pdfView.done {
+padding-bottom: calc( 75% + 32px );
+cursor: default;
+}
+.slideView.done .viewToolBar,
+.pdfView.done .viewToolBar {
+position: absolute;
+bottom: 0;
+display: block;
+}
 .slideView.done.wide {
-padding-bottom: calc( 56.25% + 29px );
+padding-bottom: calc( 56.25% + 61px );
 }
 .slideView iframe,
-.slideView img {
+.slideView img,
+.pdfView iframe,
+.pdfView img {
 position: absolute;
 top: 0; left: 0;
+z-index: 0;
 width: 100%; height: 100%;
 margin: 0; padding: 0;
 }
-.slideView img {
+.slideView.done iframe,
+.pdfView.done iframe {
+height: calc( 100% - 32px );
+}
+.slideView img,
+.pdfView img {
 vertical-align: middle;
 border: 1px solid #002B62;
 transition-duration: 0.3s;
 }
-.slideView:hover img {
+.slideView:hover img,
+.pdfView:hover img {
 opacity: 0.8;
 }
-.slideView.loading::after {
+.slideView.loading::after,
+.pdfView.loading::after {
 content: '';
 display: block;
 position: absolute;
@@ -2320,7 +2398,8 @@ border: 1px solid #002B62;
 border-radius: 4px;
 animation: slideLoading 0.3s linear infinite;
 }
-.slideView.loading::before {
+.slideView.loading::before,
+.pdfView.loading::before {
 content: 'Now Loading...';
 display: block;
 position: absolute;
@@ -2345,11 +2424,14 @@ animation: slideLoadingText 1s linear infinite;
 50% { opacity: 0.6; }
 100% { opacity: 1; }
 }
-.slideView.loading img {
+.slideView.loading img,
+.pdfView.loading img {
 opacity: 0.2;
 }
 .slideView iframe,
-.slideView.done img {
+.slideView.done img,
+.pdfView iframe,
+.pdfView.done img {
 display: none;
 }
 #articleBody .slideMenu ul {
@@ -2410,6 +2492,20 @@ font-size: 0.9rem;
 }
 #articleBody .slideCode .any {
 color: #F33;
+}
+.fullscreen .slide,
+.fullscreen .pdfjs {
+float: none;
+width: 100%; height: 100%;
+margin: 0; padding: 0;
+border: none;
+border-radius: 0;
+box-shadow: none;
+}
+.fullscreen .slideView,
+.fullscreen .pdfView {
+position: static;
+padding: 0;
 }
 
 

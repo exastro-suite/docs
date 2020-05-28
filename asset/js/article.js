@@ -93,8 +93,8 @@ $(function(){
       if( !$this.is('.on') ){
 
         var $slide = $( this ).closest('.slide'),
-            index = $slide.find('li').index( $this );
-
+            index = $this.parent().find('li').index( $this );
+        
         // Slide view adjust height.
         if( $slide.find('.on').is('.viewSlide') ){
           var height = $slide.find('.slideView').outerHeight();
@@ -108,6 +108,26 @@ $(function(){
         $slide.children().eq( index ).show();
 
       }
-    });    
+    });
+    
+// PDF.js Loading Viewer
+    $('.pdfView').on('click', function(){
+      var $pdfView = $( this ),
+          $iframe = $pdfView.find('iframe'),
+          pdfURL = $pdfView.attr('data-pdf-url');
+
+      var url = 'https://exastro-suite.github.io/docs/asset/library/pdfjs/web/viewer.html?file=https://exastro-suite.github.io/' + pdfURL + '#page=1'
+
+      $pdfView.off('click').addClass('loading');
+      $iframe.attr('src', url );
+
+      $iframe.load( function(){
+        $pdfView.removeClass('loading').addClass('done');
+        $( this ).fadeIn( 300 );
+        $pdfView.find('.fullscreen').on('click', function(){ toggleFullScreen( $pdfView.parent().get(0) ); });
+        $pdfView.find('.outlink').on('click', function(){ window.open( url, '_brank'); });
+      });
+
+    });
     
 });

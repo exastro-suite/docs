@@ -14,6 +14,11 @@ function slideLoading( jsonURL ) {
 			language = undefined;
 		}
 		
+    const text = {
+    ja : ['フルスクリーン','別タブで開く'],
+    en : ['Full screen','Open in new tab'],
+    }
+    
 		if ( language !== undefined ) {
 		
 			// JSONを読み込む
@@ -48,6 +53,10 @@ function slideLoading( jsonURL ) {
 							slideHTML = '<img src="asset/img/view_slide.jpg" alt="View slide">';
 						}
 						slideHTML += '<iframe frameborder="0" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>';
+            slideHTML += '<div class="viewToolBar"><ul>'
+            + '<li><button class="fullscreen touch"><i class="fas fa-expand"></i> ' + text[language][0] + '</button></li>'
+            + '<li><button class="outlink touch"><i class="fas fa-external-link-alt"></i> ' + text[language][1] + '</button></li>'
+            + '</ul></div>';
 						$thisSlidView.html( slideHTML );
 					}
 				});
@@ -66,6 +75,8 @@ function slideLoading( jsonURL ) {
 					$iframe.load( function(){
 						$slideView.removeClass('loading').addClass('done');
 						$( this ).fadeIn( 300 );
+            $slideView.find('.fullscreen').on('click', function(){ toggleFullScreen( $slideView.parent().get(0) ); });
+            $slideView.find('.outlink').on('click', function(){ window.open( url, '_brank'); });
 					});
 
 				});
