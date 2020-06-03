@@ -110,27 +110,26 @@ function viewDocuments( ducumentsJsonUrl ) {
                     };
                 
                 historyArray[historyCurrent] = url;
+                $prevButton.on('click', function(){
+                  nextCount++;
+                  prevCount--;
+                  historyCurrent--;
+                  historyCheck();
+                  $iframe.get(0).contentDocument.location.replace( historyArray[historyCurrent] );
+                });
+                $nextButton.on('click', function(){
+                  prevCount++;
+                  nextCount--;
+                  historyCurrent++;
+                  historyCheck();
+                  $iframe.get(0).contentDocument.location.replace( historyArray[historyCurrent] );
+                });
+                $viewBody.find('.fullscreen-on, .fullscreen-off').on('click', function(){ toggleFullScreen( $viewDocument.get(0) ); });
+                $viewBody.find('.outlink').on('click', function(){ window.open( pdfURL + documentURL, '_blank'); });
                 
-                $iframe.one('load', function(){
+                $iframe.on('load', function(){
                   var $viewContent = $( this );
                   $viewBody.removeClass('loading').addClass('done');
-                  
-                  $prevButton.on('click', function(){
-                    nextCount++;
-                    prevCount--;
-                    historyCurrent--;
-                    historyCheck();
-                    $iframe.get(0).contentDocument.location.replace( historyArray[historyCurrent] );
-                  });
-                  $nextButton.on('click', function(){
-                    prevCount++;
-                    nextCount--;
-                    historyCurrent++;
-                    historyCheck();
-                    $iframe.get(0).contentDocument.location.replace( historyArray[historyCurrent] );
-                  });
-                  $viewBody.find('.fullscreen-on, .fullscreen-off').on('click', function(){ toggleFullScreen( $viewDocument.get(0) ); });
-                  $viewBody.find('.outlink').on('click', function(){ window.open( pdfURL + documentURL, '_blank'); });
 
                   // PDF内の別PDFリンクの調整
                   if ( documentType === 'pdf') {
