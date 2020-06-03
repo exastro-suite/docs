@@ -111,7 +111,7 @@ function viewDocuments( ducumentsJsonUrl ) {
                 
                 historyArray[historyCurrent] = url;
                 
-                $iframe.on('load', function(){
+                $iframe.one('load', function(){
                   var $viewContent = $( this );
                   $viewBody.removeClass('loading').addClass('done');
                   
