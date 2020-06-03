@@ -90,13 +90,15 @@ function viewDocuments( ducumentsJsonUrl ) {
                     $nextButton = $viewBody.find('.next'),
                     nextCount = 0,
                     prevCount = 0,
+                    historyCurrent = 0,
+                    historyArray = [url],
                     historyCheck = function() {
-                      if ( nextCount !== 0 ) {
+                      if ( nextCount === 0 ) {
                         $nextButton.prop('disabled', true );
                       } else {
                         $nextButton.prop('disabled', false );
                       }
-                      if ( prevCount !== 0 ) {
+                      if ( prevCount === 0 ) {
                         $prevButton.prop('disabled', true );
                       } else {
                         $prevButton.prop('disabled', false );
@@ -109,13 +111,15 @@ function viewDocuments( ducumentsJsonUrl ) {
                   
                   $prevButton.on('click', function(){
                     nextCount++;
+                    historyCurrent--;
                     historyCheck();
-                    history.back();
+                    iframe.get(0).contentDocument.location.replace( historyArray[historyCurrent] );
                   });
                   $nextButton.on('click', function(){
                     prevCount++;
+                    historyCurrent++;
                     historyCheck();
-                    history.forward();
+                    iframe.get(0).contentDocument.location.replace( historyArray[historyCurrent] );
                   });
                   $viewBody.find('.fullscreen-on, .fullscreen-off').on('click', function(){ toggleFullScreen( $viewDocument.get(0) ); });
                   $viewBody.find('.outlink').on('click', function(){ window.open( pdfURL + documentURL, '_brank'); });
@@ -127,8 +131,11 @@ function viewDocuments( ducumentsJsonUrl ) {
                       var pdfLink = pdfViewerURL + $( this ).attr('href');
                       nextCount = 0;
                       prevCount++;
+                      historyCurrent++;
                       historyCheck();
-                      $iframe.attr('src', pdfLink );
+                      historyArray[historyCurrent] = pdfLink;
+                      // ブラウザの履歴に残さずにページ移動する
+                      $iframe.get(0).contentDocument.location.replace( pdfLink );
                     });
                   }
 
