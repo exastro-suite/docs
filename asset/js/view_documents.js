@@ -83,7 +83,7 @@ function viewDocuments( ducumentsJsonUrl ) {
 
                 $viewBody.addClass('loading');
 
-                $iframe.one('load', function(){
+                $iframe.on('load', function(){
                   var $viewContent = $( this );
                   $viewBody.removeClass('loading').addClass('done');
                   $viewBody.find('.fullscreen').on('click', function(){ toggleFullScreen( $viewDocument.get(0) ); });
@@ -93,7 +93,7 @@ function viewDocuments( ducumentsJsonUrl ) {
                   if ( documentType === 'pdf') {
                     $viewContent.contents().on('click', 'a[href$=".pdf"]', function( e ) {
                       e.preventDefault();
-                      window.location = pdfViewerURL + $( this ).attr('href');
+                      $iframe.attr('src', pdfViewerURL + $( this ).attr('href') );
                     });
                   }
 

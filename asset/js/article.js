@@ -92,20 +92,20 @@ $(function(){
       var $this = $( this );
       if( !$this.is('.on') ){
 
-        var $slide = $( this ).closest('.slide'),
+        var $viewDocument = $( this ).closest('.viewDocument'),
             index = $this.parent().find('li').index( $this );
         
         // Slide view adjust height.
-        if( $slide.find('.on').is('.viewSlide') ){
-          var height = $slide.find('.slideView').outerHeight();
-          $slide.children().not('.slideMenu').css('height', height );
+        if( $viewDocument.find('.on').is('.viewSlide') ){
+          var height = $viewDocument.find('.viewDocumentBody').outerHeight();
+          $viewDocument.children().not('.slideMenu').css('height', height );
         }
 
-        $slide.find('.on').removeClass('on');
+        $viewDocument.find('.on').removeClass('on');
         $this.addClass('on');
 
-        $slide.children().not('.slideMenu').hide();
-        $slide.children().eq( index ).show();
+        $viewDocument.children().not('.slideMenu').hide();
+        $viewDocument.children().eq( index ).show();
 
       }
     });
