@@ -111,22 +111,26 @@ $(function(){
     });
     
 // PDF.js Loading Viewer
-    $('.pdfView').on('click', function(){
+    $('.pdfView').one('click', function(){
       var $pdfView = $( this ),
           $iframe = $pdfView.find('iframe'),
           pdfURL = $pdfView.attr('data-pdf-url');
 
       var url = 'https://exastro-suite.github.io/docs/asset/library/pdfjs/web/viewer.html?file=https://exastro-suite.github.io/' + pdfURL + '#page=1'
 
-      $pdfView.off('click').addClass('loading');
-      $iframe.attr('src', url );
+      $pdfView.addClass('loading');
 
-      $iframe.load( function(){
+      $iframe.one('load', function(){
+        var $viewContent = $( this );
         $pdfView.removeClass('loading').addClass('done');
-        $( this ).fadeIn( 300 );
         $pdfView.find('.fullscreen').on('click', function(){ toggleFullScreen( $pdfView.parent().get(0) ); });
         $pdfView.find('.outlink').on('click', function(){ window.open( url, '_brank'); });
-      });
+        
+        $viewContent.fadeIn( 300 ).contents().find('a').on('click', function( e ) {
+          e.preventDefault();
+        });
+        
+      }).attr('src', url ).load();
 
     });
     
