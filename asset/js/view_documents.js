@@ -68,8 +68,7 @@ function viewDocuments( ducumentsJsonUrl ) {
               + '<div class="viewToolBar"><ul>'
                 + '<li><button class="prev touch" disabled><i class="fas fa-arrow-left"></i> ' + barText[language][3] + '</button></li>'
                 + '<li><button class="next touch" disabled>' + barText[language][4] + ' <i class="fas fa-arrow-right"></i></button></li>'
-                + '<li><button class="fullscreen-on touch"><i class="fas fa-expand"></i> ' + barText[language][0] + '</button></li>'
-                + '<li><button class="fullscreen-off touch"><i class="fas fa-compress"></i> ' + barText[language][1] + '</button></li>'
+                + '<li><button class="fullscreen-on touch"><i class="fas fa-expand"></i> ' + barText[language][0] + '</button><button class="fullscreen-off touch"><i class="fas fa-compress"></i> ' + barText[language][1] + '</button></li>'
                 + '<li><button class="outlink touch"><i class="fas fa-external-link-alt"></i> ' + barText[language][2] + '</button></li>'
               + '</ul></div></div>';
               
@@ -93,8 +92,6 @@ function viewDocuments( ducumentsJsonUrl ) {
                     historyCurrent = 0,
                     historyArray = [],
                     historyCheck = function() {
-                      console.log( historyCurrent );
-                      console.log( historyArray );
                       if ( nextCount <= 0 ) {
                         nextCount = 0;
                         $nextButton.prop('disabled', true );

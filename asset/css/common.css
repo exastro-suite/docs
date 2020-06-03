@@ -2510,17 +2510,13 @@ box-shadow: none;
 position: static;
 padding: 0;
 }
-.viewToolBar .fullscreen-off,
-.viewToolBar .next,
-.viewToolBar .prev{
+.viewToolBar .fullscreen-off {
 display: none!important;
 }
 .fullscreen .viewToolBar .fullscreen-on {
 display: none!important;
 }
-.fullscreen .viewToolBar .fullscreen-off,
-.fullscreen .viewToolBar .next, 
-.fullscreen .viewToolBar .prev {
+.fullscreen .viewToolBar .fullscreen-off {
 display: block!important;
 }
 
