@@ -7,7 +7,7 @@ if( locationHash ) window.location.hash = '';
 
 // LOAD
 $('html').addClass('loadWait');
-$( window ).on('load', function(){
+$( window ).one('load', function(){
   $('html').removeClass('loadWait');
   
   // Anker scroll
@@ -25,7 +25,7 @@ $( window ).on('load', function(){
       }
     }, 100 );
   }
-});
+}).load();
 
 // DOM
 $(function(){
@@ -55,7 +55,6 @@ $('iframe').on('load', function () {
     $('#suiteList').fadeOut( 300 );
   });
 });
-	
 	
 // Menu
 $('#header').append('<div id="menuBtn" class="touch"><span></span></div>');

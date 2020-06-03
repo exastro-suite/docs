@@ -2259,8 +2259,7 @@ padding-right: 0.5em;
 }
 
 /* Slide Image */
-.slide,
-.pdfjs {
+.viewDocument {
 float: right;
 width: 50%;
 margin: 0 0 32px 32px; padding: 8px;
@@ -2269,25 +2268,25 @@ border-radius: 4px;
 background-color: #FFF;
 box-shadow: 0 0 4px rgba( 0, 0, 0, 0.3 );
 }
-.slide.only,
-.pdfjs.only {
+.viewDocument.only {
 float: none;
 width: 100%; max-width: 800px;
 margin: 0 auto 32px;
 }
-.slideView,
-.pdfView {
+.viewDocumentBody {
 position: relative;
 z-index: 0;
 padding-bottom: 75%;
+background-color: #444;
 cursor: pointer;
 }
-.slideView.wide,
-.pdfView.wide {
+.none .viewDocumentBody {
+cursor: default;
+}
+.wide .viewDocumentBody {
 padding-bottom: 56.25%;
 }
-.slideView.loading,
-.pdfView.loading {
+.viewDocumentBody.loading {
 cursor: default;
 }
 .viewToolBar {
@@ -2342,49 +2341,48 @@ border-color: hsla(0,0%,0%,.35) hsla(0,0%,0%,.4) hsla(0,0%,0%,.45);
 box-shadow: 0 1px 1px hsla(0,0%,0%,.1) inset, 0 0 1px hsla(0,0%,0%,.2) inset, 0 1px 0 hsla(0,0%,100%,.05);
 outline: none;
 }
-.slideView.done {
+.slide .viewDocumentBody.done {
 padding-bottom: calc( 75% + 61px );
 cursor: default;
 }
-.pdfView.done {
+.slide.wide .viewDocumentBody.done {
+padding-bottom: calc( 56.25% + 61px );
+}
+.pdf .viewDocumentBody.done {
 padding-bottom: calc( 75% + 32px );
 cursor: default;
 }
-.slideView.done .viewToolBar,
-.pdfView.done .viewToolBar {
+.pdf.wide .viewDocumentBody.done {
+padding-bottom: calc( 56.25% + 32px );
+}
+.viewDocumentBody.done .viewToolBar {
 position: absolute;
 bottom: 0;
 display: block;
 }
-.slideView.done.wide {
-padding-bottom: calc( 56.25% + 61px );
-}
-.slideView iframe,
-.slideView img,
-.pdfView iframe,
-.pdfView img {
+.viewDocumentBody iframe,
+.viewDocumentBody img {
 position: absolute;
 top: 0; left: 0;
 z-index: 0;
 width: 100%; height: 100%;
 margin: 0; padding: 0;
 }
-.slideView.done iframe,
-.pdfView.done iframe {
+.viewDocumentBody.done iframe {
 height: calc( 100% - 32px );
 }
-.slideView img,
-.pdfView img {
+.viewDocumentBody img {
 vertical-align: middle;
 border: 1px solid #002B62;
 transition-duration: 0.3s;
 }
-.slideView:hover img,
-.pdfView:hover img {
+.viewDocumentBody:hover img {
 opacity: 0.8;
 }
-.slideView.loading::after,
-.pdfView.loading::after {
+.none .viewDocumentBody:hover img {
+opacity: 1;
+}
+.viewDocumentBody.loading::after {
 content: '';
 display: block;
 position: absolute;
@@ -2398,8 +2396,7 @@ border: 1px solid #002B62;
 border-radius: 4px;
 animation: slideLoading 0.3s linear infinite;
 }
-.slideView.loading::before,
-.pdfView.loading::before {
+.viewDocumentBody.loading::before {
 content: 'Now Loading...';
 display: block;
 position: absolute;
@@ -2424,16 +2421,20 @@ animation: slideLoadingText 1s linear infinite;
 50% { opacity: 0.6; }
 100% { opacity: 1; }
 }
-.slideView.loading img,
-.pdfView.loading img {
+.viewDocumentBody.loading img {
 opacity: 0.2;
 }
-.slideView iframe,
-.slideView.done img,
-.pdfView iframe,
-.pdfView.done img {
+.viewDocumentBody iframe {
+position: absolute;
+left: -9999px;
+}
+.viewDocumentBody.done img {
 display: none;
 }
+.viewDocumentBody.done iframe {
+left: 0;
+}
+
 #articleBody .slideMenu ul {
 display: table;
 table-layout: fixed;
@@ -2493,8 +2494,7 @@ font-size: 0.9rem;
 #articleBody .slideCode .any {
 color: #F33;
 }
-.fullscreen .slide,
-.fullscreen .pdfjs {
+.fullscreen .viewDocument {
 float: none;
 width: 100%; height: 100%;
 margin: 0; padding: 0;
@@ -2502,8 +2502,7 @@ border: none;
 border-radius: 0;
 box-shadow: none;
 }
-.fullscreen .slideView,
-.fullscreen .pdfView {
+.fullscreen .viewDocumentBody {
 position: static;
 padding: 0;
 }
@@ -2562,7 +2561,7 @@ border: none;
 #article.documents .documentsDownloadsList li {
 margin: 0 0 8px;
 }
-.slide {
+.viewDocument {
 float: none;
 width: 100%;
 margin: 0 0 16px;
