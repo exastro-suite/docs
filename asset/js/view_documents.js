@@ -91,21 +91,25 @@ function viewDocuments( ducumentsJsonUrl ) {
                     nextCount = 0,
                     prevCount = 0,
                     historyCurrent = 0,
-                    historyArray = [url],
+                    historyArray = [],
                     historyCheck = function() {
                       console.log( historyCurrent );
                       console.log( historyArray );
-                      if ( nextCount === 0 ) {
+                      if ( nextCount <= 0 ) {
+                        nextCount = 0;
                         $nextButton.prop('disabled', true );
                       } else {
                         $nextButton.prop('disabled', false );
                       }
-                      if ( prevCount === 0 ) {
+                      if ( prevCount <= 0 ) {
+                        prevCount = 0;
                         $prevButton.prop('disabled', true );
                       } else {
                         $prevButton.prop('disabled', false );
                       }
                     };
+                
+                historyArray[historyCurrent] = url;
                 
                 $iframe.on('load', function(){
                   var $viewContent = $( this );
@@ -113,18 +117,20 @@ function viewDocuments( ducumentsJsonUrl ) {
                   
                   $prevButton.on('click', function(){
                     nextCount++;
+                    prevCount--;
                     historyCurrent--;
                     historyCheck();
                     $iframe.get(0).contentDocument.location.replace( historyArray[historyCurrent] );
                   });
                   $nextButton.on('click', function(){
                     prevCount++;
+                    nextCount--;
                     historyCurrent++;
                     historyCheck();
                     $iframe.get(0).contentDocument.location.replace( historyArray[historyCurrent] );
                   });
                   $viewBody.find('.fullscreen-on, .fullscreen-off').on('click', function(){ toggleFullScreen( $viewDocument.get(0) ); });
-                  $viewBody.find('.outlink').on('click', function(){ window.open( pdfURL + documentURL, '_brank'); });
+                  $viewBody.find('.outlink').on('click', function(){ window.open( pdfURL + documentURL, '_blank'); });
 
                   // PDF内の別PDFリンクの調整
                   if ( documentType === 'pdf') {
