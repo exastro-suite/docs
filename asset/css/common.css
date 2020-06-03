@@ -2341,6 +2341,10 @@ border-color: hsla(0,0%,0%,.35) hsla(0,0%,0%,.4) hsla(0,0%,0%,.45);
 box-shadow: 0 1px 1px hsla(0,0%,0%,.1) inset, 0 0 1px hsla(0,0%,0%,.2) inset, 0 1px 0 hsla(0,0%,100%,.05);
 outline: none;
 }
+#articleBody .sectionInner .viewToolBar button:disabled {
+opacity: .5;
+pointer-events: none;
+}
 .slide .viewDocumentBody.done {
 padding-bottom: calc( 75% + 61px );
 cursor: default;
@@ -2506,7 +2510,19 @@ box-shadow: none;
 position: static;
 padding: 0;
 }
-
+.viewToolBar .fullscreen-off,
+.viewToolBar .next,
+.viewToolBar .prev{
+display: none!important;
+}
+.fullscreen .viewToolBar .fullscreen-on {
+display: none!important;
+}
+.fullscreen .viewToolBar .fullscreen-off,
+.fullscreen .viewToolBar .next, 
+.fullscreen .viewToolBar .prev {
+display: block!important;
+}
 
 .clipboard-copy {
   cursor: copy;

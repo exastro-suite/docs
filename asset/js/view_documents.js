@@ -14,8 +14,8 @@ function viewDocuments( ducumentsJsonUrl ) {
 		}
 		
     const barText = {
-      ja : ['フルスクリーン','別タブで開く'],
-      en : ['Full screen','Open in new tab'],
+      ja : ['フルスクリーン','フルスクリーン解除','別タブで開く','戻る','進む'],
+      en : ['Full screen','Full screen off','Open in new tab','Prev','Next'],
     }
     
 		if ( language === undefined ) return false;
@@ -66,8 +66,11 @@ function viewDocuments( ducumentsJsonUrl ) {
               }
               viewHTML += '<iframe frameborder="0" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>'
               + '<div class="viewToolBar"><ul>'
-                + '<li><button class="fullscreen touch"><i class="fas fa-expand"></i> ' + barText[language][0] + '</button></li>'
-                + '<li><button class="outlink touch"><i class="fas fa-external-link-alt"></i> ' + barText[language][1] + '</button></li>'
+                + '<li><button class="prev touch" disabled><i class="fas fa-arrow-left"></i> ' + barText[language][3] + '</button></li>'
+                + '<li><button class="next touch" disabled>' + barText[language][4] + ' <i class="fas fa-arrow-right"></i></button></li>'
+                + '<li><button class="fullscreen-on touch"><i class="fas fa-expand"></i> ' + barText[language][0] + '</button></li>'
+                + '<li><button class="fullscreen-off touch"><i class="fas fa-compress"></i> ' + barText[language][1] + '</button></li>'
+                + '<li><button class="outlink touch"><i class="fas fa-external-link-alt"></i> ' + barText[language][2] + '</button></li>'
               + '</ul></div></div>';
               
               $viewDocument.prepend( viewHTML ).find('.viewDocumentBody').one('click', function(){
@@ -82,18 +85,50 @@ function viewDocuments( ducumentsJsonUrl ) {
                 }
 
                 $viewBody.addClass('loading');
-
+                
+                var $prevButton = $viewBody.find('.prev'),
+                    $nextButton = $viewBody.find('.next'),
+                    nextCount = 0,
+                    prevCount = 0,
+                    historyCheck = function() {
+                      if ( nextCount !== 0 ) {
+                        $nextButton.prop('disabled', true );
+                      } else {
+                        $nextButton.prop('disabled', false );
+                      }
+                      if ( prevCount !== 0 ) {
+                        $prevButton.prop('disabled', true );
+                      } else {
+                        $prevButton.prop('disabled', false );
+                      }
+                    };
+                
                 $iframe.on('load', function(){
                   var $viewContent = $( this );
                   $viewBody.removeClass('loading').addClass('done');
-                  $viewBody.find('.fullscreen').on('click', function(){ toggleFullScreen( $viewDocument.get(0) ); });
-                  $viewBody.find('.outlink').on('click', function(){ window.open( url, '_brank'); });
+                  
+                  $prevButton.on('click', function(){
+                    nextCount++;
+                    historyCheck();
+                    history.back();
+                  });
+                  $nextButton.on('click', function(){
+                    prevCount++;
+                    historyCheck();
+                    history.forward();
+                  });
+                  $viewBody.find('.fullscreen-on, .fullscreen-off').on('click', function(){ toggleFullScreen( $viewDocument.get(0) ); });
+                  $viewBody.find('.outlink').on('click', function(){ window.open( pdfURL + documentURL, '_brank'); });
 
                   // PDF内の別PDFリンクの調整
                   if ( documentType === 'pdf') {
                     $viewContent.contents().on('click', 'a[href$=".pdf"]', function( e ) {
                       e.preventDefault();
-                      $iframe.attr('src', pdfViewerURL + $( this ).attr('href') );
+                      var pdfLink = pdfViewerURL + $( this ).attr('href');
+                      nextCount = 0;
+                      prevCount++;
+                      historyCheck();
+                      $iframe.attr('src', pdfLink );
                     });
                   }
 
