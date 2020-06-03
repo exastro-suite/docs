@@ -93,6 +93,8 @@ function viewDocuments( ducumentsJsonUrl ) {
                     historyCurrent = 0,
                     historyArray = [url],
                     historyCheck = function() {
+                      console.log( historyCurrent );
+                      console.log( historyArray );
                       if ( nextCount === 0 ) {
                         $nextButton.prop('disabled', true );
                       } else {
@@ -113,13 +115,13 @@ function viewDocuments( ducumentsJsonUrl ) {
                     nextCount++;
                     historyCurrent--;
                     historyCheck();
-                    iframe.get(0).contentDocument.location.replace( historyArray[historyCurrent] );
+                    $iframe.get(0).contentDocument.location.replace( historyArray[historyCurrent] );
                   });
                   $nextButton.on('click', function(){
                     prevCount++;
                     historyCurrent++;
                     historyCheck();
-                    iframe.get(0).contentDocument.location.replace( historyArray[historyCurrent] );
+                    $iframe.get(0).contentDocument.location.replace( historyArray[historyCurrent] );
                   });
                   $viewBody.find('.fullscreen-on, .fullscreen-off').on('click', function(){ toggleFullScreen( $viewDocument.get(0) ); });
                   $viewBody.find('.outlink').on('click', function(){ window.open( pdfURL + documentURL, '_brank'); });
