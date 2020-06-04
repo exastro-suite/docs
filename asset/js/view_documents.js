@@ -122,7 +122,13 @@ function viewDocuments( ducumentsJsonUrl ) {
                   $iframe.get(0).contentDocument.location.replace( historyArray[historyCurrent] );
                 });
                 $viewBody.find('.fullscreen-on, .fullscreen-off').on('click', function(){ toggleFullScreen( $viewDocument.get(0) ); });
-                $viewBody.find('.outlink').on('click', function(){ window.open( pdfURL + documentURL, '_blank'); });
+                $viewBody.find('.outlink').on('click', function(){
+                  if ( documentType === 'pdf') {
+                    window.open( pdfURL + documentURL, '_blank');
+                  } else {
+                    window.open( url, '_blank');
+                  }
+                });
                 
                 $iframe.on('load', function(){
                   var $viewContent = $( this );
