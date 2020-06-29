@@ -256,37 +256,42 @@ $('.toggleHeading').on('click', function(){
 });
 
 // Toggle Menu
-$('.toggleMenu span').on('click', function(){
+var $toggleMenu = $('.toggleMenu').children('span');
+var tggleMenuClose = function( $togleMenuSpan ) {
+  $togleMenuSpan.find('i').removeClass('fa-times').addClass('fa-angle-down');
+  $togleMenuSpan.removeClass('on').next('ul').removeClass('open over').hide();
+}
+$toggleMenu.on('click', function(){
   var $this = $( this ),
       $window = $( window );
-  var positionTop = $this.offset().top + $this.outerHeight() + 4 - $window.scrollTop(),
-      positionLeft = $this.offset().left - $window.scrollLeft();
   
-  var change = function(){
-    if( $this.find('i').is('.fa-times') ) {
-      $this.find('i').removeClass('fa-times').addClass('fa-angle-down');
-      $this.next('ul').removeClass('open over').hide();
-    } else {
-      $this.next('ul').addClass('open').removeClass('over').stop(0,0).slideDown( 50, function(){
-        $this.find('i').removeClass('fa-angle-down').addClass('fa-times');
-          $( window ).on('scroll.navMenu resize.navMenu', function(){
-            $( window ).off('scroll.navMenu resize.navMenu');
-            change();
-          });
-      } );
-    }
+  var openMenu = function() {
+    $this.addClass('on').next('ul').addClass('open').removeClass('over').stop(0,0).slideDown( 50, function(){
+    $this.find('i').removeClass('fa-angle-down').addClass('fa-times');
+      $( window ).on('scroll.navMenu resize.navMenu', function(){
+        $( window ).off('scroll.navMenu resize.navMenu');
+        tggleMenuClose( $toggleMenu.filter('.on') );
+      });
+    });
+    var positionTop = $this.offset().top + $this.outerHeight() + 4 - $window.scrollTop(),
+        positionLeft = $this.offset().left - $window.scrollLeft();
+    if( $window.width() < positionLeft + $this.next('ul').outerWidth() ) $this.next('ul').addClass('over');
+    if( positionLeft < 4 ) positionLeft = 4;
+    $this.next('ul').css({
+      'top' : positionTop,
+      'left': positionLeft
+    });
   }
-  change();
   
-  // Window size position over check
-  if( $window.width() < positionLeft + $this.next('ul').outerWidth() ) $this.next('ul').addClass('over');
-  if( positionLeft < 4 ) positionLeft = 4;
-  
-  $this.next('ul').css({
-    'top' : positionTop,
-    'left': positionLeft,
-  });
-  
+  if ( $this.is('.on') ) {
+    tggleMenuClose( $this );
+  } else {
+    if ( $toggleMenu.filter('.on').length ) {
+      tggleMenuClose( $toggleMenu.filter('.on') );
+    }
+    openMenu();
+  }  
+
 });
 
 
@@ -495,4 +500,198 @@ function toggleFullScreen( elem ) {
       document.msExitFullscreen();
     }
   }
+}
+
+
+// FAQ
+function faqLoading( jsonURL ) {
+
+		var language = '',
+        $body = $('body'),
+        $faqList = $('#faqList'),
+        $faqNavi = $('#faqNavi'),
+        $searchResult = $('#search-result');
+
+		// 言語をbodyのclassから判定
+		if ( $body.is('.en') ) {
+			language = 'en';
+		} else if ( $body.is('.ja') ) {
+			language = 'ja';
+		} else {
+			language = undefined;
+		}
+		
+		if ( language !== undefined ) {
+		
+			// JSONを読み込む
+			$.ajax({
+
+				url: jsonURL,
+				type: 'GET',
+				dataType: 'text'
+
+			}).done( function( data ){
+
+				var JSONparse = JSON.parse( data );
+
+				var faq = JSONparse[ language ],
+            faqHTML = '',
+            faqNaviHTML = '',
+            frequentlyNumber = 1,
+            frequentlyHTML = '';
+        
+        // FA HTML
+        var faqItemHTML = function( faqNo, qText, aText, category ) {
+          if ( category !== undefined ) {
+            category = '<span class="category">' + category + '</span>'
+          } else {
+            category = '';
+          }
+          var faqItem = ''
+            + '<li>'
+              + '<dl>'
+                + '<dt tabindex="0" class="q toggleHeading"><span class="mark">Q<span class="num">' + faqNo + '</span></span><span class="text">' + category + qText + '</span></dt>'
+                + '<dd class="a toggleText"><span class="mark">A</span><span class="text">' + aText + '</span></dd>'
+              + '</dl>'
+            + '</li>';
+          return faqItem;
+        };
+        
+        // Taeget scroll
+        var targetScroll = function( id ) {
+          $('#faqContent').find('.open').removeClass('open');
+          $('#' + id ).addClass('open');
+
+          var headerHeight = $('header').outerHeight() + 16,
+              speed = 300,
+              position = $('#' + id ).offset().top - headerHeight;
+          $('body, html').animate({ scrollTop : position }, speed, 'swing' );
+        }        
+        
+        for ( var cat in faq ) {
+          faqHTML += '<div id="' + faq[cat]['data']['id'] + '" class="faqItem">'
+            + '<h3>' + cat + '</h3>'
+            + '<div class="faqBody">'
+              + '<ul>';
+          faqNaviHTML += '<li><a href="#' + faq[cat]['data']['id'] + '" class="touch"><i class="fas ' + faq[cat]['data']['icon'] + '"></i>' + cat + '</a></li>';
+          
+          if ( faq[cat]['data']['id'] !== 'frequently' ) {
+            var frequentlyArray = faq[cat]['data']['frequently'].split(',');
+            for ( var no in faq[cat] ) {
+              if ( no === "data" ) break;
+              var qText = faq[cat][no]["Q"].replace(/\n/g,'<br>'),
+                  aText = faq[cat][no]["A"].replace(/\n/g,'<br>');
+              
+              faqHTML += faqItemHTML( no, qText, aText );
+              
+              if ( frequentlyArray.indexOf( no ) !== -1 ) {
+                frequentlyHTML += faqItemHTML( frequentlyNumber++, qText, aText, cat );
+              }
+            }
+          }
+          faqHTML += ''
+              + '</ul>'
+            + '</div>'
+          + '</div>';
+        }
+        
+        $faqNavi.find('ul').html( faqNaviHTML ).slideDown( 300, function() {
+          // Index 一番目を表示
+          $faqList.find('.loading').remove();
+          $faqList.prepend( faqHTML );
+          $('#frequently').find('ul').html( frequentlyHTML );
+          $faqNavi.find('a').eq(0).addClass('open');
+          $faqList.children().eq(0).addClass('open');
+        });
+        
+        $faqNavi.find('a').on('click', function( e ) {
+          e.preventDefault();
+          var id = $( this ).addClass('open').attr('href').replace('#','');
+          targetScroll( id );          
+        });
+        
+        $faqList.on({
+          'click' : function(){
+            $( this ).toggleClass('open');
+            $( this ).next('.toggleText').slideToggle( 100 );
+          },
+          'keydown' : function( e ){
+            if ( e.keyCode === 13 ) {
+              e.preventDefault();
+              $( this ).click();
+            }
+          }
+        }, '.toggleHeading' );
+        
+        var $searchInput = $('#search-input'),
+            $searchButton = $('#search-button'),
+            regexEscapeArray = ['.','*','+','^','|','[',']','(',')','?','$','{','}'],
+            regexEscapeLength = regexEscapeArray.length;
+        
+        $searchInput.on('keydown', function( e ) {
+          if ( e.keyCode === 13 ) {
+            e.preventDefault();
+            $searchButton.click();
+          }
+        });
+        
+        $searchButton.on('click', function() {
+          var keyword = $searchInput.val(),
+              searchResultHTML = '',
+              searchResultNum = 1;
+          
+          // 空白のみの場合は終了
+          if ( keyword.replace(/\s/g, '') === '' ) return false;
+          
+          // 正規表現メタ文字をエスケープ
+          for ( var i = 0; i < regexEscapeLength; i++ ) {
+            keyword = keyword.replace( regexEscapeArray[i], '\\' + regexEscapeArray[i] );
+          }
+          
+          // スペースOR
+          keyword = keyword.replace(/\s/g, '|');        
+          
+          var regex = new RegExp( "(" + keyword + ")", "igu");
+          
+          for ( var cat in faq ) {
+            if ( faq[cat]['data']['id'] !== 'frequently' ) {
+              for ( var no in faq[cat] ) {
+                if ( no === "data" ) break;
+                  var qText = faq[cat][no]['Q'].replace(/\n/g,'<br>'),
+                      aText = faq[cat][no]['A'].replace(/\n/g,'<br>');
+                  if ( qText.match( regex ) !== null || aText.match( regex ) !== null ) {
+                    qText = qText.replace( regex, '<span class="match">$1</span>');
+                    aText = aText.replace( regex, '<span class="match">$1</span>');
+                    searchResultHTML += faqItemHTML( searchResultNum++, qText, aText, cat );
+                  }
+              }
+            }
+          }
+          if ( searchResultHTML === '' ) {
+            var errorMessage = 'No search results found.';
+            if ( language === 'ja') {
+              errorMessage = '検索結果は見つかりませんでした。';
+            }
+            searchResultHTML = '<li class="error"><i class="fas fa-exclamation-triangle"></i> ' + errorMessage + '</li>';
+          }
+          
+          $searchResult.find('ul').html( searchResultHTML );
+          targetScroll('search-result');
+          
+        });
+
+			}).fail( function(){
+
+				// リストの読み込みに失敗したらConsoleにエラー出力
+				window.console.error('Failed to load "' + jsonURL + '".');
+
+			});
+		
+		} else {
+
+			// 言語の判定に失敗したらConsoleにエラー出力
+			window.console.error('Failed to get language.');
+			
+		}
+
 }

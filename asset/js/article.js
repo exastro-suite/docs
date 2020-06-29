@@ -25,11 +25,10 @@ $(function(){
     
     $( window ).scroll( function(){
         var windowScrollTop = $( this ).scrollTop();
-        var headerHeight = $('header').outerHeight();
-        var windowBackgroundPosition = windowScrollTop / 2 + headerHeight;
+        var windowBackgroundPosition = windowScrollTop / 2;
         if ( windowScrollTop < topMoveHeight.top ){
             $('#topMove').css('bottom', '-64px' );
-            $('#articleTitle .background').css('top', windowBackgroundPosition + 'px' );
+            $('#articleTitle .background').css('transform', 'translateY(' + windowBackgroundPosition + 'px)');
         } else {
             $('#topMove').css('bottom', '8px' );
         }
