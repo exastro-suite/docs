@@ -1023,8 +1023,11 @@ margin-top: 0;
 #articleBody div.toggleText p:last-child {
 margin-bottom: 0;
 }
-
-
+#articleBody div.toggleText::after {
+content: '';
+clear: both;
+display: block;
+}
 #overlay {
 display: none;
 }
