@@ -1015,7 +1015,7 @@ transform:  translateY(-65%) rotateX(-180deg);
 }
 #articleBody div.toggleText {
 display: none;
-margin: 24px 0 48px;
+margin: 24px 0 0;
 }
 #articleBody div.toggleText p:first-of-type {
 margin-top: 0;
