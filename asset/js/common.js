@@ -504,6 +504,21 @@ function toggleFullScreen( elem ) {
 
 
 // FAQ
+const textEntities = function( text ) {
+    const entities = [
+      ['&', 'amp'],
+      ['\"', 'quot'],
+      ['\'', 'apos'],
+      ['<', 'lt'],
+      ['>', 'gt'],
+    ];
+    for ( var i = 0; i < entities.length; i++ ) {
+      text = text.replace( new RegExp( entities[i][0], 'g'), '&' + entities[i][1] + ';' );
+    }
+    text = text.replace(/^\s+|\s+$/g, '');
+    text = text.replace(/\r?\n/g, '<br>');
+    return text;
+};
 function faqLoading( jsonURL ) {
 
 		var language = '',
@@ -579,8 +594,11 @@ function faqLoading( jsonURL ) {
             var frequentlyArray = faq[cat]['data']['frequently'].split(',');
             for ( var no in faq[cat] ) {
               if ( no === "data" ) break;
-              var qText = faq[cat][no]["Q"].replace(/\n/g,'<br>'),
-                  aText = faq[cat][no]["A"].replace(/\n/g,'<br>');
+              var qText = textEntities( faq[cat][no]["Q"] ),
+                  aText = textEntities( faq[cat][no]["A"] );
+              
+              // Image置換
+              aText = aText.replace(/{img{(.+)}}/g,'<img class="aImg" src="$1">');
               
               faqHTML += faqItemHTML( no, qText, aText );
               
