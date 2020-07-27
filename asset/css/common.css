@@ -347,6 +347,7 @@ background-color: #4D4D4D;
 #website.home #mainMenu a.home,
 #article.overview #mainMenu a.overview,
 #article.learn #mainMenu a.learn,
+#article.webinar #mainMenu a.webinar,
 #article.case #mainMenu a.case,
 #article.documents #mainMenu a.documents,
 #article.downloads #mainMenu a.downloads {
@@ -358,6 +359,7 @@ text-shadow: none;
 #website.home #mainMenu a.home:hover,
 #article.overview #mainMenu a.overview:hover,
 #article.learn #mainMenu a.learn:hover,
+#article.webinar #mainMenu a.webinar:hover,
 #article.case #mainMenu a.case:hover,
 #article.documents #mainMenu a.documents:hover,
 #article.downloads #mainMenu a.downloads:hover {
