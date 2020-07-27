@@ -1038,6 +1038,9 @@ padding: 12px;
 #article.newsroom #newsList dt a.hover img {
   opacity: 0.8;
 }
+#article.newsroom #newsList dt > .newsRoomVideo {
+display: block;
+}
 #article.newsroom #newsList dd {
   margin-left: 33%;
 }
