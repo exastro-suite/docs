@@ -503,22 +503,51 @@ function toggleFullScreen( elem ) {
 }
 
 
+// "YouTube iframe Player API" Set
+function youTubeIframeAPISet() {
+    var youtubeScript = document.createElement('script');
+    youtubeScript.src = 'https://www.youtube.com/iframe_api';
+    $('body').append( youtubeScript );
+    
+    // thumbnail
+    $('.youtubeEmbed').each( function() {
+      var $youtubeEmbed = $( this ),
+          youTubeID = $youtubeEmbed.attr('data-embed-id'),
+          thumbnailURL = 'http://i.ytimg.com/vi/' + youTubeID + '/sddefault.jpg';
+      $youtubeEmbed.addClass('ready').css('background-image', 'url(' + thumbnailURL + ')');      
+    });
+}
+// "Yotube iframe Player API" Ready
+function onYouTubeIframeAPIReady() {
+    var $youtubeEmbed = $('.youtubeEmbed');
+
+    $youtubeEmbed.on('click', function(){
+      var $loadYouTube = $( this ),
+          loadYouTubeID = $loadYouTube.attr('data-embed-id'),
+          width = $loadYouTube.width(),
+          height = $loadYouTube.outerHeight();
+          
+      $loadYouTube.removeClass('ready').addClass('loading');
+      
+      var ytPlayer = new YT.Player(
+        loadYouTubeID, {
+          width: width,
+          height: height,
+          videoId: loadYouTubeID,
+          playerVars: {
+            'autoplay': 1
+          },
+          events: {
+            'onReady': function(){
+              $loadYouTube.removeClass('loading').addClass('done');
+            }
+          }
+        }
+      );
+    });
+}
+
 // FAQ
-const textEntities = function( text ) {
-    const entities = [
-      ['&', 'amp'],
-      ['\"', 'quot'],
-      ['\'', 'apos'],
-      ['<', 'lt'],
-      ['>', 'gt'],
-    ];
-    for ( var i = 0; i < entities.length; i++ ) {
-      text = text.replace( new RegExp( entities[i][0], 'g'), '&' + entities[i][1] + ';' );
-    }
-    text = text.replace(/^\s+|\s+$/g, '');
-    text = text.replace(/\r?\n/g, '<br>');
-    return text;
-};
 function faqLoading( jsonURL ) {
 
 		var language = '',
@@ -581,7 +610,48 @@ function faqLoading( jsonURL ) {
               speed = 300,
               position = $('#' + id ).offset().top - headerHeight;
           $('body, html').animate({ scrollTop : position }, speed, 'swing' );
-        }        
+        };
+        
+        // Entities
+        var textEntities = function( text ) {
+            var entities = [
+              ['&', 'amp'],
+              ['\"', 'quot'],
+              ['\'', 'apos'],
+              ['<', 'lt'],
+              ['>', 'gt'],
+            ];
+            for ( var i = 0; i < entities.length; i++ ) {
+              text = text.replace( new RegExp( entities[i][0], 'g'), '&' + entities[i][1] + ';' );
+            }
+            text = text.replace(/^\s+|\s+$/g, '');
+            return text;
+        };
+        
+        // Replace
+        var textReplace = function( str ) {  
+          str = textEntities( str );
+          str = str.replace(/\r?\n/g, '<br>'); 
+          str = str.replace(/{img{(.+)}}/g,'<div class="aImge"><img src="$1"></div>');
+          return str;
+        };
+        
+        // Search replace
+        var tagReplace = function( match, p1, offset, str ) {
+          // Check <xxx> or &xxx;
+          var entitieGreater = str.indexOf( ';', offset ),
+              entitieLesser = str.indexOf( '&', offset ),
+              tagGreater = str.indexOf( '>', offset ),
+              tagLesser = str.indexOf( '<', offset );
+          if(
+              ( entitieGreater < entitieLesser || ( entitieGreater != -1 && entitieLesser == -1 ) ) ||
+              ( tagGreater < tagLesser || ( tagGreater != -1 && tagLesser == -1 ) )
+          ) {
+            return match;
+          } else {
+            return '<span class="match">' + match + '</span>';
+          }
+        };
         
         for ( var cat in faq ) {
           faqHTML += '<div id="' + faq[cat]['data']['id'] + '" class="faqItem">'
@@ -594,12 +664,9 @@ function faqLoading( jsonURL ) {
             var frequentlyArray = faq[cat]['data']['frequently'].split(',');
             for ( var no in faq[cat] ) {
               if ( no === "data" ) break;
-              var qText = textEntities( faq[cat][no]["Q"] ),
-                  aText = textEntities( faq[cat][no]["A"] );
-              
-              // Image置換
-              aText = aText.replace(/{img{(.+)}}/g,'<img class="aImg" src="$1">');
-              
+              var qText = textReplace( faq[cat][no]["Q"] ),
+                  aText = textReplace( faq[cat][no]["A"] );
+                  
               faqHTML += faqItemHTML( no, qText, aText );
               
               if ( frequentlyArray.indexOf( no ) !== -1 ) {
@@ -667,7 +734,7 @@ function faqLoading( jsonURL ) {
           }
           
           // スペースOR
-          keyword = keyword.replace(/\s/g, '|');        
+          keyword = textEntities( keyword.replace(/\s/g, '|') );
           
           var regex = new RegExp( "(" + keyword + ")", "igu");
           
@@ -675,12 +742,15 @@ function faqLoading( jsonURL ) {
             if ( faq[cat]['data']['id'] !== 'frequently' ) {
               for ( var no in faq[cat] ) {
                 if ( no === "data" ) break;
-                  var qText = faq[cat][no]['Q'].replace(/\n/g,'<br>'),
-                      aText = faq[cat][no]['A'].replace(/\n/g,'<br>');
+                  var qText = textReplace( faq[cat][no]['Q'] ),
+                      aText = textReplace( faq[cat][no]['A'] );
                   if ( qText.match( regex ) !== null || aText.match( regex ) !== null ) {
-                    qText = qText.replace( regex, '<span class="match">$1</span>');
-                    aText = aText.replace( regex, '<span class="match">$1</span>');
-                    searchResultHTML += faqItemHTML( searchResultNum++, qText, aText, cat );
+                    qText = qText.replace( regex, tagReplace );
+                    aText = aText.replace( regex, tagReplace );
+                    console.log( aText );
+                    if ( qText !== false || aText !== false ) {
+                      searchResultHTML += faqItemHTML( searchResultNum++, qText, aText, cat );
+                    }
                   }
               }
             }
