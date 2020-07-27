@@ -4287,4 +4287,16 @@ font-size: 20px;
 width: auto;
 white-space: normal;
 }
+#articleBody .webinarTitle {
+font-size: 14px;
+}
+#articleBody .webinarText {
+font-size: 11px;
+}
+.webinarDocumentVersionSelectTitle {
+font-size: 12px;
+}
+.webinarDocumentTable th, .webinarDocumentTable td {
+font-size: 11px;
+}
 } /* /480px */
