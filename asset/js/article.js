@@ -28,7 +28,7 @@ $(function(){
         var windowBackgroundPosition = windowScrollTop / 2;
         if ( windowScrollTop < topMoveHeight.top ){
             $('#topMove').css('bottom', '-64px' );
-            $('#articleTitle .background').css('transform', 'translateY(' + windowBackgroundPosition + 'px)');
+            $('#articleTitle .background').css('transform', 'translate3d(0,' + windowBackgroundPosition + 'px,0)');
         } else {
             $('#topMove').css('bottom', '8px' );
         }
