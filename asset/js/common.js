@@ -25,7 +25,7 @@ $( window ).one('load', function(){
       }
     }, 100 );
   }
-}).load();
+});
 
 // DOM
 $(function(){
@@ -632,7 +632,8 @@ function faqLoading( jsonURL ) {
         var textReplace = function( str ) {  
           str = textEntities( str );
           str = str.replace(/\r?\n/g, '<br>'); 
-          str = str.replace(/{img{(.+)}}/g,'<div class="aImge"><img src="$1"></div>');
+          str = str.replace(/{img{(.+?)}}/g,'<div class="aImge"><img src="$1"></div>');
+          str = str.replace(/{a{(.+?)}(.+?)}/g,'<a href="$1" target="_blank">$2</a>');
           return str;
         };
         
@@ -684,7 +685,7 @@ function faqLoading( jsonURL ) {
           // Index 一番目を表示
           $faqList.find('.loading').remove();
           $faqList.prepend( faqHTML );
-          $('#frequently').find('ul').html( frequentlyHTML );
+          //$('#frequently').find('ul').html( frequentlyHTML );
           $faqNavi.find('a').eq(0).addClass('open');
           $faqList.children().eq(0).addClass('open');
         });

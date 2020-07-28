@@ -350,7 +350,8 @@ background-color: #4D4D4D;
 #article.webinar #mainMenu a.webinar,
 #article.case #mainMenu a.case,
 #article.documents #mainMenu a.documents,
-#article.downloads #mainMenu a.downloads {
+#article.downloads #mainMenu a.downloads,
+#article.faq #mainMenu a.faq {
 background-color: #000;
 text-shadow: none;
 }
@@ -362,7 +363,8 @@ text-shadow: none;
 #article.webinar #mainMenu a.webinar:hover,
 #article.case #mainMenu a.case:hover,
 #article.documents #mainMenu a.documents:hover,
-#article.downloads #mainMenu a.downloads:hover {
+#article.downloads #mainMenu a.downloads:hover,
+#article.faq #mainMenu a.faq:hover {
 cursor: default;
 box-shadow: none;
 }
@@ -3891,6 +3893,10 @@ opacity: 0;
 }
 #search-result .error i {
 color: #FFAA00;
+}
+#faqContent a:hover {
+text-decoration: none;
+color: #FF833B;
 }
 @keyframes faqErrorMessage {
 to { opacity: 1; }
