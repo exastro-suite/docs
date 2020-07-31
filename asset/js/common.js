@@ -25,6 +25,35 @@ $( window ).one('load', function(){
       }
     }, 100 );
   }
+  
+  // Menu width Check
+  var $header = $('header'),
+      titleAreaWidth = $('#titleArea').outerWidth(),
+      mainMenuWidth = $('#mainMenu').width(),
+      subMenuWidth = $('#subMenu').outerWidth(),
+      menuOpenButtonWidth = 40;
+  var menuWidthCheck = function() {
+    var headerWidth = $('#header').outerWidth();
+    if ( headerWidth < titleAreaWidth + mainMenuWidth + subMenuWidth ) {
+      $header.addClass('snsHide');
+      if ( headerWidth < titleAreaWidth + mainMenuWidth + menuOpenButtonWidth ) {
+        $header.addClass('menuHide');
+      } else {
+        $header.removeClass('menuHide');
+      }
+    } else {
+      $header.removeClass('menuHide snsHide');
+    }
+  };
+  var resizeMenuCheckTimer;
+  $( window ).on('resize', function(){
+    clearTimeout( resizeMenuCheckTimer );
+    resizeMenuCheckTimer = setTimeout( function() {
+      menuWidthCheck();
+
+    }, 200 );
+  });
+  menuWidthCheck();
 });
 
 // DOM
@@ -72,35 +101,6 @@ $('#overlay').on('touchstart click', function(){
     $('header').removeClass('open');
     $('body').removeClass('overlay');
 });
-
-// Menu width Check
-var $header = $('header'),
-    titleAreaWidth = $('#titleArea').outerWidth(),
-    mainMenuWidth = $('#mainMenu').outerWidth(),
-    subMenuWidth = $('#subMenu').outerWidth(),
-    menuOpenButtonWidth = 40;
-var menuWidthCheck = function() {
-  var headerWidth = $('#header').outerWidth();
-  if ( headerWidth < titleAreaWidth + mainMenuWidth + subMenuWidth ) {
-    $header.addClass('snsHide');
-    if ( headerWidth < titleAreaWidth + mainMenuWidth + menuOpenButtonWidth ) {
-      $header.addClass('menuHide');
-    } else {
-      $header.removeClass('menuHide');
-    }
-  } else {
-    $header.removeClass('menuHide snsHide');
-  }
-};
-var resizeMenuCheckTimer;
-$( window ).on('resize', function(){
-  clearTimeout( resizeMenuCheckTimer );
-  resizeMenuCheckTimer = setTimeout( function() {
-    menuWidthCheck();
-    
-  }, 200 );
-});
-menuWidthCheck();
 
 // share menu
 $('span.share').on('click', function(){

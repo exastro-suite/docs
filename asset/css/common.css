@@ -369,6 +369,9 @@ cursor: default;
 box-shadow: none;
 }
 #mainMenu a i {
+display: inline-block;
+width: 20px;
+text-align: center;
 margin-right: 0.5em;
 color: #AAA;
 }
@@ -406,6 +409,12 @@ transition-duration: 0.3s;
 #subMenu span.subMenuPlus.hover {
 background-color: #4D4D4D;
 box-shadow: 0 0 4px 0 #000 inset;
+}
+#subMenu a i,
+#subMenu span i {
+display: inline-block;
+width: 22px;
+text-align: center;
 }
 #subMenu a + span,
 #subMenu span.subMenuPlus + span {
