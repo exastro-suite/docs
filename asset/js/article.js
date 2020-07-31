@@ -5,7 +5,7 @@ $(function(){
 
     // Title background image.
     $('#articleTitle').append('<div class="background"></div>');
-    if( $('#website.index').length ) $('.background').html('<div class="monitor"><div><ul><li></li><li></li><li></li></ul></div></div>');
+    if( $('#website.index').length ) $('.background').after('<div class="backgroundMonitor"><div class="monitor"><div><ul><li></li><li></li><li></li></ul></div></div></div>');
     
     // Resize window.
     var resizeWindow = function() {
