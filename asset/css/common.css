@@ -2989,7 +2989,7 @@ border-radius: 2px;
 .caseContentBody {
 position: relative;
 margin: 0 auto; padding: 64px 16px;
-background-image: linear-gradient( 90deg, transparent, transparent 10%, #FFF 20%, #FFF 80%, transparent 90% );
+background-image: linear-gradient( 90deg, rgba( 255,255,255,0 ), rgba( 255,255,255,0 ) 10%, #FFF 20%, #FFF 80%, rgba( 255,255,255,0 ) 90% );
 }
 .caseContentBody::before,
 .caseContentBody::after {
@@ -3001,11 +3001,11 @@ width: 100%; height: 8px;
 }
 .caseContentBody::before {
 top: 0;
-background-image: repeating-linear-gradient( 45deg, #DDD, #DDD 12px, transparent 12px, transparent 16px );
+background-image: repeating-linear-gradient( 45deg, #DDD, #DDD 12px, rgba( 255,255,255,0 ) 12px, rgba( 255,255,255,0 ) 16px );
 }
 .caseContentBody::after {
 bottom: 0;
-background-image: repeating-linear-gradient( 45deg, #EBEBEB, #EBEBEB 12px, transparent 12px, transparent 16px );
+background-image: repeating-linear-gradient( 45deg, #EBEBEB, #EBEBEB 12px, rgba( 255,255,255,0 ) 12px, rgba( 255,255,255,0 ) 16px );
 }
 .caseContentBodyInner01 {
 margin-bottom: 64px;
