@@ -1738,6 +1738,7 @@ vertical-align: bottom;
 }
 
 #articleBody a.download,
+#articleBody a.githubLink,
 #articleBody span.download {
 display: inline-block;
 padding: 4px 32px;
@@ -1752,9 +1753,17 @@ transition-duration: 0.3s;
 background-color: #CCC;
 }
 #articleBody a.download:hover {
-background-color: #A00;
+background-color: #A30000;
 }
-#articleBody a.download i.note {
+#articleBody a.githubLink {
+margin-bottom: 12px;
+background-color: #4183C4;
+}
+#articleBody a.githubLink:hover {
+background-color: #34699D;
+}
+#articleBody a.download i.note,
+#articleBody a.githubLink i.note {
 padding-left: 0.5em;
 font-size: 80%;
 font-style: normal;

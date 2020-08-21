@@ -1,0 +1,626 @@
+@charset "utf-8";
+/* CSS Document */
+
+#container {
+overflow: visible;
+}
+#eventPage {
+padding-top: 40px;
+background-color: #F2F2F2;
+background-image: url(../img/content_back.png);
+}
+
+#eventHeader {
+overflow: hidden;
+position: relative;
+z-index: 0;
+height: 400px;
+margin-bottom: 32px;
+background-color: #111;
+}
+#eventHeader::after {
+content: '';
+position: absolute;
+z-index: -1;
+left: 0; top: 0;
+width: 100%; height: 100%;
+background-size: cover;
+background-position: bottom;
+opacity: .3;
+}
+.eventHeaderTitle {
+display: table;
+width: 100%; height: 400px;
+max-width: 1280px;
+margin: 0 auto;
+box-shadow: 0 0 32px #000, 0 0 32px #000;
+}
+.event20200911 #eventHeader::after, .event20200911 .eventHeaderTitle {
+background-image: url(../event_img/20200911_titleback.jpg);
+}
+
+.eventHeaderTitleInner {
+display: table-cell;
+padding: 32px 64px;
+vertical-align: middle;
+}
+.eventType {
+display: inline-block;
+margin-bottom: 24px; padding: 12px 24px 10px;
+background-color: #002B62;
+border: 1px solid #FFF;
+font-size: 24px;
+font-weight: bold;
+color: #FFF;
+}
+.eventTitle {
+margin-bottom: 8px;
+text-shadow: 0 0 16px #000, 0 0 16px #000, 0 0 16px #000, 0 0 16px #000;
+line-height: 1.4;
+letter-spacing: .05em;
+font-size: 48px;
+color: #FE0;
+}
+.eventSubTitle {
+display: inline-block;
+padding-top: 24px;
+border-top: 2px solid #FFF;
+text-shadow: 0 0 16px #000, 0 0 16px #000, 0 0 16px #000, 0 0 16px #000;
+letter-spacing: .05em;
+font-size: 32px;
+color: #FFF;
+}
+#eventOverview {
+float: right;
+position: sticky;
+top: 56px;
+z-index: 2;
+width: 320px;
+margin-bottom: 32px; padding: 0 8px 16px;
+background-color: #FFF;
+background-image: linear-gradient( #FFF 75%, #F2F2F2 );
+border: 1px solid #EEE;
+border-bottom: 4px solid #8095B0;
+box-shadow: 0 0 8px rgba( 0,0,0,.1 );
+border-radius: 4px;
+transition-duration: .5s;
+transition-property: top;
+}
+.eventOverviewTitle {
+margin: 0 -8px 8px; padding: 16px;
+background: #002B62;
+border-bottom: 1px solid #DDD;
+font-weight: bold;
+font-size: 16px;
+color: #FFF;
+}
+.eventOverviewTable {
+width: 100%;
+margin-bottom: 24px;
+}
+.eventOverviewTable th,
+.eventOverviewTable td {
+padding: 8px;
+border: 1px solid #AAA;
+line-height: 1.5;
+font-size: 14px;
+color: #333;
+}
+.eventOverviewTable th {
+background-color: #EBEEF2;
+vertical-align: middle;
+font-weight: normal;
+white-space: nowrap;
+}
+.eventOverviewTable strong {
+font-size: 140%;
+}
+.eventOverviewNote {
+margin-top: 4px; padding: 4px 8px;
+background-color: #FFEEAA;
+border: 1px solid #FFCC33;
+font-size: 12px;
+color: #111;
+}
+.eventOverviewAttention {
+padding-left: 1em;
+text-indent: -1em;
+font-size: 12px;
+color: #E00;
+}
+.signUpHereLink {
+display: block;
+width: 90%;
+margin: 0 auto;
+text-decoration: none;
+}
+.signUpHereLink span {
+overflow: hidden;
+position: relative;
+z-index: 1;
+display: block;
+width: 100%;
+background-color: #FF821E;
+background-image: linear-gradient( rgba( 255,255,255,0 ), rgba( 255,255,255,.2 ) );
+border-bottom: 2px solid #B25B15;
+border-radius: 4px;
+line-height: 48px;
+text-align: center;
+font-size: 16px;
+font-weight: bold;
+color: #FFF;
+}
+.signUpHereLink span::before,
+.signUpHereLink span::after {
+content: '';
+position: absolute;
+top: 50%;
+display: block;
+width: 96px; height: 96px;
+transform: translateY(-50%) rotate(45deg);
+transition-duration: .2s;
+border: 8px solid rgba( 255,255,255,.2 );
+}
+.signUpHereLink span::before {
+left: -72px;
+}
+.signUpHereLink span::after {
+right: -72px;
+}
+.signUpHereLink:hover {
+padding-top: 1px;
+}
+.signUpHereLink:hover span {
+background-color: #FF640A;
+border-bottom: 1px solid #B24607;
+}
+.signUpHereLink:hover span::before {
+left: -64px;
+}
+.signUpHereLink:hover span::after {
+right: -64px;
+}
+.signUpHereLink:active {
+padding-top: 2px;
+}
+.signUpHereLink:active span {
+background-color: #FF640A;
+border-bottom: none;
+}
+
+#eventBody {
+position: relative;
+z-index: 1;
+max-width: 1280px;
+margin: 0 auto;
+}
+#eventBody::after {
+content: '';
+display: table;
+clear: both;
+}
+.eventBlock {
+margin: 0 352px 32px 0; padding: 0 32px 24px;
+background-color: #FFF;
+border: 1px solid #EEE;
+box-shadow: 0 0 8px rgba( 0,0,0,.1 );
+border-radius: 4px;
+}
+.eventBlockTitle {
+margin: 0 -32px 24px; padding: 16px;
+background: linear-gradient( rgba(0,0,0,0),rgba(0,0,0,.05));
+border-bottom: 1px solid #DDD;
+font-weight: bold;
+font-size: 16px;
+color: #002B62;
+}
+#eventDescription {
+overflow: hidden;
+}
+.eventDescriptionMain {
+float: left;
+width: calc( 70% - 24px );
+}
+.eventDescriptionSub {
+float: right;
+width: 30%;
+}
+.leafletLink {
+display: block;
+font-size: 12px;
+text-align: center;
+}
+.leafletLink:hover {
+text-decoration: none;
+}
+.leafletLink img {
+width: 100%; height: auto;
+margin-bottom: 8px;
+vertical-align: top;
+transition-duration: .2s;
+}
+.leafletLink:hover img {
+opacity: .8;
+}
+.timeSchedule {
+margin: 0; padding: 0;
+list-style: none;
+}
+.timeScheduleItem {
+position: relative;
+z-index: 0;
+margin: 0; padding: 0 0 32px;
+}
+.timeScheduleItem::before {
+content: '';
+display: block;
+position: absolute;
+z-index: -1;
+left: 45px; top: 0;
+width: 8px; height: 100%;
+background-color: #60C60D;
+}
+.timeScheduleItem:last-child {
+padding-bottom: 0;
+}
+.timeScheduleCase::after {
+content: '';
+display: table;
+clear: both;
+}
+.timeScheduleCaseTime {
+position: relative;
+z-index: 1;
+float: left;
+display: block;
+width: 116px;
+}
+.timeScheduleInterludeTime,
+.timeScheduleLectureTime {
+display: inline-block;
+text-align: center;
+font-family: Consolas, "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", "sans-serif";
+}
+.timeScheduleInterludeTime {
+width: 64px;
+margin-left: 18px;
+background-color: #60C60D;
+border: 1px solid #60C60D;
+border-radius: 4px;
+line-height: 24px;
+font-size: 14px;
+color: #FFF;
+}
+.timeScheduleLectureTime {
+width: 100px;
+border-radius: 50%;
+background-color: #FFF;
+background-size: 100%;
+border: 2px solid #60C60D;
+line-height: 96px;
+font-size: 18px;
+font-weight: bold;
+color: #333;
+}
+.timeScheduleInterludeTime::after,
+.timeScheduleLectureTime::after {
+content: '';
+display: block;
+position: absolute;
+z-index: -1;
+right: 0; top: calc( 50% - 1px );
+width: 50%; height: 2px;
+background-color: #60C60D;
+}
+.timeScheduleInterludeTime::before,
+.timeScheduleLectureTime::before {
+content: '';
+display: block;
+position: absolute;
+z-index: -1;
+right: -4px; top: calc( 50% - 4px );
+width: 8px; height: 8px;
+background-color: #60C60D;
+box-shadow: 0 0 0 1px #FFF;
+border-radius: 50%;
+}
+
+.timeScheduleInterlude {
+margin-left: 116px;
+background-color: #F2FAEC;
+border: 1px solid #A0DD6E;
+border-radius: 4px;
+text-align: center;
+line-height: 24px;
+font-size: 14px;
+color: #60C60D;
+}
+.timeScheduleCaseContent {
+margin-left: 116px; padding: 16px;
+background: linear-gradient( #F8F8F8, #FFF 50% ) #FFF;
+border: 1px solid #AAA;
+box-shadow: 0 0 8px rgba( 0,0,0,.1 );
+border-radius: 4px;
+line-height: 1.75;
+font-size: 14px;
+}
+.lecturOverview {
+margin-bottom: 16px;
+}
+.speakerData {
+padding: 16px;
+background-color: #F8F8F8;
+border: 1px solid #FFF;
+box-shadow: 0 0 0 1px #CCC;
+}
+.speakerData::after {
+content: '';
+display: table;
+clear: both;
+}
+.speakerPhoto {
+float: left;
+width: 120px; height: 160px;
+background-color: #CCC;
+}
+.speakerPhoto img {
+width: 100%; height: auto;
+vertical-align: top;
+}
+.lectureType {
+position: relative;
+z-index: 1;
+display: inline-block;
+margin-bottom: 16px; padding: 0 16px;
+line-height: 28px;
+font-size: 16px;
+font-weight: bold;
+color: #FFF;
+}
+.lectureType::after {
+content: '';
+display: block;
+position: absolute;
+right: -28px; top: 0;
+border: 14px solid transparent;
+}
+.lectureTypeLecuture {
+background-color: #002B62;
+}
+.lectureTypeLecuture::after {
+border-left-color: #002B62;
+}
+.lectureTypeTalkLive {
+background-color: #E00;
+}
+.lectureTypeTalkLive::after {
+border-left-color: #E00;
+}
+.lectureTypeNumber {
+color: #FE0;
+}
+.lectureTime {
+display: inline-block;
+margin-bottom: 16px; padding: 0 24px;
+background-color: #FFF;
+border: 1px solid #CCC;
+border-left: none;
+line-height: 26px;
+font-size: 16px;
+font-family: Consolas, "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", "sans-serif";
+}
+.lecturTitle {
+margin-bottom: 16px; padding-bottom: 8px;
+border-bottom: 4px solid #DDD;
+line-height: 1.5;
+font-size: 20px;
+font-weight: bold;
+color: #333;
+}
+.lectureTitleLecture {
+border-color: #99AAC0;
+}
+.lectureTitleTalkLive {
+border-color: #F89999;
+}
+.lecturTitle strong {
+font-size: 125%;
+}
+.speakerPosition,
+.speakerName,
+.speakerProfile {
+margin-left: 136px;
+}
+.speakerPosition {
+font-size: 12px;
+color: #555;
+}
+.speakerName {
+font-size: 20px;
+font-weight: bold;color: #333;
+}
+.speakerType {
+display: inline-block;
+padding: 4px 8px 3px;
+border-radius: 4px;
+font-weight: normal;
+font-size: 12px;
+line-height: 1;
+vertical-align: 2px;
+color: #FFF;
+}
+.speakerTypeLecuture {
+background-color: #335581;
+}
+.speakerTypeTalkLive {
+background-color: #F13333;
+}
+.speakerTypeModerator {
+background-color: #A155E8;
+}
+.speakerProfile {
+margin-top: 8px; padding-top: 8px;
+border-top: 1px dotted #BBB;
+font-size: 12px;
+}
+.speakerSeparate {
+clear: both;
+margin: 0 0 16px; padding: 16px 0 0;
+border: none;
+border-bottom: 1px solid #CCC;
+}
+
+
+
+.eventDescriptionParagraph {
+margin-bottom: 1em;
+line-height: 1.75;
+font-size: 16px;
+color: #333;
+}
+.eventDescriptionNote {
+padding: 16px 0 0 1em;
+border-top: 1px solid #DDD;
+line-height: 1.75;
+text-indent: -1em;
+font-size: 12px;
+color: #666;
+}
+.eventContactParagraph {
+line-height: 1.75;
+font-size: 16px;
+color: #333;
+}
+
+
+
+
+@media screen and ( max-width: 1200px ){
+.widthNone {
+display: none;
+}
+#eventBody {
+max-width: 800px;
+margin: 0 auto;
+}
+#eventOverview {
+float: none;
+position: static;
+top: 0;
+width: 100%;
+}
+.eventBlock {
+margin: 0 auto 32px;
+}
+}
+
+@media screen and ( max-width: 880px ){
+#eventHeader {
+height: auto;
+}
+.eventHeaderTitle {
+height: auto;
+background-size: cover;
+}
+.eventHeaderTitleInner {
+padding: 5%;
+}
+.eventType {
+margin-bottom: 3vw;
+padding: 1.5vw 3vw 1.2vw;
+font-size: 3vw;
+}
+.eventTitle {
+margin-bottom: 1vw;
+font-size: 5vw;
+}
+.eventSubTitle {
+padding-top: 3vw;
+font-size: 3.2vw;
+}
+}
+@media screen and ( max-width: 800px ){
+#eventBody {
+padding: 0 8px;
+}
+.eventBlockTitle {
+margin: 0 -16px 12px;
+}
+.eventBlock {
+padding: 0 16px 12px;
+}
+.timeScheduleItem::before {
+left: calc( 50% - 4px );
+}
+.timeScheduleCaseTime {
+display: none;
+}
+.timeScheduleInterlude,
+.timeScheduleCaseContent {
+margin-left: 0;
+}
+}
+
+@media screen and ( max-width: 480px ){
+.widthNoneSp {
+display: none;
+}
+.eventDescriptionParagraph {
+padding: 0 8px;
+font-size: 12px;
+}
+.eventDescriptionMain,
+.eventDescriptionSub {
+float: none;
+width: 100%;
+}
+.leafletLink {
+display: block;
+padding: 8px;
+background-color: #F0F0F0;
+box-shadow: 0 0 16px rgba( 0,0,0,.1 ) inset;
+font-size: 12px;
+text-align: center;
+}
+.leafletLink:hover {
+text-decoration: none;
+}
+.leafletLink img {
+max-width: 160px;
+}
+#eventBody {
+padding: 0 ;
+}
+.eventBlock {
+padding: 0 8px;
+border-left: none;
+border-right: none;
+}
+.eventBlockTitle {
+margin: 0 -8px 12px;
+}
+.lectureType,
+.lectureTime {
+font-size: 10px;
+}
+.lecturTitle {
+font-size: 16px;
+}
+.lecturOverview {
+font-size: 12px;
+}
+.speakerPhoto {
+float: none;
+width: 100%;
+margin: 0 auto 16px;
+background-color: #F0F0F0;
+box-shadow: 0 0 16px rgba( 0,0,0,.1 ) inset;
+text-align: center;
+}
+.speakerPhoto img {
+max-width: 120px;
+}
+.speakerPosition, .speakerName, .speakerProfile {
+margin-left: 0;
+}
+}

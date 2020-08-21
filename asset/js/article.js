@@ -9,7 +9,11 @@ $(function(){
     
     // Resize window.
     var resizeWindow = function() {
-        topMoveHeight = $('#articleBody').offset();
+        if ( $('#articleBody').length ) {
+          topMoveHeight = $('#articleBody').offset();
+        } else if ( $('#eventBody').length ) {
+          topMoveHeight = $('#eventBody').offset();
+        }
     }
     var timer = false;    
     $( window ).resize( function() {

@@ -1,0 +1,562 @@
+<!doctype html>
+<html><!-- InstanceBegin template="/Templates/base.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-144561796-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-144561796-1');
+</script>
+<!-- InstanceParam name="pageLanguage" type="text" value="ja" -->
+<!-- InstanceParam name="pageType" type="text" value="article" -->
+<!-- InstanceParam name="pageTitle" type="text" value="event" -->
+<!-- InstanceParam name="suiteType" type="text" value="exastro" -->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="format-detection" content="telephone=no">
+<meta name="theme-color" content="#002B62">
+<meta http-equiv="content-language" content="ja">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>システムライフサイクルをデジタル化するExastro活用術 | Exastro</title>
+<!-- InstanceEndEditable -->
+<!-- Stylesheet and JavaScript -->
+<link rel="stylesheet" type="text/css" href="../asset/css/common.css">
+<noscript><link rel="stylesheet" type="text/css" href="../asset/css/noscript.css"></noscript>
+
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,900" rel="stylesheet">
+<link href="../asset/font/fontawesome/css/all.min.css" rel="stylesheet">
+<script src="../asset/js/jquery-1.11.3.js"></script>
+<script src="../asset/js/common.js"></script>
+<!-- InstanceBeginEditable name="head" -->
+
+<link rel="stylesheet" type="text/css" href="../../docs/asset/css/home.css">
+<link rel="stylesheet" type="text/css" href="../../docs/asset/css/event.css">
+<script src="../../docs/asset/js/article.js"></script>
+<script src="../../docs/asset/js/event.js"></script>
+
+<link rel="icon" type="image/x-icon" href="../favicon.ico">
+<link rel="shortcut icon" href="../favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+
+<link rel="alternate" hreflang="ja" href="https://exastro-suite.github.io/docs/event/20200911.html">
+
+<meta name="keywords" content="Exastro, Exastro Suite, OSS, IT Automation">
+<meta name="description" content="Exastro is an open source software suite for digitizing, automating and labor saving the system life cycle (design, development, setting and operation).">
+<meta name="thumbnail" content="https://exastro-suite.github.io/docs/asset/img/ogp_twitter_image.jpg" />
+<meta property="og:description" content="Exastro is an open source software suite for digitizing, automating and labor saving the system life cycle (design, development, setting and operation).">
+<link rel="image_src" href="https://exastro-suite.github.io/docs/asset/img/ogp_image.jpg">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://exastro-suite.github.io/docs/index.html">
+<meta property="og:title" content="Exastro Suite">
+<meta property="og:image" content="https://exastro-suite.github.io/docs/asset/img/ogp_image.jpg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Exastro Suite">
+<meta name="twitter:image" content="https://exastro-suite.github.io/docs/asset/img/ogp_twitter_image.jpg">
+
+<link rel="canonical" href="https://exastro-suite.github.io/docs/index.html">
+
+<!-- InstanceEndEditable -->
+</head>
+
+<body id="article" class="exastro event ja">
+
+<div id="container">
+
+<!-- Facebook SDK -->
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v4.0"></script>
+
+
+<header>
+<div id="header">
+
+<div id="titleArea">
+
+<div id="logo">
+<a href="#"><img src="../asset/img/exastro.svg" alt="Exastro"></a>
+</div>
+<div id="suiteList">
+  <ul>
+    
+    <li class="exastro"><a href="../index_ja.html">Exastro Home</a></li>
+    <li class="ita"><a href="../../it-automation-docs/index_ja.html">IT Automation</a></li>
+    <li class="pc"><a href="https://github.com/exastro-suite/playbook-collection-docs/blob/master/README.ja.md" target="_blank" rel="noopener">Playbook Collection</a></li>
+    <li class="oase"><a href="../../oase-docs/index_ja.html">Operation Autonomy Support Engine</a></li>
+    
+  </ul>
+</div>
+<!-- InstanceBeginEditable name="EditHeaderMainTitle" -->
+<!-- InstanceEndEditable -->
+</div>
+
+<nav>
+
+<ul id="mainMenu"><!-- InstanceBeginEditable name="EditHeaderMainMenuArea" -->
+<li><a href="index_ja.html#why"><i class="fas fa-question-circle"></i><span>Why Exastro</span></a></li>
+<li><a href="index_ja.html#suite"><i class="far fa-list-alt"></i><span>Exastro Suite</span></a></li>
+<li><a href="newsroom_ja.html" class="newsroom"><i class="fas fa-clipboard-check"></i><span>News Room</span></a></li>
+<li><a href="asset_ja.html" class="asset"><i class="fas fa-toolbox"></i><span>Asset</span></a></li>
+<!-- InstanceEndEditable --></ul>
+
+<ul id="subMenu">
+<li><a href="https://twitter.com/ExastroSuite" class="twitter" target="_blank" rel="noopener"><i class="fab fa-twitter-square"></i></a><span>Twitter</span></li>
+<li><a href="https://www.facebook.com/ExastroSuite/" class="facebook" target="_blank" rel="noopener"><i class="fab fa-facebook-square"></i></a><span>Facebook</span></li>
+<li><a href="https://www.youtube.com/channel/UC-kwQiXQfmYXTPbrGR-8qxw" class="youtube" target="_blank" rel="noopener"><i class="fab fa-youtube-square"></i></a><span>YouTube</span></li>
+<li><a href="https://github.com/exastro-suite" class="github" target="_blank" rel="noopener"><i class="fab fa-github-square"></i></a><span>GitHub</span></li>
+<li><span class="share subMenuPlus touch"><i class="fas fa-share-alt"></i></span><span>Share</span></li>
+<li><span class="language subMenuPlus touch"><i class="fas fa-globe"></i></span><span>Language</span></li>
+</ul>
+
+<ul id="shareMenu"><!-- InstanceBeginEditable name="EditHeaderShareMenuArea" -->
+  <li><a href="https://twitter.com/intent/tweet?text=Exastro&amp;url=https%3a%2f%2fexastro%2dsuite%2egithub%2eio%2fdocs&amp;hashtags=Exastro" target="_blank" rel="noopener"><i class="fab fa-twitter"></i><span>Tweet</span></a></li>
+  <li><a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fexastro%2dsuite%2egithub%2eio%2fdocs&amp;src=sdkpreparse" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i><span>Facebook</span></a></li>
+  <li><a href="https://social-plugins.line.me/lineit/share?url=https%3a%2f%2fexastro%2dsuite%2egithub%2eio%2fdocs" target="_blank" rel="noopener"><i class="fab fa-line"></i><span>LINE</span></a></li>
+<!-- InstanceEndEditable --></ul>
+
+<ul id="languageMenu">
+<li><!-- InstanceBeginEditable name="EditHeaderLanguageMenuArea" -->
+<!-- InstanceEndEditable --></li>
+<li><span>Japanese</span></li>
+</ul>
+
+</nav>
+</div>
+</header>
+
+
+
+
+
+<main>
+
+<article>
+<!-- InstanceBeginEditable name="EditContentBodyArea" -->
+
+<div id="eventPage" class="event20200911">
+
+<div id="eventHeader">
+  <div class="eventHeaderTitle">
+    <div class="eventHeaderTitleInner">
+      <div class="eventType">Exastro Webセミナー</div>
+      <h1 class="eventTitle">システムライフサイクルを<br>
+      デジタル化するExastro活用術</h1>
+      <div class="eventSubTitle">攻めと守りの自動化でニューノーマルを勝ち抜く</div>
+    </div>
+  </div>
+</div><!-- /#eventHeader -->
+
+<div id="eventBody">
+
+<div id="eventOverview">
+
+<h2 class="eventOverviewTitle"><i class="fas fa-calendar"></i> 開催概要</h2>
+
+<table class="eventOverviewTable">
+  <tbody>
+    <tr>
+      <th>日時</th>
+      <td>2020年<br class="widthNone">
+      <strong>9月11日</strong>（金）<br class="widthNone">
+      13:00～16:00<br>
+      （受付開始 12:30）</td>
+    </tr>
+    <tr>
+      <th>会場</th>
+      <td>Webセミナー
+      <div class="eventOverviewNote">開催前までに接続方法をメールでご連絡いたします。</div></td>
+    </tr>
+    <tr>
+      <th>主催</th>
+      <td>NEC</td>
+    </tr>
+    <tr>
+      <th>参加費</th>
+      <td>無料：事前申し込み</td>
+    </tr>
+    <tr>
+      <th>定員</th>
+      <td>150名</td>
+    </tr>
+    <tr>
+      <th>お申し込み<br>
+      締め切り</th>
+      <td>2020年9月10日（木）<br class="widthNone">
+      12:00まで
+      <div class="eventOverviewAttention">※定員に達し次第締め切らせていただきます。</div></td>
+    </tr>
+  </tbody>
+</table>
+
+  <div class="signUpHere">
+    <a class="signUpHereLink" href="https://jpn.nec.com/event/200911exastro/" target="_blank" rel="noopener"><span>詳細・お申し込みはこちら</span></a>
+  </div>
+</div><!-- /#eventOverview -->
+
+<div id="eventDescription" class="eventBlock">
+  <h2 class="eventBlockTitle"><i class="fas fa-chalkboard"></i> セミナー説明</h2>
+  <div class="eventBlockBody">
+    <div class="eventDescriptionMain">
+      <p class="eventDescriptionParagraph">近年、システム構築・運用の自動化は、省力化や効率化を目的に進化してきました。<br>
+      そして、新型コロナウイルス感染症（COVID-19）の世界的な拡大による影響で、「自動化」は、ニューノーマル時代に合ったシステム構築・運用を実現する手段の一つとして、改めて注目を集めています。<br>
+      本セミナーでは、「自動化」によりこれまで人手でカバーしてきた潜在的なシステム構築・運用の課題をどのように解決できるのかを解説します。<br>
+      さらに、スピーディーなサービス展開でビジネスの優位性を支えるためにも「自動化」がKFS(重要成功要因)であることを解説します。</p>
+      <p class="eventDescriptionParagraph">NTTドコモ様、レッドハット様をお迎えしたトークセッションもご用意しており、本領域での取り組みについてディスカションいたします。</p>
+      <p class="eventDescriptionParagraph">この貴重な機会を是非ご活用ください。</p>
+    </div>
+    <div class="eventDescriptionSub">
+      <a class="leafletLink" href="../asset/event_img/20200911_leaflet.pdf" title="システムライフサイクルをデジタル化するExastro活用術" target="_blank">
+        <img src="../asset/event_img/20200911_leaflet.jpg" alt="システムライフサイクルをデジタル化するExastro活用術"><br>
+        Leaflet（PDF）
+      </a>
+    </div>
+  </div>
+</div><!-- /#eventDescription -->
+
+<div id="eventProgram" class="eventBlock">
+  <h2 class="eventBlockTitle"><i class="far fa-clock"></i> 当日のタイムスケジュール</h2>
+  <div class="eventBlockBody">
+    <ol class="timeSchedule">
+      <li class="timeScheduleItem">
+        <dl class="timeScheduleCase">
+          <dt class="timeScheduleCaseTime"><span class="timeScheduleInterludeTime">12:30</span></dt>
+          <dd class="timeScheduleInterlude">受付開始 12:30</dd>
+        </dl>
+      </li>
+      <li class="timeScheduleItem">
+        <dl class="timeScheduleCase">
+          <dt class="timeScheduleCaseTime"><span class="timeScheduleLectureTime" style="background-image: url(../asset/event_img/time1300.png)">13:00</span></dt>
+          <dd class="timeScheduleCaseContent">
+            <div class="lectureType lectureTypeLecuture"><i class="fas fa-user"></i> セッション <span class="lectureTypeNumber">01</span></div>
+            <div class="lectureTime">13:00 - 13:45</div>
+            <div class="lecturTitle lectureTitleLecture">
+              攻めと守りの両面からシステム構築・運用をデジタル化する<br class="widthNoneSp">
+              オープンソースのソフトウェアスイート「Exastro」とは
+            </div>
+            <div class="lecturOverview">
+              「攻めのデジタル化・自動化」とは何か？「守りのデジタル化・自動化」とは何か？<br>
+              これらは目的・領域の違いから、今まで別々に議論されてきました。<br>
+              ところが、ニューノーマルにおけるデジタル化の加速を受け、想定よりも早くこれらをハイブリッドで活用すべき時代が到来しました。<br>
+              本セッションでは、「そもそも攻めと守りとは何を意味するのか？」を解説します。<br>
+              そしてそれらの「デジタル化・自動化」を実現するためのソフトウェアである「Exastro」を紹介します。
+            </div>
+            <div class="speakerData">
+              <div class="speakerPhoto"><img src="../asset/event_img/20200911_yoshida.jpg" alt="吉田 功一"></div>
+              <div class="speakerName"><span class="speakerType speakerTypeLecuture">講師</span> 吉田 功一</div>
+              <div class="speakerPosition">NEC サービス＆プラットフォームSI事業部</div>
+              <div class="speakerProfile">
+                2006年NEC入社、ミッションクリティカルなAP開発からインフラアーキテクトまで幅広く経験。<br>
+                数年前からシステム構築・運用の自動化に取り組み現在に至る。<br>
+                プライベートでは子供たちとプラネタリウムに通いつめ、あらゆる星空を解説できるようになった。
+              </div>
+            </div>
+          </dd>
+        </dl>
+      </li>
+      <li class="timeScheduleItem">
+        <dl class="timeScheduleCase">
+          <dt class="timeScheduleCaseTime"><span class="timeScheduleLectureTime" style="background-image: url(../asset/event_img/time1345.png)">13:45</span></dt>
+          <dd class="timeScheduleCaseContent">
+            <div class="lectureType lectureTypeTalkLive"><i class="fas fas fa-volume-up"></i> トークライブ <span class="lectureTypeNumber">01</span></div>
+            <div class="lectureTime">13:45 - 14:15</div>
+            <div class="lecturTitle lectureTitleTalkLive">
+              <strong>NTTドコモと共に考える！</strong>運用の進むべき道<br>
+              ～システム運用からサービス運用へ～
+            </div>
+            <div class="lecturOverview">
+              運用基盤では「システムで何が起こっているのか」をモニタリングする機能は充実していますが、現場の運用者が知りたいのは「サービスで何が起こっているのか」なのです。<br>
+              本セッションでは、「サービスのための運用」を実現するために取るべきアプローチを熱く討論します。
+            </div>
+            <div class="speakerData">
+              <div class="speakerPhoto"><img src="../asset/event_img/20200911_yamashita.jpg" alt="山上 拓也"></div>
+              <div class="speakerName"><span class="speakerType speakerTypeTalkLive">パネラー</span> 山上 拓也</div>
+              <div class="speakerPosition">NTTドコモ　サービスデザイン部　運用企画担当</div>
+              <div class="speakerProfile">
+                2010年NTTドコモ入社、ドコモのISPサービス（iモード/spモード）の基盤システムのインフラ開発業務に8年間従事。<br>
+                2018年より、ドコモ提供サービスの運用に対する改善業務に従事し現在に至る。<br>
+                趣味はゴルフと音楽。
+              </div>
+              <hr class="speakerSeparate">
+              <div class="speakerPhoto"><img src="../asset/event_img/20200911_endo.jpg" alt="遠藤 裕己"></div>
+              <div class="speakerName"><span class="speakerType speakerTypeTalkLive">パネラー</span> 遠藤 裕己</div>
+              <div class="speakerPosition">NEC OMCS事業部</div>
+              <div class="speakerProfile">
+                2007年NEC入社、大手キャリア様向けのミッションクリティカルシステムでAP開発から運用まで幅広く経験。<br>
+                2014年から統合運用システムの提案、AP開発に従事。<br>
+                現在は、運用業務の分析から改善提案、運用の自動化／自律化に取り組んでいる。<br>
+                趣味はサッカーと旅行。
+              </div>
+              <hr class="speakerSeparate">
+              <div class="speakerName"><span class="speakerType speakerTypeModerator">モデレータ</span> 吉田 功一</div>
+              <div class="speakerPosition">NEC サービス＆プラットフォームSI事業部</div>
+            </div>
+          </dd>
+        </dl>
+      </li>
+      <li class="timeScheduleItem">
+        <dl class="timeScheduleCase">
+          <dt class="timeScheduleCaseTime"><span class="timeScheduleInterludeTime">14:15</span></dt>
+          <dd class="timeScheduleInterlude">休憩 14:15 - 14:20</dd>
+        </dl>
+      </li>
+      <li class="timeScheduleItem">
+        <dl class="timeScheduleCase">
+          <dt class="timeScheduleCaseTime"><span class="timeScheduleLectureTime" style="background-image: url(../asset/event_img/time1420.png)">14:20</span></dt>
+          <dd class="timeScheduleCaseContent">
+            <div class="lectureType lectureTypeLecuture"><i class="fas fa-user"></i> セッション <span class="lectureTypeNumber">02</span></div>
+            <div class="lectureTime">14:20 - 14:55</div>
+            <div class="lecturTitle lectureTitleLecture">
+              <strong>まずは守りの自動化を！</strong><br>
+              日々繰り返すアラート対応はExastroにお任せあれ
+            </div>
+            <div class="lecturOverview">
+              システム規模が大きい場合や、複数のシステムを統合運用する場合などに、日々大量に挙がるアラートメッセージへの対応に忙殺されることはよくあるケースです。<br>
+              本セッションでは、「守りのデジタル化・自動化」を適用すべき代表的なケースとして、日々繰り返すアラート対応を如何にして自動化・省力化することができるのかを、実機デモを交えながら分かりやすく解説します。
+            </div>
+            <div class="speakerData">
+              <div class="speakerPhoto"><img src="../asset/event_img/20200911_kawano.jpg" alt="河野 友生子"></div>
+              <div class="speakerName"><span class="speakerType speakerTypeLecuture">講師</span> 河野 友生子</div>
+              <div class="speakerPosition">NEC サービス＆プラットフォームSI事業部</div>
+              <div class="speakerProfile">
+                2015年NEC入社、大手キャリア様向け基盤システムの開発に３年間従事。<br>
+                2018年より、Exastroチームに加わり、Exastro OASEを中心に開発・プロモーション活動に携わる。<br>
+                現在は、開発手法の一つであるスクラムにも力を入れており、社内外で事例紹介やノウハウの展開活動中。<br>
+                趣味は、洋画・海外ドラマの鑑賞、パン作り、SNSでお掃除テクやレシピ動画などの生活の知恵や、動物の癒され動画を漁ること。
+              </div>
+            </div>
+          </dd>
+        </dl>
+      </li>
+      <li class="timeScheduleItem">
+        <dl class="timeScheduleCase">
+          <dt class="timeScheduleCaseTime"><span class="timeScheduleLectureTime" style="background-image: url(../asset/event_img/time1455.png)">14:55</span></dt>
+          <dd class="timeScheduleCaseContent">
+            <div class="lectureType lectureTypeTalkLive"><i class="fas fas fa-volume-up"></i> トークライブ <span class="lectureTypeNumber">02</span></div>
+            <div class="lectureTime">14:55 - 15:20</div>
+            <div class="lecturTitle lectureTitleTalkLive">
+              <strong>レッドハットと共に考える！</strong><br>
+              クラウドネイティブに対応したあるべきインフラの姿とその運用
+            </div>
+            <div class="lecturOverview">
+              ITがスピーディーなサービス展開に追いつき、ビジネスの優位性を支えるという攻めのIT戦略の見地から、DXやクラウドネイティブの気運は高まり続けています。そしてクラウドネイティブで特に重要とされているのは「設計に自動化を組み込む」という原則です。<br>
+              本セッションでは、インフラの設計に自動化を組み込み、そしてそれを運用するために検討すべきポイントをクールに討論します。
+            </div>
+            <div class="speakerData">
+              <div class="speakerPhoto"><img src="../asset/event_img/20200911_anraku.jpg" alt="安楽 慎吾"></div>
+              <div class="speakerName"><span class="speakerType speakerTypeTalkLive">パネラー</span> 安楽 慎吾</div>
+              <div class="speakerPosition">レッドハット株式会社 テクニカルセールス本部 パートナーソリューションアーキテクト部</div>
+              <div class="speakerProfile">
+                IBMやCA Technologies等でセキュリティ及び運用監視製品のプリセールス、コンサルティング企業で情報セキュリティ&amp;内部統制コンサルティング等を経験、2017年末レッドハットに入社、現在パートナー様向けプリセールスを担当。<br>
+                趣味は卓球。目下夢中になっておりましたが最近は自粛傾向。少し腹回りがゆったりしてきた感じ。
+              </div>
+              <hr class="speakerSeparate">
+              <div class="speakerPhoto"><img src="../asset/event_img/20200911_hisatomi.jpg" alt="久冨 孝司"></div>
+              <div class="speakerName"><span class="speakerType speakerTypeTalkLive">パネラー</span> 久冨 孝司</div>
+              <div class="speakerPosition">NEC 先端SI技術開発本部 OSS推進センター</div>
+              <div class="speakerProfile">
+                2001年NEC入社、お客様担当SEとして8年間システムの設計、構築、AP開発に携わったのち、現在はOSSに関わる製品やソリューションのプリセールスを担当。<br>
+                お客様に安心してOSSを活用いただけるよう、日々業務に取り組んでいる。
+              </div>
+              <hr class="speakerSeparate">
+              <div class="speakerName"><span class="speakerType speakerTypeModerator">モデレータ</span> 吉田 功一</div>
+              <div class="speakerPosition">NEC サービス＆プラットフォームSI事業部</div>
+            </div>
+          </dd>
+        </dl>
+      </li>
+      <li class="timeScheduleItem">
+        <dl class="timeScheduleCase">
+          <dt class="timeScheduleCaseTime"><span class="timeScheduleInterludeTime">15:20</span></dt>
+          <dd class="timeScheduleInterlude">休憩 15:20 - 15:25</dd>
+        </dl>
+      </li>
+      <li class="timeScheduleItem">
+        <dl class="timeScheduleCase">
+          <dt class="timeScheduleCaseTime"><span class="timeScheduleLectureTime" style="background-image: url(../asset/event_img/time1525.png)">15:25</span></dt>
+          <dd class="timeScheduleCaseContent">
+            <div class="lectureType lectureTypeLecuture"><i class="fas fa-user"></i> Lecture <span class="lectureTypeNumber">03</span></div>
+            <div class="lectureTime">15:25 - 16:00</div>
+            <div class="lecturTitle lectureTitleLecture">
+              <strong>そして攻めの自動化へ！</strong><br>
+              Exastroによるクラウドシフトの実現方法
+            </div>
+            <div class="lecturOverview">
+              クラウドネイティブでは、作業量に糸目を付けてはならず、その前提においても稼働爆発しないように、原則としてあらゆる作業を自動化しなければなりません。<br>
+              そのためには、2種類の自動化メソッドを駆使する必要があります。手続型の自動化と宣言型の自動化です。<br>
+              本セッションでは、ガバナンスの効いたAWSシステムを構築し、さらに稼働中の仮想マシン(EC2)にパッチ適用するといったシナリオを題材に、クラウドネイティブにおいて2種類の自動化メソッドの両方が必要になることを解説します。
+            </div>
+            <div class="speakerData">
+              <div class="speakerPhoto"><img src="../asset/event_img/20200911_wakitani.jpg" alt="脇谷 徹"></div>
+              <div class="speakerName"><span class="speakerType speakerTypeLecuture">講師</span> 脇谷 徹</div>
+              <div class="speakerPosition">NEC サービス＆プラットフォームSI事業部</div>
+              <div class="speakerProfile">
+                2012年NEC入社、大手キャリア様向け基盤システムの開発に３年間従事。<br>
+                2015年より、同セミナー講師の吉田氏と共にExastroの立ち上げ、開発に従事し、現在はExastroの提案・PJ導入支援やプロモーション活動中。<br>
+                趣味は、音楽鑑賞。J-POPからクラシックまで幅広く聞く。今年はフェスが中止で寂しい。
+              </div>
+            </div>
+          </dd>
+        </dl>
+      </li>
+      <li class="timeScheduleItem">
+        <dl class="timeScheduleCase">
+          <dt class="timeScheduleCaseTime"><span class="timeScheduleInterludeTime">16:00</span></dt>
+          <dd class="timeScheduleInterlude">終了</dd>
+        </dl>
+      </li>
+    </ol>
+  </div>
+</div>
+
+<div id="eventSignUpHere" class="eventBlock">
+  <h2 class="eventBlockTitle"><i class="far fa-file-alt"></i> セミナーお申し込み</h2>
+  <div class="eventBlockBody">
+    <div class="signUpHere">
+      <a class="signUpHereLink" href="https://jpn.nec.com/event/200911exastro/" target="_blank" rel="noopener"><span>詳細・お申し込みはこちら</span></a>
+    </div>
+  </div>
+</div>
+
+<div id="eventContact" class="eventBlock">
+  <h2 class="eventBlockTitle"><i class="far fa-envelope"></i> セミナーに関するお問い合わせ</h2>
+  <div class="eventBlockBody">
+    <p class="eventContactParagraph">
+      NEC サービス＆プラットフォームSI事業部 Exastro Webセミナー事務局<br>
+      <a href="mailto:contact@exastro.jp.nec.com">contact@exastro.jp.nec.com</a>
+    </p>
+  </div>
+</div>
+
+</div><!-- /#eventBody -->
+</div><!-- /#eventPage -->
+<!-- InstanceEndEditable -->
+</article>
+
+</main>
+
+
+
+
+
+<!-- Go To TOP -->
+<div id="topMove"><a href="#" class="touch anker"><i class="fas fa-arrow-up"></i><span>Page Top</span></a></div>
+
+
+
+
+
+<!-- FOOTER -->
+<footer>
+
+  <div id="footerInner">
+
+    <div id="footerAbout">
+      <div id="footerLogo"><img src="../asset/img/exastro.svg" alt="Exastro"></div>
+      <p>Exastro is an open source software suite for digitizing, automating and labor saving the system life cycle.</p>
+    </div>
+
+    <div id="footerMenu">
+
+      <ul id="footerMainMenu">
+        <li id="footerExastro">
+          <div class="footerMainMenuHome"><a href="../index_ja.html"><img src="../asset/img/exastro_logotype.svg" alt="Exastro"></a></div>
+          <ul class="footerMainMenuChildren">
+            <li><a href="../index_ja.html#why">Why Exastro</a></li>
+            <li><a href="../index_ja.html#suite">Exastro Suite</a></li>
+            <li><a href="../newsroom_ja.html">News Room</a></li>
+            <li><a href="../asset_ja.html">Asset</a></li>
+          </ul>
+        </li>
+        <li id="footerIta">
+          <div class="footerMainMenuHome"><a href="../../it-automation-docs/index_ja.html"><img src="../../it-automation-docs/asset/img/ita.svg" alt="IT Automation"></a></div>
+          <ul class="footerMainMenuChildren">
+            <li><a href="../../it-automation-docs/overview_ja.html" class="overview">Overview</a></li>
+            <li><a href="../../it-automation-docs/learn_ja.html" class="learn">Learn</a></li>
+            <li><a href="../../it-automation-docs/webinar_ja.html" class="webinar">Webinar</a></li>
+            <li><a href="../../it-automation-docs/case_ja.html" class="case">Case</a></li>
+            <li><a href="../../it-automation-docs/documents_ja.html" class="documents">Documents</a></li>
+            <li><a href="../../it-automation-docs/downloads_ja.html" class="downloads">Downloads</a></li>
+            <li><a href="../../it-automation-docs/faq_ja.html" class="downloads">FAQ</a></li>
+          </ul>
+        </li>
+				<li id="footerOase">
+          <div class="footerMainMenuHome"><a href="../../oase-docs/index_ja.html"><img src="../../oase-docs/asset/img/oase.svg" alt="OASE | Operation Autonomy Support Engine"></a></div>
+          <ul class="footerMainMenuChildren">
+            <li><a href="../../oase-docs/overview_ja.html" class="overview">Overview</a></li>
+            <li><a href="../../oase-docs/learn_ja.html" class="learn">Learn</a></li>
+            <li><a href="../../oase-docs/case_ja.html" class="case">Case</a></li>
+            <li><a href="../../oase-docs/documents_ja.html" class="documents">Documents</a></li>
+            <li><a href="../../oase-docs/downloads_ja.html" class="downloads">Downloads</a></li>
+          </ul>
+        </li>
+      </ul>
+
+      <ul id="footerSubMenu">
+        <li><a href="https://twitter.com/ExastroSuite" class="twitter" target="_blank" rel="noopener"><i class="fab fa-twitter-square"></i></a><span>Twitter</span></li>
+        <li><a href="https://www.facebook.com/ExastroSuite/" class="facebook" target="_blank" rel="noopener"><i class="fab fa-facebook-square"></i></a><span>facebook</span></li>
+        <li><a href="https://www.youtube.com/channel/UC-kwQiXQfmYXTPbrGR-8qxw" class="youtube" target="_blank" rel="noopener"><i class="fab fa-youtube-square"></i></a><span>YouTube</span></li>
+        <li><a href="https://github.com/exastro-suite" class="github" target="_blank" rel="noopener"><i class="fab fa-github-square"></i></a><span>GitHub</span></li>
+      </ul>
+
+      <div id="footerShareMenu">
+        <dl>
+          <dt><i class="fas fa-share-alt"></i><span>Share</span></dt>
+          <dd>
+            <ul><!-- InstanceBeginEditable name="EditFooterShareMenuArea" -->
+              <li><a href="https://twitter.com/intent/tweet?text=Exastro&amp;url=https%3a%2f%2fexastro%2dsuite%2egithub%2eio%2fdocs&amp;hashtags=Exastro" target="_blank" rel="noopener"><i class="fab fa-twitter"></i><span>Tweet</span></a></li>
+              <li><a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fexastro%2dsuite%2egithub%2eio%2fdocs&amp;src=sdkpreparse" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i><span>Facebook</span></a></li>
+              <li><a href="https://social-plugins.line.me/lineit/share?url=https%3a%2f%2fexastro%2dsuite%2egithub%2eio%2fdocs" target="_blank" rel="noopener"><i class="fab fa-line"></i><span>LINE</span></a></li>
+            <!-- InstanceEndEditable --></ul>
+          </dd>
+        </dl>
+      </div>
+
+    </div><!-- /#footerMenu -->
+
+  </div><!-- /#footerInner -->
+
+  <div id="copyright">
+    <p><small>Copyright © NEC Corporation 2019-2020</small></p>
+  </div>
+
+</footer>
+
+
+
+
+
+<!-- InstanceBeginEditable name="EditFooterArea" -->
+<!-- InstanceEndEditable -->
+
+
+
+
+
+</div><!-- /#container -->
+
+
+
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+<script type="text/javascript">
+piAId = '873721';
+piCId = '21538';
+piHostname = 'pi.pardot.com';
+
+(function() {
+	function async_load(){
+		var s = document.createElement('script'); s.type = 'text/javascript';
+		s.src = ('https:' == document.location.protocol ? 'https://pi' : 'http://cdn') + '.pardot.com/pd.js';
+		var c = document.getElementsByTagName('script')[0]; c.parentNode.insertBefore(s, c);
+	}
+	if(window.attachEvent) { window.attachEvent('onload', async_load); }
+	else { window.addEventListener('load', async_load, false); }
+})();
+</script>
+</body>
+<!-- InstanceEnd --></html>
