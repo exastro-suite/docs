@@ -592,7 +592,7 @@ max-width: 160px;
 padding: 0 ;
 }
 .eventBlock {
-padding: 0 8px;
+padding: 0 8px 12px;
 border-left: none;
 border-right: none;
 }
