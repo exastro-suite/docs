@@ -15,7 +15,7 @@ $('html').addClass('loadStart');
 $( window ).on('load', function(){
 
     var loadCompleatDelay = 100,
-        loadCompleatWait = 800,
+        loadCompleatWait = 350,
         canvasFadeAnimationTime = 300;
 
     setTimeout(function(){

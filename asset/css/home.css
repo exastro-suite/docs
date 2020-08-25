@@ -983,8 +983,232 @@ padding: 12px;
 
 
 
+/* -------------------------------------------------- **
 
+   Event
 
+** -------------------------------------------------- */
+
+#article.event #articleTitle .background {
+  background-image: url("../img/header_event.jpg");
+}
+#articleBody .sectionInner .eventList {
+  margin: 32px 0; padding: 16px;
+  background-color: #FFF;
+  border-radius: 4px;
+  box-shadow: 0 0 8px rgba( 0,0,0,0.2 );
+  list-style: none;
+}
+.eventListData::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+.eventListMainImage {
+  float: left;
+  overflow: hidden;
+  width: 30%;
+  margin-bottom: 56px;
+}
+.eventListImage {
+  width: 100%; height: auto;
+  vertical-align: top;
+}
+.eventListOverview {
+margin-left: calc( 30% + 24px );
+}
+.eventListData {
+position: relative;
+z-index: 1;
+}
+.eventListDate {
+margin: 0 0 16px;
+padding: 0 16px 0 0;
+background-color: #D6E4F4;
+text-align: right;
+line-height: 40px;
+font-size: 20px;
+font-weight: bold;
+color: #002B62;
+}
+.eventListType {
+display: block;
+float: left;
+padding: 0 16px;
+background-color: #002B62;
+color: #FFF;
+}
+.eventListTitle {
+margin-bottom: 4px;
+line-height: 1.5;
+font-size: 24px;
+font-weight: bold;
+color: #333;
+}
+.eventListSubTitle {
+margin-bottom: 12px;
+line-height: 1.5;
+font-size: 20px;
+font-weight: bold;
+color: #666;
+}
+.eventListSummary {
+margin-bottom: 16px; padding-top: 16px;
+border-top: 4px solid #DDD;
+line-height: 1.75;
+font-size: 12px;
+}
+
+.eventListTag {
+  margin-bottom: 12px;
+}
+.eventListTag i {
+  display: block;
+  float: left;
+  padding-top: 5px;
+  font-size: 1rem;
+  color: #CCC;
+}
+#articleBody .sectionInner .eventListTagList {
+  margin: 0 0 0 1.5em; padding: 0;
+  line-height: 1;
+}
+#articleBody .sectionInner .eventListTagItem {
+  display: inline-block;
+  margin: 4px 0; padding: 0;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  vertical-align: top;
+}
+.eventTag {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 4px;
+  vertical-align: top;
+  font-size: 10px;
+  font-family: "Lucida Console", Monaco, "monospace";
+  color: #FFF;
+}
+.eventTag.ita { background-color: #002B62; }
+.eventTag.pc { background-color: #C80000; }
+.eventTag.oase { background-color: #00B5B8; }
+.eventTag.other { background-color: #BBB; }
+
+#articleBody .sectionInner .eventListMetaList {
+margin: 0; padding: 0;
+list-style: none;
+}
+#articleBody .sectionInner .eventListMetaItem {
+display: inline-block;
+margin: 2px 0; padding: 4px 8px;
+background-color: #F8F8F8;
+border: 1px solid #CCC;
+font-size: 12px;
+color: #333;
+}
+.eventListDetail {
+position: absolute;
+left: 0; bottom: 0;
+width: 30%; height: 48px;
+}
+.eventListLink {
+display: block;
+width: 100%;
+text-decoration: none;
+}
+.eventListLink span {
+overflow: hidden;
+position: relative;
+z-index: 1;
+display: block;
+width: 100%;
+background-color: #FF821E;
+background-image: linear-gradient( rgba( 255,255,255,0 ), rgba( 255,255,255,.2 ) );
+border-bottom: 2px solid #B25B15;
+border-radius: 4px;
+line-height: 48px;
+text-align: center;
+font-size: 16px;
+font-weight: bold;
+color: #FFF;
+}
+.eventListLink span::before,
+.eventListLink span::after {
+content: '';
+position: absolute;
+top: 50%;
+display: block;
+width: 96px; height: 96px;
+transform: translateY(-50%) rotate(45deg);
+transition-duration: .2s;
+border: 8px solid rgba( 255,255,255,.2 );
+}
+.eventListLink span::before {
+left: -72px;
+}
+.eventListLink span::after {
+right: -72px;
+}
+.eventListLink.hover {
+padding-top: 1px;
+}
+.eventListLink.hover span {
+background-color: #FF640A;
+border-bottom: 1px solid #B24607;
+}
+.eventListLink.hover span::before {
+left: -64px;
+}
+.eventListLink.hover span::after {
+right: -64px;
+}
+.eventListLink:active {
+padding-top: 2px;
+}
+.eventListLink.active span {
+background-color: #FF640A;
+border-bottom: none;
+}
+
+@media screen and ( max-width: 1040px ){
+#articleBody .sectionInner .eventList {
+max-width: 680px;
+margin: 0 auto;
+}
+.eventListMainImage {
+float: none;
+width: 100%;
+margin-bottom: 16px;
+text-align: center;
+}
+#articleBody .eventListImage {
+max-width: 480px;
+}
+.eventListOverview {
+margin: 0;
+}
+.eventListDetail {
+position: static;
+width: 90%;
+margin: 24px auto 0;
+}
+}
+@media screen and ( max-width: 480px ){
+.eventListDate {
+font-size: 3.5vw;
+}
+.eventListTitle {
+font-size: 4vw;
+}
+.eventListSubTitle {
+font-size: 3.2vw;
+}
+.eventListSummary,
+#articleBody .sectionInner .eventListMetaItem {
+font-size: 10px;
+}
+}
 /* -------------------------------------------------- **
 
    News Room
