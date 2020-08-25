@@ -4120,9 +4120,17 @@ font-size: 1.2rem;
 font-family: Consolas, "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", "sans-serif";
 color: #FFF;
 }
+.webinarTable a {
+transition-duration: .2s;
+}
 .webinarTable .webinarTableLevel1 a {
 background-color: #8CC63F;
-transition-duration: .2s;
+}
+.webinarTable .webinarTableLevel2 a {
+background-color: #FBB03B;
+}
+.webinarTable .webinarTableLevel3 a {
+background-color: #DD0000;
 }
 .webinarTable a:hover {
 opacity: .8;
