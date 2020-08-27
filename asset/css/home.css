@@ -54,6 +54,9 @@ animation: backgroundFullloadingEnd 0.3s linear;
 100% { opacity: 1; }
 }
 
+#container {
+overflow: hidden;
+}
 /* Start Area */
 #startArea {
 position: relative;
