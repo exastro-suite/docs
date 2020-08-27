@@ -1834,15 +1834,18 @@ border-color: #FF833B;
 color: #FFF;
 cursor: default;
 }
-.tabOpen::after {
-display: block;
+.tabMenuItem::after {
+opacity: 0;
+animation: tabOpenContentArrow 0.6s;
+}
+.tabMenuItem.tabOpen::after {
+opacity: 1;
 content: '';
 position: absolute;
 left: 50%; bottom: 0;
 margin-left: -8px;
 border: 8px solid transparent;
 border-top: 8px solid #FF833B;
-animation: tabOpenContentArrow 0.6s;
 }
 .tabMenuLink::before {
 box-sizing: content-box;
