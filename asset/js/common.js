@@ -169,15 +169,17 @@ if( $('.scrollShow').length ){
 
 // Tab Contents
 $('.tabContents').each( function(){
-    $( this ).find('.tabMenu li:first a').addClass('tabOpen');
-    $( this ).find('.tabContent:first').addClass('tabOpen');
+    $( this ).children('.tabMenu').find('.tabMenuItem').eq(0).addClass('tabOpen');
+    $( this ).children('.tabContent').eq(0).addClass('tabOpen');
 });
-$('.tabContents .tabMenu a').on('click', function( e ){
+$('.tabMenuLink').on('click', function( e ){
     e.preventDefault();
-    $( this ).closest('.tabContents').find('.tabOpen').removeClass('tabOpen');
-    var openTab = $( this ).attr('href');
-    $( this ).addClass('tabOpen');
-    $( openTab ).addClass('tabOpen');
+    var $tabMenuItem = $( this ).parent(),
+        $targetTab = $( $( this ).attr('href') );
+    $tabMenuItem.siblings('.tabOpen').removeClass('tabOpen');
+    $tabMenuItem.closest('.tabContents').children('.tabOpen').removeClass('tabOpen');
+    $tabMenuItem.addClass('tabOpen');
+    $targetTab.addClass('tabOpen');
 });
 
 // ImageBox Close
@@ -778,7 +780,7 @@ function faqLoading( jsonURL ) {
                   if ( qText.match( regex ) !== null || aText.match( regex ) !== null ) {
                     qText = qText.replace( regex, tagReplace );
                     aText = aText.replace( regex, tagReplace );
-                    console.log( aText );
+                    
                     if ( qText !== false || aText !== false ) {
                       searchResultHTML += faqItemHTML( searchResultNum++, qText, aText, cat );
                     }
