@@ -1269,7 +1269,7 @@ background-color: #194072;
 #articleBody nav {
 position: sticky;
 top: 40px;
-z-index: 9999;
+z-index: 9998;
 background-color: #FFF;
 box-shadow: 0 0 8px rgba( 0,0,0,.2 );
 text-align: center;
@@ -1432,7 +1432,7 @@ border: 1px dotted #CCC;
 border-top: 4px solid #002B62;
 border-radius: 0 0 8px 8px;
 line-height: 32px;
-font-size: 16px;
+font-size: 20px;
 font-weight: bold;
 color: #002B62;
 }
@@ -4560,4 +4560,155 @@ left: 4px; top: 4px;
 @media screen and ( max-width: 640px ){
 .bannerPC { display: none; }
 .bannerSP { display: block; }
+}
+
+
+
+
+/*
+
+Setting samples
+
+*/
+.settingSamplesList {
+width: 100%;
+margin-bottom: 16px;
+border: 1px solid #AAA;
+}
+.settingSamplesList:last-child {
+margin-bottom: 0;
+}
+.settingSamplesListTitle,
+.settingSamplesListData {
+background-color: #FFF;
+border: 1px solid #AAA;
+}
+.settingSamplesListTitle {
+width: 30%;
+vertical-align: top;
+}
+.settingSamplesListData {
+padding: 4px;
+background-color: #F2F2F2;
+border-right: none;
+border-left: none;
+vertical-align: middle;
+}
+.settingSamplesListData.fit {
+width: 4px;
+}
+.settingSamplesSectionLink {
+display: block;
+text-decoration: none;
+color: #111;
+}
+.settingSamplesSection {
+text-align: left;
+}
+.settingSamplesSectionTitle {
+padding: 8px 16px;
+background-color: #002B62;
+line-height: 1.5;
+font-size: 16px;
+color: #FFF;
+}
+.settingSamplesSectionTitle i {
+color: #FFA500;
+}
+.settingSamplesSectionText {
+padding: 8px 16px;
+line-height: 1.5;
+font-weight: normal;
+font-size: 14px;
+}
+.settingSamplesItemLink,
+.settingSamplesItemNoLink {
+display: block;
+position: relative;
+z-index: 1;
+background-color: #002B62;
+border: 1px solid #002B62;
+border-left-width: 4px;
+text-decoration: none;
+color: #333;
+}
+.settingSamplesItemLink:hover {
+border-color: #FF640A;
+color:#FF640A;
+}
+.settingSamplesItem {
+background-color: #FFF;
+}
+.settingSamplesItemLink:hover .settingSamplesItem {
+background-color: #FFF9F5;
+}
+.settingSamplesItemTitle {
+padding: 4px 8px 2px;
+border-bottom: 1px dotted #DDD;
+line-height: 1.5;
+font-size: 14px;
+}
+.settingSamplesItemTitle i {
+font-size: 120%;
+color: #60C60D;
+}
+.settingSamplesItemText {
+padding: 4px 8px;
+line-height: 1.5;
+font-size: 12px;
+}
+.settingSamplesItemNoLink {
+background-color: #F8F8F8;
+border-color: #CCC;
+}
+.underConstruction .settingSamplesItemTitle i {
+color: #CCC;
+}
+.settingSamplesKymLink {
+display: block;
+padding: 0 8px;
+background-color: #4183C4;
+border-radius: 4px;
+text-align: center;
+text-decoration: none;
+line-height: 32px;
+white-space: nowrap;
+font-size: 12px;
+color: #FFF;
+}
+.settingSamplesKymLink:hover {
+background-color: #34699D;
+}
+.settingSamplesSubTitle {
+display: block;
+margin-bottom: 8px;
+border-bottom: 1px solid rgba( 255,255,255,.3 );
+font-weight: normal;
+font-size: 80%;
+}
+.settingSamplesComingSoon {
+position: relative;
+z-index: 1;
+user-select: none;
+-moz-user-select: none;
+-webkit-user-select: none;
+-ms-user-select: none;
+}
+.settingSamplesComingSoon::after {
+content: 'Coming Soon.';
+display: block;
+position: absolute;
+left: 50%; top: 50%;
+z-index: 2;
+transform: translate(-50%,-50%);
+width: 80%;
+background-color: rgba( 200,0,0,.7 );
+border: 2px solid rgba( 255,255,255,.7 );
+border-radius: 8px;
+text-align: center;
+text-shadow: 0 0 4px rgba( 0,0,0,.5 );
+line-height: 64px;
+font-size: 24px;
+font-weight: bold;
+color: #FFF;
 }
