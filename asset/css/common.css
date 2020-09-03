@@ -802,6 +802,9 @@ margin-bottom: 12px;
 letter-spacing: normal;
 display: inline-block;
 }
+#footerMainMenu .footerMainMenuChildren li {
+margin: 8px 0;
+}
 #footerMainMenu a {
 text-shadow: 1px 1px 1px #000;
 letter-spacing: 0.05em;
@@ -4711,4 +4714,44 @@ line-height: 64px;
 font-size: 24px;
 font-weight: bold;
 color: #FFF;
+}
+
+@media screen and ( max-width: 980px ){
+.settingSamplesList,
+.settingSamplesComingSoon {
+max-width: 640px;
+margin: 0 auto 16px;
+}
+.settingSamplesComingSoon {
+margin-bottom: 0;
+}
+.settingSamplesListTitle,
+.settingSamplesListData {
+display: block;
+width: 100%;
+border: none;
+border-bottom: 1px solid #CCC;
+}
+.settingSamplesListData.fit {
+width: 100%;
+}
+.settingSamplesKymLink {
+max-width: 60%;
+margin: 0 auto;
+}
+}
+@media screen and ( max-width: 640px ){
+.settingSamplesSectionTitle {
+font-size: 2.8vw;
+}
+.settingSamplesSectionText,
+.settingSamplesItemTitle {
+font-size: 2.3vw;
+}
+.settingSamplesItemText {
+font-size: 2vw;
+}
+.settingSamplesComingSoon::after {
+font-size: 4vw;
+}
 }
