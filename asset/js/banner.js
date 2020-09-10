@@ -32,4 +32,4 @@ var title = 'システムライフサイクルをデジタル化するExastro活
     }, closeTime );
   });
 }
-footerBanner();
+// footerBanner();
