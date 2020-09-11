@@ -128,7 +128,8 @@ text-indent: -1em;
 font-size: 12px;
 color: #E00;
 }
-.signUpHereLink {
+.signUpHereLink,
+.signUpHereLinkEnd {
 display: block;
 width: 90%;
 margin: 0 auto;
@@ -186,6 +187,19 @@ padding-top: 2px;
 .signUpHereLink:active span {
 background-color: #FF640A;
 border-bottom: none;
+}
+.signUpHereLinkEnd span {
+overflow: hidden;
+display: block;
+width: 100%;
+background-color: #CCC;
+background-image: linear-gradient( rgba( 255,255,255,0 ), rgba( 255,255,255,.2 ) );
+border-radius: 4px;
+line-height: 48px;
+text-align: center;
+font-size: 16px;
+font-weight: bold;
+color: #FFF;
 }
 .eventCalenderLink {
 display: block;
