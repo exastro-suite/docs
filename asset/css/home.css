@@ -1480,7 +1480,7 @@ display: block;
   #article.newsroom #newsList dd.title {
     font-size: 3.5vw;
   }
-  #article.newsroom #newsList .documentSet a {
+  #article.newsroom #newsList .documentSet .title a {
     font-size: 3.2vw;
   }
   #article.newsroom #newsList .documentSetMenuLink {
