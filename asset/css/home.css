@@ -1446,11 +1446,14 @@ display: block;
 
 @media screen and (max-width: 640px) {
 
+  #article.newsroom #newsList li {
+    padding: 16px;
+  }
   #article.newsroom #newsList dt,
   #article.newsroom #newsList .documentSet dt {
     float: none;
     width: 100%;
-    margin-bottom: 24px;
+    margin-bottom: 16px;
   }
   #article.newsroom #newsList dd,
   #article.newsroom #newsList .documentSet dd{
@@ -1463,7 +1466,7 @@ display: block;
     font-size: 2vw;
   }
   #article.newsroom #newsList .documentSetMenuList {
-    padding-bottom: 2px;
+    padding-bottom: 4px;
   }
   #article.newsroom #newsList .documentSetMenuItem {
     margin: 2px;
@@ -1474,9 +1477,17 @@ display: block;
   #article.newsroom #newsList dd.title {
     font-size: 3.5vw;
   }
+  #article.newsroom #newsList .documentSet a {
+    font-size: 3.2vw;
+  }
+  #article.newsroom #newsList .documentSetMenuLink {
+    padding: 0 8px;
+  }
   #article.newsroom #newsList .documentSet .title {
     padding-top: 0;
+    font-size: 3.2vw;
   }
+  
   #article.newsroom #newsList dd.meta,
   #article.newsroom #newsList dd.document {
     font-size: 2.3vw;

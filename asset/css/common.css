@@ -975,7 +975,7 @@ padding-bottom: 12px;
 border: none;
 }
 #footerMainMenu .footerMainMenuChildren a {
-margin: 0; padding: 8px 8px 8px;
+margin: 0; padding: 0 4px;
 font-size: 2.8vw;
 }
 
