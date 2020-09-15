@@ -111,7 +111,7 @@ $( window ).on('load', function(){
 $(function(){
     
     // Add loading
-    $('#container').append('<div id="loading"></div>');
+    $('#container').append('<div id="loading"></div>');  
   
 });
 

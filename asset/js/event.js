@@ -1,5 +1,5 @@
 // JavaScript Document
-/*
+
 function eventOverviewSlide() {
 
   var $window = $( window );
@@ -31,5 +31,11 @@ function eventOverviewSlide() {
     });
   });
 }
-eventOverviewSlide();
-*/
+// eventOverviewSlide(); 
+
+function googleCalenderEvent() {
+
+var googleCalenderURL = '',
+    userAgent = navigator.userAgent;
+
+}

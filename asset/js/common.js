@@ -182,6 +182,22 @@ $('.tabMenuLink').on('click', function( e ){
     $targetTab.addClass('tabOpen');
 });
 
+// News Room tab
+$('.documentSetInner').each( function(){
+    $( this ).children('.documentSetMenu').find('.documentSetMenuItem').eq(0).addClass('tabOpen');
+    $( this ).children('.documentSetContent').eq(0).addClass('tabOpen');
+});
+$('.documentSetMenuLink').on('click', function( e ){
+    e.preventDefault();
+    var $tabMenuItem = $( this ).parent(),
+        $targetTab = $( $( this ).attr('href') );
+    $tabMenuItem.siblings('.tabOpen').removeClass('tabOpen');
+    $tabMenuItem.closest('.documentSetInner').children('.tabOpen').removeClass('tabOpen');
+    $tabMenuItem.addClass('tabOpen');
+    $targetTab.addClass('tabOpen');
+});
+
+
 // ImageBox Close
 var closeImageBox = function(){
   var $imageBox = $('#imageBox'),

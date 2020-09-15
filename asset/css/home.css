@@ -1280,7 +1280,7 @@ display: block;
 #article.newsroom #newsList dd.tag i {
   display: block;
   float: left;
-  padding-top: 1px;
+  padding-top: 3px;
   font-size: 1rem;
   color: #CCC;
 }
@@ -1290,7 +1290,7 @@ display: block;
 }
 #article.newsroom #newsList dd.tag li {
   display: inline-block;
-  margin: 0; padding: 0;
+  margin: 2px 0; padding: 0;
   border: none;
   border-radius: 0;
   box-shadow: none;
@@ -1369,14 +1369,91 @@ color: #666;
   color: #999;
 }
 
+
+
+
+#article.newsroom #newsList .documentSet {
+clear: both;
+margin: 0;
+padding-top: 16px;
+}
+#article.newsroom #newsList .documentSetInner {
+}
+#article.newsroom #newsList .documentSetMenu {
+border-bottom: 1px solid #CCC;
+}
+#article.newsroom #newsList .documentSetMenuList {
+display: inline-block;
+margin: 0; padding: 0;
+letter-spacing: -0.4em;
+list-style: none;
+}
+#article.newsroom #newsList .documentSetMenuItem {
+display: inline-block;
+margin: 0; padding: 0;
+border: none;
+box-shadow: none;
+letter-spacing: normal;
+}
+#article.newsroom #newsList .documentSetMenuLink {
+display: block;
+margin-bottom: -1px; padding: 0 16px;
+background-color: #F2F2F2;
+border: 1px solid #CCC;
+text-decoration: none;
+line-height: 32px;
+font-size: 14px;
+font-family: Consolas, "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", "sans-serif";
+color: #333;
+}
+#article.newsroom #newsList .tabOpen .documentSetMenuLink {
+background-color: #FFF;
+border-bottom-color: #FFF;
+}
+#article.newsroom #newsList .documentSetMenuLink:hover {
+background-color: #FFF;
+text-decoration: none;
+}
+#article.newsroom #newsList .tabOpen .documentSetMenuLink:hover {
+cursor: default;
+}
+#article.newsroom #newsList .documentSet .title {
+padding-top: 8px;
+line-height: 1.5;
+font-size: 1.2rem;
+font-weight: normal;
+}
+#article.newsroom #newsList .documentSet .title::after {
+display: none;
+}
+#article.newsroom #newsList .documentSetContent {
+display: none;
+padding: 16px;
+background-color: #FFF;
+border: 1px solid #CCC;
+border-top: none;
+}
+#article.newsroom #newsList .documentSetContent.tabOpen {
+display: block;
+}
+#article.newsroom #newsList .documentSet dt {
+
+}
+#article.newsroom #newsList .documentSet dd {
+
+}
+
+
 @media screen and (max-width: 640px) {
 
-  #article.newsroom #newsList dt {
+  #article.newsroom #newsList dt,
+  #article.newsroom #newsList .documentSet dt {
     float: none;
     width: 100%;
     margin-bottom: 24px;
   }
-  #article.newsroom #newsList dd {
+  #article.newsroom #newsList dd,
+  #article.newsroom #newsList .documentSet dd{
     margin-left: 0;
   }
   #article.newsroom #newsList dd.tag i {
@@ -1385,8 +1462,20 @@ color: #666;
   #article.newsroom #newsList dd.tag li div {
     font-size: 2vw;
   }
+  #article.newsroom #newsList .documentSetMenuList {
+    padding-bottom: 2px;
+  }
+  #article.newsroom #newsList .documentSetMenuItem {
+    margin: 2px;
+  }
+  #article.newsroom #newsList .tabOpen .documentSetMenuLink {
+    border-color: #AAA;
+  }
   #article.newsroom #newsList dd.title {
     font-size: 3.5vw;
+  }
+  #article.newsroom #newsList .documentSet .title {
+    padding-top: 0;
   }
   #article.newsroom #newsList dd.meta,
   #article.newsroom #newsList dd.document {
