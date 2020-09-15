@@ -653,3 +653,67 @@ max-width: 120px;
 margin-left: 0;
 }
 }
+
+
+
+
+
+
+
+
+
+
+.lecturArchive {
+margin-top: 16px; padding: 16px;
+background-color: #F6F9FB;
+border: 1px solid #2860A0;
+box-shadow: 0 0 0 1px #CCC;
+}
+.lecturArchive::after {
+content: '';
+display: table;
+clear: both;
+}
+.lecturArchiveVideo {
+margin-bottom: 16px;
+}
+.lecturArchiveDocument {
+}
+.lecturArchiveTitle {
+display: inline-block;
+margin-bottom: 8px; padding: 4px 16px;
+background-color: #2860A0;
+color: #FFF;
+}
+.lecturArchiveDocumentList {
+margin: 0; padding: 0;
+list-style: none;
+}
+.lecturArchiveDocumentItem {
+margin: 0 0 4px; padding: 0;
+}
+.lecturArchiveDocumentItem:last-child {
+margin-bottom: 0;
+}
+.lecturArchiveDocumentLink,
+.lecturArchiveDocumentSoon {
+display: block;
+padding: 4px 8px;
+background-color: #FFF;
+border: 1px solid #DDD;
+border-left-width: 4px;
+color: #666;
+text-decoration: none;
+}
+.lecturArchiveDocumentLink:hover {
+  background-color: #F9F9F9;
+  border-color: #BBB;
+  text-decoration: none;
+  color: #333;
+}
+.lecturArchiveDocumentLink .fa-file-pdf { color: #FF0000; }
+
+.lecturArchiveDocumentSoon {
+background-color: #F2F2F2;
+color: #AAA;
+}

@@ -4272,6 +4272,7 @@ padding-right: 16px;
 }
 .youtubeEmbed {
 overflow: hidden;
+display: block;
 position: relative;
 z-index: 1;
 width: 100%;
@@ -4296,14 +4297,14 @@ position: absolute;
 left: 50%; top: 50%;
 z-index: 3;
 transform: translate(-50%,-50%);
-width: 96px; height: 96px;
+width: 80px; height: 80px;
 background-color: rgba( 0,0,0,.4 );
 border-radius: 50%;
 text-align: center;
-line-height: 96px;
+line-height: 80px;
 font-family: 'Font Awesome 5 Free';
 font-weight: bold;
-font-size: 32px;
+font-size: 28px;
 color: #FFF;
 transition-duration: .2s;
 }
