@@ -1420,11 +1420,14 @@ cursor: default;
 #article.newsroom #newsList .documentSet .title {
 padding-top: 8px;
 line-height: 1.5;
-font-size: 1.2rem;
 font-weight: normal;
+font-size: 1.1rem;
 }
 #article.newsroom #newsList .documentSet .title::after {
 display: none;
+}
+#article.newsroom #newsList .documentSet .title a {
+font-size: 1.1rem;
 }
 #article.newsroom #newsList .documentSetContent {
 display: none;
