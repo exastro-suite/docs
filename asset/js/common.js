@@ -574,7 +574,7 @@ function onYouTubeIframeAPIReady() {
           loadYouTubeID = $loadYouTube.attr('data-embed-id'),
           width = $loadYouTube.width(),
           height = $loadYouTube.outerHeight();
-          
+
       $loadYouTube.removeClass('ready').addClass('loading');
       
       var ytPlayer = new YT.Player(
@@ -592,6 +592,10 @@ function onYouTubeIframeAPIReady() {
           }
         }
       );
+      
+      $('#' + loadYouTubeID ).on('load', function(){
+        $loadYouTube.removeClass('loading').addClass('done');
+      });
     });
 }
 
