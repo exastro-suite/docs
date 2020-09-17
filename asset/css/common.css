@@ -4432,16 +4432,27 @@ letter-spacing: normal;
 .webinarDocumentVersionItem a {
 display: block;
 margin-bottom: -1px; padding: 0 16px;
-background-color: #FFF;
+background-color: #EEE;
 border: 1px solid #CCC;
-border-bottom: none;
+border-right: none;
 text-decoration: none;
 line-height: 32px;
 font-family: Consolas, "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", "sans-serif";
 color: #333;
 }
+.webinarDocumentVersionItem:last-child a {
+border-right: 1px solid #CCC;
+}
+.webinarDocumentVersionItem.tabOpen a {
+border-bottom-color: #FFF;
+background-color: #FFF;
+cursor: default;
+}
 .webinarDocumentBody {
-
+  display: none;
+}
+.webinarDocumentBody.tabOpen {
+  display: block;
 }
 .webinarDocumentTable {
 width: 100%;

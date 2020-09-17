@@ -136,9 +136,10 @@ $('a[href^="#"].anker').on('click', function( e ){
   e.preventDefault();
   var href = $( this ).attr('href'),
       headerHeight = $('header').outerHeight(),
+      menuHeight = $('#contentsMenu').outerHeight(),
       speed = 300,
       target = $( ( href == '#' || href == '' ) ? 'html' : href ),
-      position = target.offset().top - headerHeight;
+      position = target.offset().top - headerHeight - menuHeight;
   $('body, html').animate({ scrollTop : position }, speed, 'swing' );
 });
 
@@ -168,16 +169,16 @@ if( $('.scrollShow').length ){
 }
 
 // Tab Contents
-$('.tabContents').each( function(){
-    $( this ).children('.tabMenu').find('.tabMenuItem').eq(0).addClass('tabOpen');
-    $( this ).children('.tabContent').eq(0).addClass('tabOpen');
+$('.tabContents, .webinarDocument').each( function(){
+    $( this ).children('.tabMenu, .webinarDocumentVersionSelect').find('.tabMenuItem, .webinarDocumentVersionItem').eq(0).addClass('tabOpen');
+    $( this ).children('.tabContent, .webinarDocumentBody').eq(0).addClass('tabOpen');
 });
-$('.tabMenuLink').on('click', function( e ){
+$('.tabMenuLink, .webinarDocumentVersionLink').on('click', function( e ){
     e.preventDefault();
     var $tabMenuItem = $( this ).parent(),
         $targetTab = $( $( this ).attr('href') );
     $tabMenuItem.siblings('.tabOpen').removeClass('tabOpen');
-    $tabMenuItem.closest('.tabContents').children('.tabOpen').removeClass('tabOpen');
+    $tabMenuItem.closest('.tabContents, .webinarDocument').children('.tabOpen').removeClass('tabOpen');
     $tabMenuItem.addClass('tabOpen');
     $targetTab.addClass('tabOpen');
 });
