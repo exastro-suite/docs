@@ -1253,6 +1253,10 @@ font-size: 10px;
   overflow: hidden;
   width: 30%;
 }
+#article.newsroom #newsList small {
+font-size: 80%;
+font-weight: normal;
+}
 #article.newsroom #newsList dt a {
   display: block;
   background-color: #000;
