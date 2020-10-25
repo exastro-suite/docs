@@ -996,11 +996,17 @@ padding: 12px;
   background-image: url("../img/header_event.jpg");
 }
 #articleBody .sectionInner .eventList {
+  margin: 0; padding: 0;
+  list-style: none;
+}
+#articleBody .sectionInner .eventListItem {
   margin: 32px 0; padding: 16px;
   background-color: #FFF;
   border-radius: 4px;
   box-shadow: 0 0 8px rgba( 0,0,0,0.2 );
-  list-style: none;
+}
+#articleBody .sectionInner .eventListItem:last-child {
+  margin-bottom: 0;
 }
 .eventListData::after {
   content: '';
@@ -1047,6 +1053,9 @@ line-height: 1.5;
 font-size: 24px;
 font-weight: bold;
 color: #333;
+}
+.eventListTitle .popularity {
+color: #EE0000;
 }
 .eventListSubTitle {
 margin-bottom: 12px;

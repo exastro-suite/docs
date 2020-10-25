@@ -1,0 +1,15 @@
+﻿BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Exastro/Exastro event////JP
+METHOD:PUBLISH
+X-WR-CALDESC:【好評により再配信決定！】Exastro-システムライフサイクルをデジタル化するExastro活用術
+X-WR-CALNAME:【好評により再配信決定！】Exastro-システムライフサイクルをデジタル化するExastro活用術
+X-WR-TIMEZONE:Asia/Tokyo
+BEGIN:VEVENT
+DTSTART;TZID=Asia/Tokyo:20201118T130000
+DTEND;TZID=Asia/Tokyo:20201118T16000
+SUMMARY:【好評により再配信決定！】システムライフサイクルをデジタル化するExastro活用術 攻めと守りの自動化でニューノーマルを勝ち抜く
+LOCATION:Webセミナー
+DESCRIPTION:近年、システム構築・運用の自動化は、省力化や効率化を目的に進化してきました。\nそして、新型コロナウイルス感染症（COVID-19）の世界的な拡大による影響で、「自動化」は、ニューノーマル時代に合ったシステム構築・運用を実現する手段の一つとして、改めて注目を集めています。\n本セミナーでは、「自動化」によりこれまで人手でカバーしてきた潜在的なシステム構築・運用の課題をどのように解決できるのかを解説します。\nさらに、スピーディーなサービス展開でビジネスの優位性を支えるためにも「自動化」がKFS(重要成功要因)であることを解説します。\n\nNTTドコモ様、レッドハット様をお迎えしたトークセッションもご用意しており、本領域での取り組みについてディスカションいたします。\n\nこの貴重な機会を是非ご活用ください。\n\n■詳細・お申し込みはこちら\nhttps://exastro-suite.github.io/docs/event/20201118.html
+END:VEVENT
+END:VCALENDAR

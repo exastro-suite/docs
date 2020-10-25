@@ -2,10 +2,10 @@
 
 function footerBanner() {
 
-var title = 'システムライフサイクルをデジタル化するExastro活用術',
-    linkURL = 'https://exastro-suite.github.io/docs/event/20200911.html',
-    bannerPC = 'https://exastro-suite.github.io/docs/asset/banner/banner20200911pc.jpg',
-    bannerSP = 'https://exastro-suite.github.io/docs/asset/banner/banner20200911sp.jpg',
+var title = '【好評により再配信決定！】システムライフサイクルをデジタル化するExastro活用術',
+    linkURL = 'https://exastro-suite.github.io/docs/event/20201118.html',
+    bannerPC = 'https://exastro-suite.github.io/docs/asset/banner/banner20201118pc.jpg',
+    bannerSP = 'https://exastro-suite.github.io/docs/asset/banner/banner20201118sp.jpg',
     bannerHTML = '<div id="announceArea">'
     + '<div class="announceAreaInner">'
       + '<div class="bannerClose touch" title="Close"><i class="fas fa-times"></i></div>'
@@ -32,4 +32,4 @@ var title = 'システムライフサイクルをデジタル化するExastro活
     }, closeTime );
   });
 }
-// footerBanner();
+footerBanner();
