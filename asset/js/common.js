@@ -656,7 +656,7 @@ function faqLoading( jsonURL ) {
         
         // Taeget scroll
         var targetScroll = function( id ) {
-          $('#faqContent').find('.open').removeClass('open');
+          $('#faqList').find('.open').removeClass('open');
           $('#' + id ).addClass('open');
 
           var headerHeight = $('header').outerHeight() + 16,
@@ -745,7 +745,10 @@ function faqLoading( jsonURL ) {
         
         $faqNavi.find('a').on('click', function( e ) {
           e.preventDefault();
-          var id = $( this ).addClass('open').attr('href').replace('#','');
+          var $link = $( this );
+          $faqNavi.find('.open').removeClass('open');
+          $link.addClass('open');
+          var id = $link.attr('href').replace('#','');
           targetScroll( id );          
         });
         
