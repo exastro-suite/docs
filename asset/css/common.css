@@ -3208,9 +3208,11 @@ background-image: repeating-linear-gradient( 45deg, #DDD, #DDD 12px, rgba( 255,2
 bottom: 0;
 background-image: repeating-linear-gradient( 45deg, #EBEBEB, #EBEBEB 12px, rgba( 255,255,255,0 ) 12px, rgba( 255,255,255,0 ) 16px );
 }
+.caseContentBodyInner,
 .caseContentBodyInner01 {
 margin-bottom: 64px;
 }
+.caseContentBodyBlock,
 .caseContentBodyBlock01 {
 max-width: 1280px;
 margin: 0 auto;
@@ -3222,6 +3224,9 @@ align-items: top;
 .caseOutlineText {
 width: 55%;
 padding: 16px 16px 0;
+}
+.caseContentBodyBlock .caseOutlineText {
+width: 100%;
 }
 .caseOutlineText.space {
 background: url("../../../it-automation-docs/asset/case/common/building_t.png") center bottom no-repeat;
@@ -3271,6 +3276,7 @@ opacity: 0.3;
 
 @media screen and ( max-width: 1280px ) {
 
+  .caseContentBodyBlock,
   .caseContentBodyBlock01 {
   max-width: 672px;
   }
@@ -3476,6 +3482,12 @@ background: url("../../../it-automation-docs/asset/case/common/problem.svg") cen
 background-size: 80% 80%;
 opacity: 0.5;
 }
+.caseContentBody .caseContentBodyBlock .problem .inner::before,
+.caseContentBody .caseContentBodyBlock .solve .inner::before,
+.caseContentBody .caseContentBodyBlock .result .inner::before {
+width: 240px;
+padding-bottom: 16%;
+}
 .caseContentBody .solve .inner::before {
 background-image: url("../../../it-automation-docs/asset/case/common/solve.svg");
 }
@@ -3559,6 +3571,10 @@ letter-spacing: 0.05em;
 line-height: 1.75;
 font-size: 1rem;
 color: #2B2B2B;
+}
+#articleBody .caseContentBody .caseContentBodyBlock .caseContentText {
+width: calc( 100% - 240px );
+font-size: 1.3rem;
 }
 #articleBody .caseContentBody .caseContentText h5 {
 margin: 2em 0 1em; padding-bottom: 4px;
@@ -3645,6 +3661,26 @@ color: #999;
 background-color: #EBEBEB;
 }
 
+
+@media screen and ( max-width: 1280px ) {
+  .caseContentBody .caseContentBodyBlock .problem .inner::before,
+  .caseContentBody .caseContentBodyBlock .solve .inner::before,
+  .caseContentBody .caseContentBodyBlock .result .inner::before {
+  width: 180px;padding-bottom: 27.5%;
+  }
+  #articleBody .caseContentBody .caseContentBodyBlock .caseContentText {
+  width: calc( 100% - 180px );
+  font-size: 1rem;
+  }
+  .caseContentBody .caseContentBodyBlock .imageNone .inner::before {
+  display: none;
+  }
+  #articleBody .caseContentBody .caseContentBodyBlock .imageNone .caseContentText {
+  width: 100%;
+  padding: 40px 24px 24px;
+  }
+}
+  
 @media screen and ( max-width: 740px ) {
 
 #articleBody .caseContentHeader .title h2 {
@@ -3659,6 +3695,7 @@ font-size: 3.7vw;
 }
 #articleBody .caseContentBody h4 {
 min-width: inherit;
+line-height: 1;
 font-size: 2.8vw;
 }
 #articleBody .caseContentBody .caseContentText h5 {
@@ -3728,13 +3765,14 @@ margin: 4px;
 }
 
 #articleBody .caseContentBody .caseContentText {
-width: 100%;
+width: 100%!important;
 padding: 24px 16px 16px 0;
 }
 .caseContentBody .problem .inner::before,
 .caseContentBody .solve .inner::before,
 .caseContentBody .result .inner::before {
-width: 120px;
+width: 120px!important;
+padding-bottom: 27.5% !important;
 }
 .caseContentBody .full .result .inner::before {
 display: none;
