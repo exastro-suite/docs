@@ -35,7 +35,8 @@ max-width: 1280px;
 margin: 0 auto;
 box-shadow: 0 0 32px #000, 0 0 32px #000;
 }
-.event20200911 #eventHeader::after, .event20200911 .eventHeaderTitle {
+.event20200911 #eventHeader::after, .event20200911 .eventHeaderTitle
+.event20201118 #eventHeader::after, .event20201118 .eventHeaderTitle {
 background-image: url(../event_img/20200911_titleback.jpg);
 }
 
