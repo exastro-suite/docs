@@ -637,8 +637,8 @@ text-align: center;
 }
 #terminalBody .handoutList li {
 display: inline-block;
-width: 33.33333%;
-margin: 0; padding: 0;
+width: 31.333%;
+margin: 1%; padding: 0;
 background-color: #FFF;
 box-shadow: 0 0 16px rgba( 0,0,0,0.1 );
 border: 1px solid #CCC;
@@ -719,7 +719,7 @@ font-size: 2vw;
 font-size: 2vw;
 }
 #terminalBody .handoutList li {
-width: 50%;
+width: 48%;
 }
 
 }
