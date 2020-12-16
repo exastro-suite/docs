@@ -4486,6 +4486,12 @@ border-bottom-color: #FFF;
 background-color: #FFF;
 cursor: default;
 }
+.webinarVideoBody {
+  display: none;
+}
+.webinarVideoBody.tabOpen {
+  display: block;
+}
 .webinarDocumentBody {
   display: none;
 }
