@@ -1430,8 +1430,8 @@ letter-spacing: 0.03em;
 }
 #articleBody h4 {
 margin: 24px 0 24px; padding: 8px 16px;
-background-image: linear-gradient( #FFF, #F2F2F2 );
-border: 1px dotted #CCC;
+background-image: linear-gradient( #FFF, #EEE );
+border: 1px solid #BBB;
 border-top: 4px solid #002B62;
 border-radius: 0 0 8px 8px;
 line-height: 32px;
