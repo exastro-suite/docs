@@ -16,7 +16,8 @@ $( window ).one('load', function(){
     $('html, body').scrollTop( 0 );
     setTimeout(function(){
       var headerHeight = $('header').outerHeight(),
-          scrollPosition = $( locationHash ).offset().top - headerHeight;
+          subMenuHeight = $('#contentsMenu').outerHeight(),
+          scrollPosition = $( locationHash ).offset().top - headerHeight - subMenuHeight;
       $('html, body').animate({ scrollTop: scrollPosition }, 300, 'swing');
       if( $( locationHash ).is('.toggleHeading') ) {
         setTimeout(function(){
