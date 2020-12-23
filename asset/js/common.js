@@ -170,24 +170,19 @@ if( $('.scrollShow').length ){
 }
 
 // Tab Contents
-$('.tabContents, .webinarDocument, .webinarVideoWrap').each( function(){
-    $( this ).children('.tabMenu, .webinarDocumentVersionSelect').find('.tabMenuItem, .webinarDocumentVersionItem').eq(0).addClass('tabOpen');
-    $( this ).children('.tabContent, .webinarDocumentBody, .webinarVideoBody').eq(0).addClass('tabOpen');
+$('.tabContents, .webinarContainer').each( function(){
+    $( this ).children('.tabMenu, .webinarVersionSelect').find('.tabMenuItem, .webinarVersionItem').eq(0).addClass('tabOpen');
+    $( this ).children('.tabContent, .webinarContent').eq(0).addClass('tabOpen');
 });
-$('.tabMenuLink, .webinarDocumentVersionLink').on('click', function( e ){
+$('.tabMenuLink, .webinarVersionLink').on('click', function( e ){
     e.preventDefault();
     var $a = $( this ),
         $tabMenuItem = $a.parent(),
         $targetTab = $( $a.attr('href') );
     $tabMenuItem.siblings('.tabOpen').removeClass('tabOpen');
-    $tabMenuItem.closest('.tabContents, .webinarDocument').children('.tabOpen').removeClass('tabOpen');
+    $tabMenuItem.closest('.tabContents, .webinarContainer').children('.tabOpen').removeClass('tabOpen');
     $tabMenuItem.addClass('tabOpen');
     $targetTab.addClass('tabOpen');
-    if ( $a.is('.webinarVideoVersionLink') ) {
-      var $targetVideo = $targetTab = $( $a.attr('href') + 'v');
-      $targetVideo.siblings('.tabOpen').removeClass('tabOpen');
-      $targetVideo.addClass('tabOpen');
-    }
 });
 
 // News Room tab
