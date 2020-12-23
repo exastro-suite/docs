@@ -4342,8 +4342,9 @@ vertical-align: middle;
 overflow: hidden;
 text-overflow: ellipsis;
 display: block;
-padding: 0 24px;
+padding: 0 24px; margin-bottom: -1px;
 background-color: #EEE;
+background-image: linear-gradient( #EEE 90%, #E2E2E2 );
 border: 1px solid #CCC;
 border-right: none;
 text-decoration: none;
@@ -4352,12 +4353,17 @@ font-family: Consolas, "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", 
 font-size: 16px;
 color: #333;
 }
+.webinarVersionLink:hover {
+background-image: linear-gradient( #F2F2F2 80%, #EEE );
+}
 .webinarVersionItem:last-child .webinarVersionLink {
 border-right: 1px solid #CCC;
 }
 .webinarVersionItem.tabOpen .webinarVersionLink {
 border-bottom-color: #FFF;
+background-image: linear-gradient( #EEE, #FFF );
 background-color: #FFF;
+box-shadow: 0 0 0 1px #FFF inset;
 color: #002B62;
 cursor: default;
 }
