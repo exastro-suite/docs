@@ -721,6 +721,9 @@ font-size: 2vw;
 #terminalBody .handoutList li {
 width: 48%;
 }
+.ja #terminalBody #why p.link a {
+min-width: 140px;
+}
 
 }
 
@@ -822,6 +825,12 @@ padding: 0;
 }
 #snsArea {
 padding: 0 16px;
+}
+#terminalBody a.download {
+font-size: 120%;
+}
+#terminalBody section#overview {
+padding: 48px 16px;
 }
 
 }/* /640px */
