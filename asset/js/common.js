@@ -714,7 +714,11 @@ function faqLoading( jsonURL ) {
             + '<h3>' + cat + '</h3>'
             + '<div class="faqBody">'
               + '<ul>';
-          faqNaviHTML += '<li><a href="#' + faq[cat]['data']['id'] + '" class="touch"><i class="fas ' + faq[cat]['data']['icon'] + '"></i>' + cat + '</a></li>';
+          var catName = cat;
+          if ( faq[cat]['data']['abbreviation'] !== undefined && faq[cat]['data']['abbreviation'] !== '') {
+            catName = faq[cat]['data']['abbreviation'];
+          }
+          faqNaviHTML += '<li><a href="#' + faq[cat]['data']['id'] + '" class="touch"><i class="fas ' + faq[cat]['data']['icon'] + '"></i>' + catName + '</a></li>';
           
           if ( faq[cat]['data']['id'] !== 'frequently' ) {
             var frequentlyArray = faq[cat]['data']['frequently'].split(',');
@@ -796,6 +800,7 @@ function faqLoading( jsonURL ) {
           keyword = textEntities( keyword.replace(/\s/g, '|') );
           
           var regex = new RegExp( "(" + keyword + ")", "igu");
+          $faqNavi.find('.open').removeClass('open');
           
           for ( var cat in faq ) {
             if ( faq[cat]['data']['id'] !== 'frequently' ) {

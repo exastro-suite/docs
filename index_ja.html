@@ -56,6 +56,13 @@
 <meta name="twitter:title" content="Exastro Suite">
 <meta name="twitter:image" content="https://exastro-suite.github.io/docs/asset/img/ogp_twitter_image.jpg">
 
+<script src="./asset/js/view_documents.js"></script>
+<script>
+$(function(){
+  var url = 'https://exastro-suite.github.io/docs/asset/json/documents.json';
+  viewDocuments( url );
+});
+</script>
 <!-- InstanceEndEditable -->
 </head>
 
@@ -196,10 +203,18 @@
           （設計・開発・設定・運用）を<br>
           デジタル化・自動化・省力化することを目的とした<br>
           オープンソースのソフトウェアスイートです。</p>
-          <p class="link"><a href="#suite" class="touch anker">Exastro Suite</a></p>
+          <p class="link"><a href="#outline" class="touch anker">Exastro 概要</a> <a href="#suite" class="touch anker">Exastro Suite</a></p>
         </div>
       
       </div>
+    </div>
+  </section>
+  
+  <section id="outline">
+    <div class="sectionInner">
+      <h2><span><em>Exastro</em> 概要</span></h2>
+      <div class="viewDocument only wide pdf" data-document="outline"></div>
+      <p class="center"><a href="asset/pdf/exastro_outline_ja.pdf" class="download" download="Exastro概要"><i class="fas fa-file-pdf"></i> 概要をダウンロード<i class="note">(PDF)</i></a></p>
     </div>
   </section>
 

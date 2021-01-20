@@ -1752,6 +1752,10 @@ box-shadow: 0 0 16px #000;
 vertical-align: bottom;
 }
 
+#terminalBody a.download {
+font-size: 90%;
+}
+#terminalBody a.download,
 #articleBody a.download,
 #articleBody a.githubLink,
 #articleBody span.download {
@@ -1767,6 +1771,7 @@ transition-duration: 0.3s;
 #articleBody span.download {
 background-color: #CCC;
 }
+#terminalBody a.download:hover,
 #articleBody a.download:hover {
 background-color: #A30000;
 }
@@ -1777,6 +1782,7 @@ background-color: #4183C4;
 #articleBody a.githubLink:hover {
 background-color: #34699D;
 }
+#terminalBody a.download i.note,
 #articleBody a.download i.note,
 #articleBody a.githubLink i.note {
 padding-left: 0.5em;
@@ -2533,12 +2539,14 @@ background-image: linear-gradient(hsla(0,0%,32%,.99), hsla(0,0%,27%,.95));
 border-top: 1px solid #111;
 border-bottom: 1px solid #111;
 }
+#terminalBody .sectionInner .viewToolBar ul,
 #articleBody .sectionInner .viewToolBar ul {
 width: 100%; height: 30px;
 margin: 0; padding: 0 8px;
 list-style: none;
 letter-spacing: -0.4em;
 }
+#terminalBody .sectionInner .viewToolBar li,
 #articleBody .sectionInner .viewToolBar li {
 display: inline-block;
 height: 24px;
@@ -2547,6 +2555,7 @@ vertical-align: top;
 letter-spacing: normal;
 line-height: 1;
 }
+#terminalBody .sectionInner .viewToolBar button,
 #articleBody .sectionInner .viewToolBar button {
 display: block;
 height: 24px;
@@ -2560,8 +2569,10 @@ font-size: 11px;
 text-decoration: none;
 color: hsla(0,0%,100%,.8);
 }
+#terminalBody .sectionInner .viewToolBar button.hover,
+#terminalBody .sectionInner .viewToolBar button:focus,
 #articleBody .sectionInner .viewToolBar button.hover,
-#articleBody .sectionInner .viewToolBar button:focus{
+#articleBody .sectionInner .viewToolBar button:focus {
 background-color: hsla(0,0%,0%,.12);
 background-image: linear-gradient(hsla(0,0%,100%,.05), hsla(0,0%,100%,0));
 border: 1px solid hsla(0,0%,0%,.35);
@@ -2569,6 +2580,7 @@ border-color: hsla(0,0%,0%,.32) hsla(0,0%,0%,.38) hsla(0,0%,0%,.42);
 box-shadow: 0 1px 0 hsla(0,0%,100%,.05) inset, 0 0 1px hsla(0,0%,100%,.15) inset, 0 1px 0 hsla(0,0%,100%,.05);
 outline: none;
 }
+#terminalBody .sectionInner .viewToolBar button.hover:active,
 #articleBody .sectionInner .viewToolBar button.hover:active {
 background-color: hsla(0,0%,0%,.2);
 background-image: linear-gradient(hsla(0,0%,100%,.05), hsla(0,0%,100%,0));
@@ -2576,6 +2588,7 @@ border-color: hsla(0,0%,0%,.35) hsla(0,0%,0%,.4) hsla(0,0%,0%,.45);
 box-shadow: 0 1px 1px hsla(0,0%,0%,.1) inset, 0 0 1px hsla(0,0%,0%,.2) inset, 0 1px 0 hsla(0,0%,100%,.05);
 outline: none;
 }
+#terminalBody .sectionInner .viewToolBar button:disabled,
 #articleBody .sectionInner .viewToolBar button:disabled {
 opacity: .5;
 pointer-events: none;
