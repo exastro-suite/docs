@@ -1,0 +1,21 @@
+{
+	"en": {
+		"outline": {
+      "type": "none",
+      "url": ""
+    }
+	},
+	"ja": {
+		"outline": {
+      "type": "pdf",
+      "url": "pdf/exastro_outline_ja.pdf"
+    }
+	},
+	"config": {
+    "pdf_viewer_url" : "https://exastro-suite.github.io/docs/asset/library/pdfjs/web/viewer.html?file=",
+    "pdf_viewer_parameters" : "#page=1",
+		"pdf_url": "https://exastro-suite.github.io/docs/asset/",
+		"slide_url": "https://docs.google.com/presentation/d/e/",
+		"slide_parameters": "/embed?start=false&loop=false&delayms=3000"
+	}
+}
