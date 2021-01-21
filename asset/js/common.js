@@ -687,7 +687,7 @@ function faqLoading( jsonURL ) {
         var textReplace = function( str ) {  
           str = textEntities( str );
           str = str.replace(/\r?\n/g, '<br>'); 
-          str = str.replace(/{img{(.+?)}}/g,'<div class="aImge"><img src="$1"></div>');
+          str = str.replace(/{img{(.+?)}(.+?)}/g,'<div class="aImge"><img src="$1" style="width:$2;"></div>');
           str = str.replace(/{a{(.+?)}(.+?)}/g,'<a href="$1" target="_blank">$2</a>');
           return str;
         };
