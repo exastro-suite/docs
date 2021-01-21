@@ -1014,11 +1014,11 @@ background-image: none;
 transform: translateY(-35%);
 }
 #articleBody h3.toggleHeading.open::after {
-transform:  translateY(-50%) rotateX(-180deg);
+transform:  translateY(-50%) scaleY(-1);
 color: #FFFFFF;
 }
 #articleBody h3.toggleHeading.open:hover::after {
-transform:  translateY(-65%) rotateX(-180deg);
+transform:  translateY(-65%) scaleY(-1);
 }
 #articleBody div.toggleText {
 display: none;
