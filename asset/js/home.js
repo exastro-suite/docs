@@ -12,7 +12,18 @@ window.cancelAnimFrame = ( function() {
 })();
 
 $('html').addClass('loadStart');
-$( window ).on('load', function(){
+
+// $window load timeout.
+var loadTimeoutTime = 3000;
+var loadTimer = setTimeout(
+  function(){
+    $( window ).load();
+  }, loadTimeoutTime
+);
+
+$( window ).one('load', function(){
+
+    clearTimeout( loadTimer );
 
     var loadCompleatDelay = 100,
         loadCompleatWait = 350,
@@ -50,6 +61,7 @@ $( window ).on('load', function(){
         }
         var resizeAndMore = function() {
 
+          $('#epoch').find('.text').css('height', $('#epoch').find('.image').height() );
           $('#andMore').find('.text').css('height', $('#andMore').find('.image').height() );
 
         }

@@ -7,7 +7,18 @@ if( locationHash ) window.location.hash = '';
 
 // LOAD
 $('html').addClass('loadWait');
+
+// $window load timeout.
+var commonloadTimeoutTime = 3000;
+var commonloadTimer = setTimeout(
+  function(){
+    $( window ).load();
+  }, commonloadTimeoutTime
+);
+
 $( window ).one('load', function(){
+
+  clearTimeout( commonloadTimer );
   $('html').removeClass('loadWait');
   
   // Anker scroll
