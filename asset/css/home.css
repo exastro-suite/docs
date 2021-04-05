@@ -546,7 +546,7 @@ text-align: left;
 #terminalBody dd.link {
 margin-bottom: 0;
 }
-#terminalBody dd.link a,
+#terminalBody dd.link .link-a,
 #terminalBody dd.link .nolink {
 position: relative;
 display: inline-block;
@@ -579,7 +579,7 @@ animation: UnderConstructionText 1s linear infinite;
  50% { opacity: 0.75; }
 100% { opacity: 1; }
 }
-#terminalBody dd.link a::before {
+#terminalBody dd.link .link-a::before {
 content: attr(data-text)'';
 display: block;
 width: 100%; height: 100%;
@@ -588,7 +588,7 @@ top: 0; left: 0;
 text-shadow: 0 0 2px #000;
 color: #EEE;
 }
-#terminalBody dd.link a span {
+#terminalBody dd.link .link-a span {
 display: block;
 position: absolute;
 top: 0; left: 0;
@@ -599,8 +599,18 @@ pointer-events: none;
 transition-duration: 0.3s;
 transform-origin: bottom;
 }
-#terminalBody dd.link a.hover span,
-#terminalBody dd.link a:active span {
+#terminalBody .suiteItemLink {
+text-decoration: none;
+}
+#terminalBody .suiteList li.show .suiteItemLink > .suiteContent {
+opacity: 1;
+transition-duration: .2s;
+}
+#terminalBody .suiteList li.show .suiteItemLink.hover > .suiteContent {
+opacity: .75;
+}
+#terminalBody .suiteItemLink.hover dd.link .link-a span,
+#terminalBody .suiteItemLinkdd:active .link .link-a span {
 box-shadow: 0 -8px 24px rgba( 0,0,0,0.3 );
 transform: rotateX( -120deg );
 }
