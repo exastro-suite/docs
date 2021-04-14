@@ -56,6 +56,14 @@
 <meta name="twitter:title" content="Exastro Suite">
 <meta name="twitter:image" content="https://exastro-suite.github.io/docs/asset/img/ogp_twitter_image.jpg">
 
+<script src="./asset/js/view_documents.js"></script>
+<script>
+$(function(){
+  var url = 'https://exastro-suite.github.io/docs/asset/json/documents.json';
+  viewDocuments( url );
+});
+</script>
+
 <link rel="canonical" href="https://exastro-suite.github.io/docs/index.html">
 
 <!-- InstanceEndEditable -->
@@ -97,6 +105,7 @@
 <ul id="mainMenu"><!-- InstanceBeginEditable name="EditHeaderMainMenuArea" -->
 <li><a href="#why" class="anker"><i class="fas fa-question-circle"></i><span>Why Exastro</span></a></li>
 <li><a href="#suite" class="anker"><i class="far fa-list-alt"></i><span>Exastro Suite</span></a></li>
+<li><a href="#overview" class="anker"><i class="fas fa-list"></i><span>Overview</span></a></li>
 <li><a href="newsroom.html" class="newsroom"><i class="fas fa-clipboard-check"></i><span>News Room</span></a></li>
 <li><a href="asset.html" class="asset"><i class="fas fa-toolbox"></i><span>Asset</span></a></li>
 <!-- InstanceEndEditable --></ul>
@@ -155,6 +164,7 @@
     <div id="startMenu">
       <ul>
         <li class="main"><a href="#why" class="touch anker">Why Exastro ?</a></li>
+        <li class="main"><a href="#overview" class="touch anker">Exastro Overview</a></li>
         <li class="main"><a href="#suite" class="touch anker">Exastro Suite</a></li>
         <li class="sub"><a href="newsroom.html" class="touch"><span class="title"><i class="far fa-newspaper"></i> Exastro News Room</span><span class="update">Update:2021/03/26</span></a></li>
       </ul>
@@ -195,14 +205,22 @@
           for digitizing, automating and labor saving<br>
           the system life cycle<br>
           (design, development, setting and operation).</p>
-          <p class="link"><a href="#suite" class="touch anker">Exastro Suite</a></p>
+          <p class="link"><a href="#overview" class="touch anker">Exastro Overview</a> <a href="#suite" class="touch anker">Exastro Suite</a></p>
         </div>
       
       </div>
 
     </div>
   </section>
-
+  
+  <section id="overview">
+    <div class="sectionInner">
+      <h2><span><em>Exastro</em> Overview</span></h2>
+      <div class="viewDocument only wide pdf" data-document="outline"></div>
+      <p class="center"><a href="asset/pdf/Exastro-overview.pdf" class="download" download="Exastro-overview"><i class="fas fa-file-pdf"></i> 概要をダウンロード<i class="note">(PDF)</i></a></p>
+    </div>
+  </section>
+  
   <section id="suite">
     <div class="sectionInner">
 
@@ -251,13 +269,24 @@
             </div>
           </a>
         </li>
+          <li id="epoch" class="scrollShow suiteItem">
+          <div class="suiteItemLink">
+            <div class="suiteContent">
+              <dl>
+                <dt><em>Exastro</em> EPOCH <span class="series development"><span>Development</span></span></dt>
+                <dd class="image"><img src="./asset/img/series_epoch.jpg" alt="EPOCH Image"></dd>
+                <dd class="text"><span>Coming soon...</span></dd>
+              </dl>
+            </div>
+          </div>
+        </li>
         <li id="andMore" class="scrollShow">
           <div class="suiteItemLink">
             <div class="suiteContent">
               <dl>
                 <dt>and more</dt>
                 <dd class="image"><img src="./asset/img/series_and_more_en.jpg" alt="and more Image"></dd>
-                <dd class="text"><span>further possibilities for <em>Exastro</em>.</span></dd>
+                <dd class="text"><span><em>Exastro</em>is preparing<br>new possibilities...</span></dd>
               </dl>
             </div>
           </div>
