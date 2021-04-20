@@ -304,6 +304,8 @@ z-index: 3;
 .ja #terminalBody .systemLifeCycleText .design { width: 19.741%; left: 9%; top: 38%; }
 .ja #terminalBody .systemLifeCycleText .development { width: 39.583%; left: 36%; top: 9%; }
 
+.en #terminalBody .systemLifeCycleText .development a { padding: 0 13%; }
+
 #terminalBody .systemLifeCycleSystem > div {
 position: absolute;
 top: 50%; left: 50%;
@@ -760,7 +762,7 @@ font-size: 2vw;
 #terminalBody .handoutList li {
 width: 48%;
 }
-.ja #terminalBody #why p.link a {
+#terminalBody #why p.link a {
 min-width: 140px;
 }
 
