@@ -23,19 +23,21 @@ $( window ).one('load', function(){
   
   // Anker scroll
   if( locationHash ) {
-    window.location.hash = locationHash;
-    $('html, body').scrollTop( 0 );
-    setTimeout(function(){
-      var headerHeight = $('header').outerHeight(),
-          subMenuHeight = $('#contentsMenu').outerHeight(),
-          scrollPosition = $( locationHash ).offset().top - headerHeight - subMenuHeight;
-      $('html, body').animate({ scrollTop: scrollPosition }, 300, 'swing');
-      if( $( locationHash ).is('.toggleHeading') ) {
-        setTimeout(function(){
-          $( locationHash ).click();
-        }, 400 );
-      }
-    }, 100 );
+    if ( $( locationHash ).length ) {
+      window.location.hash = locationHash;
+      $('html, body').scrollTop( 0 );
+      setTimeout(function(){
+        var headerHeight = $('header').outerHeight(),
+            subMenuHeight = $('#contentsMenu').outerHeight(),
+            scrollPosition = $( locationHash ).offset().top - headerHeight - subMenuHeight;
+        $('html, body').animate({ scrollTop: scrollPosition }, 300, 'swing');
+        if( $( locationHash ).is('.toggleHeading') ) {
+          setTimeout(function(){
+            $( locationHash ).click();
+          }, 400 );
+        }
+      }, 100 );
+    }
   }
   
   // Menu width Check
@@ -658,8 +660,8 @@ function faqLoading( jsonURL ) {
             category = '';
           }
           var faqItem = ''
-            + '<li id="' + id + '-q' +  faqNo + '">'
-              + '<dl>'
+            + '<li>'
+              + '<dl id="' + id + '-q' +  faqNo + '">'
                 + '<dt tabindex="0" class="q toggleHeading"><span class="mark">Q<span class="num">' + faqNo + '</span></span><span class="text">' + category + qText + '</span></dt>'
                 + '<dd class="a toggleText"><span class="mark">A</span><span class="text">' + aText + '</span></dd>'
               + '</dl>'
@@ -700,7 +702,7 @@ function faqLoading( jsonURL ) {
           str = str.replace(/\r?\n/g, '<br>'); 
           str = str.replace(/{img{(.+?)}(.+?)}/g,'<div class="aImge"><img src="$1" style="width:$2;"></div>');
           str = str.replace(/{a{(.+?)}(.+?)}/g,'<a href="$1" target="_blank">$2</a>');
-          str = str.replace(/{ank{(.+?)}(.+?)}/g,'<a href="$1" class="anker touch q-anker" target="_blank">$2</a>');
+          str = str.replace(/{ank{(.+?)}(.+?)}/g,'<a href="$1" class="q-anker" target="_blank">$2</a>');
           return str;
         };
         
@@ -782,6 +784,20 @@ function faqLoading( jsonURL ) {
             }
           }
         }, '.toggleHeading' );
+        
+        $('#faqContent').on('click', '.q-anker',function(e){
+          e.preventDefault();
+          var href = $( this ).attr('href'),
+              headerHeight = $('header').outerHeight(),
+              menuHeight = $('#contentsMenu').outerHeight(),
+              speed = 100,
+              $target = $( ( href == '#' || href == '' ) ? 'html' : href ),
+              position = $target.offset().top - headerHeight - menuHeight;
+          $('body, html').animate({ scrollTop : position }, speed, 'swing' );
+          if ( !$target.find('dt').is('.open') ) {
+            $target.find('dt').click();
+          }
+        });
         
         var $searchInput = $('#search-input'),
             $searchButton = $('#search-button'),
