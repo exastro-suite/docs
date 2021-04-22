@@ -4099,7 +4099,15 @@ transform:  translateY(-65%) rotateX(-180deg);
 display: block;
 margin-left: 64px;
 }
-
+#faqContent .a pre {
+margin: 0;
+padding: 8px;
+background-color: #333;
+border-radius: 2px;
+font-family: Consolas, "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", "sans-serif";
+color: #DDD;
+font-size: 0.9rem;
+}
 
 /* 検索 */
 #faqContent .search-box {

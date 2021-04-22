@@ -1,6 +1,5 @@
 // JavaScript Document
 
-
 // HASH
 var locationHash = window.location.hash;
 if( locationHash ) window.location.hash = ''; 
@@ -699,10 +698,11 @@ function faqLoading( jsonURL ) {
         // Replace
         var textReplace = function( str ) {  
           str = textEntities( str );
-          str = str.replace(/\r?\n/g, '<br>'); 
-          str = str.replace(/{img{(.+?)}(.+?)}/g,'<div class="aImge"><img src="$1" style="width:$2;"></div>');
-          str = str.replace(/{a{(.+?)}(.+?)}/g,'<a href="$1" target="_blank">$2</a>');
-          str = str.replace(/{ank{(.+?)}(.+?)}/g,'<a href="$1" class="q-anker" target="_blank">$2</a>');
+          str = str.replace(/\r?\n/g, '<br>\n'); 
+          str = str.replace(/\{img{(.+?)\}(.+?)\}/g,'<div class="aImge"><img src="$1" style="width:$2;"></div>');
+          str = str.replace(/\{a{(.+?)\}(.+?)\}/g,'<a href="$1" target="_blank">$2</a>');
+          str = str.replace(/\{ank{(.+?)\}(.+?)\}/g,'<a href="$1" class="q-anker" target="_blank">$2</a>');
+          str = str.replace(/\{code\{([\s\S]+?)\}(.+?)\}/g,'<pre class="type-$2 clipboard-copy">$1</pre>');
           return str;
         };
         
@@ -758,6 +758,7 @@ function faqLoading( jsonURL ) {
           // Index 一番目を表示
           $faqList.find('.loading').remove();
           $faqList.prepend( faqHTML );
+          $faqList.find('pre').find('br').remove();
           //$('#frequently').find('ul').html( frequentlyHTML );
           $faqNavi.find('a').eq(0).addClass('open');
           $faqList.children().eq(0).addClass('open');
@@ -785,7 +786,7 @@ function faqLoading( jsonURL ) {
           }
         }, '.toggleHeading' );
         
-        $('#faqContent').on('click', '.q-anker',function(e){
+        $faqList.on('click', '.q-anker',function(e){
           e.preventDefault();
           var href = $( this ).attr('href'),
               headerHeight = $('header').outerHeight(),
@@ -799,6 +800,41 @@ function faqLoading( jsonURL ) {
           }
         });
         
+        $faqList.on('click', '.clipboard-copy', function(){
+
+          var clickInterval = 1000; // Click interval.
+          var $this = $( this );
+
+          if( !$this.is('.copy') ){
+
+            var $dummyElm = $('<textarea class="dummy" />'),
+                text = '';
+
+            // Line feed check.
+            text = $( this ).text();
+            text = text.replace(/\r/g, '\n');
+            if( text.slice( -1) !== '\n' ) text += '\n';
+            text = text.replace(/\n+$/, '\n');
+
+            // Add text to dummy element and select.
+            $this.after( $dummyElm );
+            $dummyElm.text( text ).focus().select();
+
+            // Selected text to clipboard.
+            document.execCommand('copy');
+
+            // Dummy element remove.
+            $dummyElm.remove();
+
+            // Leave an interval.
+            $this.addClass('copy');
+            setTimeout( function(){
+              $this.removeClass('copy');
+            }, clickInterval );
+
+          }
+        });
+
         var $searchInput = $('#search-input'),
             $searchButton = $('#search-button'),
             regexEscapeArray = ['.','*','+','^','|','[',']','(',')','?','$','{','}'],
