@@ -891,6 +891,7 @@ function faqLoading( jsonURL ) {
           }
           
           $searchResult.find('ul').html( searchResultHTML );
+          $faqList.find('pre').find('br').remove();
           targetScroll('search-result');
           
         });
