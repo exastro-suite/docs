@@ -744,7 +744,7 @@ function faqLoading( jsonURL ) {
               faqHTML += faqItemHTML( faq[cat]['data']['id'], no, qText, aText );
               
               if ( frequentlyArray.indexOf( no ) !== -1 ) {
-                frequentlyHTML += faqItemHTML( frequentlyNumber++, qText, aText, cat );
+                frequentlyHTML += faqItemHTML( faq[cat]['data']['id'], frequentlyNumber++, qText, aText, cat );
               }
             }
           }
@@ -870,16 +870,15 @@ function faqLoading( jsonURL ) {
             if ( faq[cat]['data']['id'] !== 'frequently' ) {
               for ( var no in faq[cat] ) {
                 if ( no === "data" ) break;
-                  var qText = textReplace( faq[cat][no]['Q'] ),
-                      aText = textReplace( faq[cat][no]['A'] );
-                  if ( qText.match( regex ) !== null || aText.match( regex ) !== null ) {
-                    qText = qText.replace( regex, tagReplace );
-                    aText = aText.replace( regex, tagReplace );
-                    
-                    if ( qText !== false || aText !== false ) {
-                      searchResultHTML += faqItemHTML( searchResultNum++, qText, aText, cat );
-                    }
+                var qText = textReplace( faq[cat][no]['Q'] ),
+                    aText = textReplace( faq[cat][no]['A'] );
+                if ( qText.match( regex ) !== null || aText.match( regex ) !== null ) {
+                  qText = qText.replace( regex, tagReplace );
+                  aText = aText.replace( regex, tagReplace );
+                  if ( qText !== false || aText !== false ) {
+                    searchResultHTML += faqItemHTML('search', searchResultNum++, qText, aText, cat );
                   }
+                }
               }
             }
           }
