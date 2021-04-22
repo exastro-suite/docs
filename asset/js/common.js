@@ -651,14 +651,14 @@ function faqLoading( jsonURL ) {
             frequentlyHTML = '';
         
         // FA HTML
-        var faqItemHTML = function( faqNo, qText, aText, category ) {
+        var faqItemHTML = function( id, faqNo, qText, aText, category ) {
           if ( category !== undefined ) {
             category = '<span class="category">' + category + '</span>'
           } else {
             category = '';
           }
           var faqItem = ''
-            + '<li>'
+            + '<li id="' + id + '-q' +  faqNo + '">'
               + '<dl>'
                 + '<dt tabindex="0" class="q toggleHeading"><span class="mark">Q<span class="num">' + faqNo + '</span></span><span class="text">' + category + qText + '</span></dt>'
                 + '<dd class="a toggleText"><span class="mark">A</span><span class="text">' + aText + '</span></dd>'
@@ -700,6 +700,7 @@ function faqLoading( jsonURL ) {
           str = str.replace(/\r?\n/g, '<br>'); 
           str = str.replace(/{img{(.+?)}(.+?)}/g,'<div class="aImge"><img src="$1" style="width:$2;"></div>');
           str = str.replace(/{a{(.+?)}(.+?)}/g,'<a href="$1" target="_blank">$2</a>');
+          str = str.replace(/{ank{(.+?)}(.+?)}/g,'<a href="$1" class="anker touch q-anker" target="_blank">$2</a>');
           return str;
         };
         
@@ -738,7 +739,7 @@ function faqLoading( jsonURL ) {
               var qText = textReplace( faq[cat][no]["Q"] ),
                   aText = textReplace( faq[cat][no]["A"] );
                   
-              faqHTML += faqItemHTML( no, qText, aText );
+              faqHTML += faqItemHTML( faq[cat]['data']['id'], no, qText, aText );
               
               if ( frequentlyArray.indexOf( no ) !== -1 ) {
                 frequentlyHTML += faqItemHTML( frequentlyNumber++, qText, aText, cat );
