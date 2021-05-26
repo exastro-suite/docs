@@ -703,6 +703,7 @@ function faqLoading( jsonURL ) {
           str = str.replace(/\{a{(.+?)\}(.+?)\}/g,'<a href="$1" target="_blank">$2</a>');
           str = str.replace(/\{ank{(.+?)\}(.+?)\}/g,'<a href="$1" class="q-anker" target="_blank">$2</a>');
           str = str.replace(/\{code\{([\s\S]+?)\}(.+?)\}/g,'<pre class="type-$2 clipboard-copy">$1</pre>');
+          str = str.replace(/\{cmd\{([\s\S]+?)\}(.+?)\}/g,'<pre class="type-$2">$1</pre>');
           return str;
         };
         
