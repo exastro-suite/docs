@@ -4094,7 +4094,10 @@ transform:  translateY(-50%) rotateX(-180deg);
 #faqContent .q.toggleHeading.open:hover .text::after {
 transform:  translateY(-65%) rotateX(-180deg);
 }
-
+#faqContent .a {
+overflow: auto;
+max-height: 640px;
+}
 #faqContent .a .text {
 display: block;
 margin-left: 64px;
