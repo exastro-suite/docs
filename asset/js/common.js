@@ -787,14 +787,28 @@ function faqLoading( jsonURL ) {
           }
         }, '.toggleHeading' );
         
+        // FAQ link
         $faqList.on('click', '.q-anker',function(e){
           e.preventDefault();
-          var href = $( this ).attr('href'),
+          var $link = $( this ),
+              href = $( this ).attr('href'),
+              linkCat = href.split('-')[0],
               headerHeight = $('header').outerHeight(),
               menuHeight = $('#contentsMenu').outerHeight(),
-              speed = 100,
-              $target = $( ( href == '#' || href == '' ) ? 'html' : href ),
-              position = $target.offset().top - headerHeight - menuHeight;
+              speed = 100;
+          
+          // 別のカテゴリリンクの場合
+          if ( !$link.closest( linkCat ).length ) {
+            $faqNavi.find('.open').removeClass('open');
+            $faqList.find('.open').removeClass('open');
+            
+            $faqNavi.find('a[href="' + linkCat + '"]').addClass('open');
+            $faqList.find( linkCat ).addClass('open');
+          }
+          
+          var $target = $( ( href == '#' || href == '' ) ? 'html' : href ),
+              position = $target.offset().top - headerHeight - menuHeight;                    
+          
           $('body, html').animate({ scrollTop : position }, speed, 'swing' );
           if ( !$target.find('dt').is('.open') ) {
             $target.find('dt').click();
