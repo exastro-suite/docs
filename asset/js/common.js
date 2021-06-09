@@ -800,7 +800,7 @@ function faqLoading( jsonURL ) {
           // 別のカテゴリリンクの場合
           if ( !$link.closest( linkCat ).length ) {
             $faqNavi.find('.open').removeClass('open');
-            $faqList.find('.open').removeClass('open');
+            $faqList.find('.faqItem.open').removeClass('open');
             
             $faqNavi.find('a[href="' + linkCat + '"]').addClass('open');
             $faqList.find( linkCat ).addClass('open');
@@ -810,7 +810,7 @@ function faqLoading( jsonURL ) {
               position = $target.offset().top - headerHeight - menuHeight;                    
           
           $('body, html').animate({ scrollTop : position }, speed, 'swing' );
-          if ( !$target.find('dt').is('.open') ) {
+          if ( !$target.find('.a').is(':visible') ) {
             $target.find('dt').click();
           }
         });
