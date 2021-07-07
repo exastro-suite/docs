@@ -99,7 +99,7 @@ const footerMenuJa =  (function(){/*
       <li><a href="../oase-docs/faq_ja.html" class="faq">FAQ</a></li>
     </ul>
   </li>
-  <!--<li id="footerEpoch">
+  <li id="footerEpoch">
     <div class="footerMainMenuHome">
       <a href="../epoch-docs/index_ja.html"><img src="../epoch-docs/asset/img/epoch.svg" alt="EPOCH"></a>
     </div>
@@ -109,7 +109,7 @@ const footerMenuJa =  (function(){/*
       <li><a href="../epoch-docs/documents_ja.html" class="documents">Documents</a></li>
       <li><a href="../epoch-docs/downloads_ja.html" class="downloads">Downloads</a></li>
     </ul>
-  </li>-->
+  </li>
 </ul>
 <ul id="footerSubMenu">
   <li><a href="https://twitter.com/ExastroSuite" class="twitter" target="_blank" rel="noopener"><i class="fab fa-twitter-square"></i></a><span>Twitter</span></li>
