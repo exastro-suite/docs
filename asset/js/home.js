@@ -61,7 +61,6 @@ $( window ).one('load', function(){
         }
         var resizeAndMore = function() {
 
-          $('#epoch').find('.text').css('height', $('#epoch').find('.image').height() );
           $('#andMore').find('.text').css('height', $('#andMore').find('.image').height() );
 
         }
