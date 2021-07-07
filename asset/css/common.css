@@ -290,24 +290,28 @@ right: 20px;
 }
 .exastro #suiteList .exastro a,
 .ita #suiteList .ita a,
-.oase #suiteList .oase a {
+.oase #suiteList .oase a,
+.epoch #suiteList .epoch a {
 color: #666;
 cursor: default;
 }
 .exastro #suiteList .exastro a::after,
 .ita #suiteList .ita a::after,
-.oase #suiteList .oase a::after {
+.oase #suiteList .oase a::after,
+.epoch #suiteList .epoch a::after {
 content: '\f00c';
 color: #60C60D;
 }
 .exastro #suiteList .exastro a:hover,
 .ita #suiteList .ita a:hover,
-.oase #suiteList .oase a:hover {
+.oase #suiteList .oase a:hover,
+.epoch #suiteList .epoch a:hover {
 background-color: #FFF;
 }
 .exastro #suiteList .exastro a:hover::after,
 .ita #suiteList .ita a:hover::after,
-.oase #suiteList .oase a:hover::after {
+.oase #suiteList .oase a:hover::after,
+.epoch #suiteList .epoch a:hover::after {
 right: 24px;
 }
 

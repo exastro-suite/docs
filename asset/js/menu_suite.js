@@ -21,7 +21,7 @@ const suiteListJa =  (function(){/*
   <li class="ita"><a href="/it-automation-docs/index_ja.html">IT Automation</a></li>
   <li class="pc"><a href="https://github.com/exastro-suite/playbook-collection-docs/blob/master/README.ja.md" target="_blank" rel="noopener">Playbook Collection</a></li>
   <li class="oase"><a href="/oase-docs/index_ja.html">Operation Autonomy Support Engine</a></li>
-  <li class="epoch"><a href="/epoch-docs/index_ja.html">Operation Autonomy Support Engine</a></li>
+  <li class="epoch"><a href="/epoch-docs/index_ja.html">EPOCH</a></li>
 </ul>
 */}).toString().match(/[^]*\/\*([^]*)\*\/\}$/)[1];
 
