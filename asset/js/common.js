@@ -26,9 +26,19 @@ $( window ).one('load', function(){
       window.location.hash = locationHash;
       $('html, body').scrollTop( 0 );
       setTimeout(function(){
-        var headerHeight = $('header').outerHeight(),
-            subMenuHeight = $('#contentsMenu').outerHeight(),
-            scrollPosition = $( locationHash ).offset().top - headerHeight - subMenuHeight;
+      
+        var $target = $( locationHash ),
+            headerHeight = $('header').outerHeight(),
+            subMenuHeight = $('#contentsMenu').outerHeight();
+        
+        var scrollPosition = 0;
+            
+        if ( $target.is('.tabContent') ) {
+          scrollPosition = $target.closest('section').offset().top - headerHeight - subMenuHeight;
+        } else {
+          scrollPosition = $target.offset().top - headerHeight - subMenuHeight;
+        }
+            
         $('html, body').animate({ scrollTop: scrollPosition }, 300, 'swing');
         if( $( locationHash ).is('.toggleHeading') ) {
           setTimeout(function(){
@@ -181,10 +191,25 @@ if( $('.scrollShow').length ){
   });
 }
 
+
+// hash open tab check.
+var $hashTab = $( locationHash );
+if ( $hashTab.is('.tabContent') ){
+  var $tabContents = $hashTab.closest('.tabContents');
+  $tabContents.attr('data-open-tab', $hashTab.closest('.tabContents').children('.tabContent').index( $hashTab ) );
+  if ( $tabContents.closest('.tabContent').length ) {
+    var $parentTabContents = $tabContents.closest('.tabContent').closest('.tabContents');
+    $parentTabContents.attr('data-open-tab', $parentTabContents.children('.tabContent').index( $tabContents.closest('.tabContent') ) );
+  }
+}
+
+
 // Tab Contents
 $('.tabContents, .webinarContainer').each( function(){
-    $( this ).children('.tabMenu, .webinarVersionSelect').find('.tabMenuItem, .webinarVersionItem').eq(0).addClass('tabOpen');
-    $( this ).children('.tabContent, .webinarContent').eq(0).addClass('tabOpen');
+    var $tabContents = $( this ),
+        openTabNum = ( $tabContents.attr('data-open-tab') === undefined )? 0: $tabContents.attr('data-open-tab');
+    $( this ).children('.tabMenu, .webinarVersionSelect').find('.tabMenuItem, .webinarVersionItem').eq( openTabNum ).addClass('tabOpen');
+    $( this ).children('.tabContent, .webinarContent').eq( openTabNum ).addClass('tabOpen');
 });
 $('.tabMenuLink, .webinarVersionLink').on('click', function( e ){
     e.preventDefault();
