@@ -78,7 +78,11 @@ function viewDocuments( ducumentsJsonUrl ) {
 
                 var url = '';
                 if ( documentType === 'pdf') {
-                  url = pdfViewerURL + pdfURL + documentURL + pdfViewerParam;
+                  if ( documentURL.match(/^https:\/\//) ) {
+                    url = documentURL + pdfViewerParam;
+                  } else {
+                    url = pdfViewerURL + pdfURL + documentURL + pdfViewerParam;
+                  }
                 } else if ( documentType === 'slide') {
                   url = googleSlideURL + documentURL + googleSlideParam;
                 }
