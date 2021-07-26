@@ -723,13 +723,13 @@ function faqLoading( jsonURL ) {
         // Replace
         var textReplace = function( str ) {  
           str = textEntities( str );
-          str = str.replace(/\{color\{([\s\S]+?)\}(.+?)\}/g,'<span style="$2">$1</span>');
+          str = str.replace(/\{color\{([\s\S]+?)\}(.+?)\}/g,'<span style="color:$2">$1</span>');
           str = str.replace(/\r?\n/g, '<br>\n'); 
           str = str.replace(/\{img{(.+?)\}(.+?)\}/g,'<div class="aImge"><img src="$1" style="width:$2;"></div>');
           str = str.replace(/\{a{(.+?)\}(.+?)\}/g,'<a href="$1" target="_blank">$2</a>');
           str = str.replace(/\{ank{(.+?)\}(.+?)\}/g,'<a href="$1" class="q-anker" target="_blank">$2</a>');
           str = str.replace(/\__{code\{([\s\S]+?)\}([^\}]+?)\}__/g,'<pre class="type-$2 clipboard-copy">$1</pre>');
-          str = str.replace(/\{cmd\{([\s\S]+?)\}(.+?)\}/g,'<pre class="type-$2">$1</pre>');
+          str = str.replace(/\{cmd\{([\s\S]+?)\}command}/g,'<pre class="type-$2">$1</pre>');
           return str;
         };
         
