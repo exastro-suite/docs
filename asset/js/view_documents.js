@@ -128,7 +128,11 @@ function viewDocuments( ducumentsJsonUrl ) {
                 $viewBody.find('.fullscreen-on, .fullscreen-off').on('click', function(){ toggleFullScreen( $viewDocument.get(0) ); });
                 $viewBody.find('.outlink').on('click', function(){
                   if ( documentType === 'pdf') {
-                    window.open( pdfURL + documentURL, '_blank');
+                    if ( documentURL.match(/^https:\/\//) ) {
+                      window.open( pdfURL + documentURL, '_blank');
+                    } else {
+                      window.open( documentURL, '_blank');
+                    }
                   } else {
                     window.open( url, '_blank');
                   }
