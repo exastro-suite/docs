@@ -129,9 +129,9 @@ function viewDocuments( ducumentsJsonUrl ) {
                 $viewBody.find('.outlink').on('click', function(){
                   if ( documentType === 'pdf') {
                     if ( documentURL.match(/^https:\/\//) ) {
-                      window.open( pdfURL + documentURL, '_blank');
-                    } else {
                       window.open( documentURL, '_blank');
+                    } else {
+                      window.open( pdfURL + documentURL, '_blank');
                     }
                   } else {
                     window.open( url, '_blank');
