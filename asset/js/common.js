@@ -685,7 +685,7 @@ function faqLoading( jsonURL ) {
           }
           var faqItem = ''
             + '<li>'
-              + '<dl id="' + id + '-q' +  faqNo + '">'
+              + '<dl id="' + id + '">'
                 + '<dt tabindex="0" class="q toggleHeading"><span class="mark">Q<span class="num">' + faqNo + '</span></span><span class="text">' + category + qText + '</span></dt>'
                 + '<dd class="a toggleText"><span class="mark">A</span><span class="text">' + aText + '</span></dd>'
               + '</dl>'
@@ -727,7 +727,7 @@ function faqLoading( jsonURL ) {
           str = str.replace(/\r?\n/g, '<br>\n'); 
           str = str.replace(/\{img{(.+?)\}(.+?)\}/g,'<div class="aImge"><img src="$1" style="width:$2;"></div>');
           str = str.replace(/\{a{(.+?)\}(.+?)\}/g,'<a href="$1" target="_blank">$2</a>');
-          str = str.replace(/\{ank{(.+?)\}(.+?)\}/g,'<a href="$1" class="q-anker" target="_blank">$2</a>');
+          str = str.replace(/\{ank{(.+?)\}(.+?)\}/g,'<a href="#$1" class="q-anker" target="_blank">$2</a>');
           str = str.replace(/\__{code\{([\s\S]+?)\}([^\}]+?)\}__/g,'<pre class="type-$2 clipboard-copy">$1</pre>');
           str = str.replace(/\{cmd\{([\s\S]+?)\}command}/g,'<pre class="type-$2">$1</pre>');
           return str;
@@ -768,10 +768,10 @@ function faqLoading( jsonURL ) {
               var qText = textReplace( faq[cat][no]["Q"] ),
                   aText = textReplace( faq[cat][no]["A"] );
                   
-              faqHTML += faqItemHTML( faq[cat]['data']['id'], no, qText, aText );
+              faqHTML += faqItemHTML( faq[cat][no]['id'], no, qText, aText );
               
               if ( frequentlyArray.indexOf( no ) !== -1 ) {
-                frequentlyHTML += faqItemHTML( faq[cat]['data']['id'], frequentlyNumber++, qText, aText, cat );
+                frequentlyHTML += faqItemHTML( faq[cat][no]['id'], frequentlyNumber++, qText, aText, cat );
               }
             }
           }
@@ -818,11 +818,11 @@ function faqLoading( jsonURL ) {
           e.preventDefault();
           var $link = $( this ),
               href = $( this ).attr('href'),
-              linkCat = href.split('-')[0],
+              linkCat = href.replace(/[0-9]+$/,''),
               headerHeight = $('header').outerHeight(),
               menuHeight = $('#contentsMenu').outerHeight(),
               speed = 100;
-          
+          console.log(linkCat)
           // 別のカテゴリリンクの場合
           if ( !$link.closest( linkCat ).length ) {
             $faqNavi.find('.open').removeClass('open');
@@ -917,7 +917,7 @@ function faqLoading( jsonURL ) {
                   qText = qText.replace( regex, tagReplace );
                   aText = aText.replace( regex, tagReplace );
                   if ( qText !== false || aText !== false ) {
-                    searchResultHTML += faqItemHTML('search', searchResultNum++, qText, aText, cat );
+                    searchResultHTML += faqItemHTML('search' + no, searchResultNum++, qText, aText, cat );
                   }
                 }
               }
