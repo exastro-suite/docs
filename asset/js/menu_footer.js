@@ -25,10 +25,10 @@ const footerMenuEn =  (function(){/*
     </div>
     <ul class="footerMainMenuChildren">
       <li><a href="/it-automation-docs/overview.html" class="overview">Overview</a></li>
+      <li><a href="/it-automation-docs/install.html" class="install">Install</a></li>
       <li><a href="/it-automation-docs/learn.html" class="learn">Learn</a></li>
       <li><a href="/it-automation-docs/case.html" class="case">Case</a></li>
       <li><a href="/it-automation-docs/documents.html" class="documents">Documents</a></li>
-      <li><a href="/it-automation-docs/downloads.html" class="downloads">Downloads</a></li>
       <li><a href="/it-automation-docs/faq.html" class="faq">FAQ</a></li>
     </ul>
   </li>
@@ -76,11 +76,11 @@ const footerMenuJa =  (function(){/*
     </div>
     <ul class="footerMainMenuChildren">
       <li><a href="/it-automation-docs/overview_ja.html" class="overview">Overview</a></li>
+      <li><a href="/it-automation-docs/install_ja.html" class="install">Install</a></li>
       <li><a href="/it-automation-docs/learn_ja.html" class="learn">Learn</a></li>
       <li><a href="/it-automation-docs/webinar_ja.html" class="webinar">Webinar</a></li>
       <li><a href="/it-automation-docs/case_ja.html" class="case">Case</a></li>
       <li><a href="/it-automation-docs/documents_ja.html" class="documents">Documents</a></li>
-      <li><a href="/it-automation-docs/downloads_ja.html" class="downloads">Downloads</a></li>
       <li><a href="/it-automation-docs/setting-samples_ja.html" class="setting-samples">Setting samples</a></li>
       <li><a href="/it-automation-docs/faq_ja.html" class="faq">FAQ</a></li>
     </ul>
@@ -106,6 +106,7 @@ const footerMenuJa =  (function(){/*
     <ul class="footerMainMenuChildren">
       <li><a href="/epoch-docs/overview_ja.html" class="overview">Overview</a></li>
       <li><a href="/epoch-docs/learn_ja.html" class="learn">Learn</a></li>
+      <!--<li><a href="/epoch-docs/webinar_ja.html" class="learn">Webinar</a></li>-->
       <li><a href="/epoch-docs/documents_ja.html" class="documents">Documents</a></li>
       <li><a href="/epoch-docs/downloads_ja.html" class="downloads">Downloads</a></li>
     </ul>
