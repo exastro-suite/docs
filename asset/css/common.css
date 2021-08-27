@@ -3835,6 +3835,7 @@ float: left;
 position: relative;
 z-index: 1;
 width: 280px;
+margin-bottom: 24px;
 padding: 24px 8px 8px;
 background-color: #FFF;
 background-image: linear-gradient( #FFF 75%, #F2F2F2 );
@@ -3849,6 +3850,10 @@ font-family: Consolas, "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", 
 font-size: 10px;
 font-weight: bold;
 color: #002B62;
+}
+#articleBody p.faqLead {
+max-width: 980px;
+margin: 24px auto;
 }
 #articleBody #faqNavi::before {
 content: '';
@@ -3946,12 +3951,15 @@ margin: 0 auto 48px;
 
 #faqContent {
 max-width: 1200px;
-margin: 0 auto;
+margin: 0 auto; padding-top: 1px;
 }
 #faqContent::after {
 content: '';
 display: block;
 clear: both;
+}
+#articleBody #faqContent h3 {
+margin-top: 0;
 }
 #faqList {
 margin: 0 0 0 320px; 
