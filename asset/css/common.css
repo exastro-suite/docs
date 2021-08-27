@@ -862,7 +862,7 @@ width: 200px; height: auto;
 }
 #footerAbout p {
 line-height: 2;
-text-align: justify;
+text-align: left;
 font-size: 13px;
 color: #FFF;
 }
