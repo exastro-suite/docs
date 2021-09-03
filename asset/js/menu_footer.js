@@ -106,7 +106,7 @@ const footerMenuJa =  (function(){/*
     <ul class="footerMainMenuChildren">
       <li><a href="/epoch-docs/overview_ja.html" class="overview">Overview</a></li>
       <li><a href="/epoch-docs/learn_ja.html" class="learn">Learn</a></li>
-      <!--<li><a href="/epoch-docs/webinar_ja.html" class="learn">Webinar</a></li>-->
+      <li><a href="/epoch-docs/webinar_ja.html" class="learn">Webinar</a></li>
       <li><a href="/epoch-docs/documents_ja.html" class="documents">Documents</a></li>
       <li><a href="/epoch-docs/downloads_ja.html" class="downloads">Downloads</a></li>
     </ul>
