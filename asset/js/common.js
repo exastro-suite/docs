@@ -607,14 +607,16 @@ function youTubeIframeAPISet() {
 }
 // "Yotube iframe Player API" Ready
 function onYouTubeIframeAPIReady() {
-    var $youtubeEmbed = $('.youtubeEmbed');
-
+    var $youtubeEmbed = $('.youtubeEmbed');  
+    
     $youtubeEmbed.on('click', function(){
       var $loadYouTube = $( this ),
           loadYouTubeID = $loadYouTube.attr('data-embed-id'),
           width = $loadYouTube.width(),
-          height = $loadYouTube.outerHeight();
-
+          height = $loadYouTube.outerHeight(),
+          start = Number( $loadYouTube.attr('data-start-time') );
+      if ( start === undefined ) start = 0;
+      console.log(start)
       $loadYouTube.removeClass('ready').addClass('loading');
       
       var ytPlayer = new YT.Player(
@@ -623,7 +625,8 @@ function onYouTubeIframeAPIReady() {
           height: height,
           videoId: loadYouTubeID,
           playerVars: {
-            'autoplay': 1
+            'autoplay': 1,
+            'start': start,
           },
           events: {
             'onReady': function(){
