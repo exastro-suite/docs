@@ -14,6 +14,11 @@ Twitter: @rich_clark
 ** -------------------------------------------------- */
 article,aside,details,figcaption,figure,footer,header,hgroup,hr,menu,nav,section{display:block}a,hr{padding:0}abbr,address,article,aside,audio,b,blockquote,body,canvas,caption,cite,code,dd,del,details,dfn,div,dl,dt,em,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,p,pre,q,samp,section,small,span,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,ul,var,video{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:0 0}ins,mark{background-color:#ff9;color:#000}body{line-height:1}nav ul{list-style:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:'';content:none}a{margin:0;font-size:100%;vertical-align:baseline;background:0 0}ins{text-decoration:none}mark{font-style:italic;font-weight:700}del{text-decoration:line-through}abbr[title],dfn[title]{border-bottom:1px dotted;cursor:help}table{border-collapse:collapse;border-spacing:0}hr{height:1px;border:0;border-top:1px solid #ccc;margin:1em 0}input,select{vertical-align:middle}*,::after,::before{box-sizing:border-box}
 
+/* -------------------------------------------------- **
+
+   Exastro documents css
+
+** -------------------------------------------------- */
 html, body {
 height: 100%;
 }
@@ -259,7 +264,7 @@ background-color: #FFF;
 }
 .article-section h2 {
 margin: 0 -32px 24px; padding: 48px 40px;
-background-image: url(../../../docs/asset/img/footer_background.png), linear-gradient( 45deg, #4CA393, #1C7E6C );
+background-image: url(https://exastro-suite.github.io/docs/asset/img/footer_background.png), linear-gradient( 45deg, #4CA393, #1C7E6C );
 background-size: auto 150%, 100% 100%;
 background-repeat: no-repeat;
 background-position: right;
@@ -410,12 +415,18 @@ color: #D00;
 .article-section pre em {
 color: #DD0;
 }
-.message {
+p.check,
+p.info,
+p.warning,
+p.alert {
 position: relative;
 padding: 24px 24px 24px 112px;
 border-left: 4px solid #CCC;
 }
-.message::before {
+p.check::before,
+p.info::before,
+p.warning::before,
+p.alert::before {
 content: "";
 display: flex;
 align-items: center;
@@ -428,35 +439,35 @@ font-family: "Font Awesome 5 Free";
 font-weight: 900;
 font-size: 32px;
 }
-.message.m-check {
+p.check {
 background-color: #DFF4CF;
 border-color: #60C60D;
 }
-.message.m-check::before {
+p.check::before {
 content: "\f058";
 color: #60C60D;
 }
-.message.m-info {
+p.info {
 background-color: #D1E7EF;
 border-color: #1B86AD;
 }
-.message.m-info::before {
+p.info::before {
 content: "\f05a";
 color: #1B86AD;
 }
-.message.m-warning {
+p.warning {
 background-color: #FFE0CE;
 border-color: #FF821E;
 }
-.message.m-warning::before {
+p.warning::before {
 content: "\f071";
 color: #FF821E;
 }
-.message.m-error {
+p.alert {
 background-color: #F8CCCC;
 border-color: #DD0000;
 }
-.message.m-error::before {
+p.alert::before {
 content: "\f057";
 color: #DD0000;
 }
