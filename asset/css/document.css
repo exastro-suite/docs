@@ -101,7 +101,8 @@ color: #EEE;
 #main {
 display: block;
 margin: 0 0 0 320px; padding: 0;
-background: url("../img/background.png");
+background-image: url(https://exastro-suite.github.io/docs/asset/img/background.png);
+background-color: #F8F8F8;
 }
 #article {
 position: relative;
