@@ -258,13 +258,12 @@ text-align: center;
 color: #333;
 }
 
-
 .article-section {
 padding: 0 32px 96px;
 background-color: #FFF;
 }
 .article-section h2 {
-margin: 96px -32px 24px; padding: 48px 40px;
+margin: 128px -32px 24px; padding: 48px 40px;
 background-image: url(https://exastro-suite.github.io/docs/asset/img/footer_background.png), linear-gradient( 45deg, #4CA393, #1C7E6C );
 background-size: auto 150%, 100% 100%;
 background-repeat: no-repeat;
@@ -385,7 +384,8 @@ color: #1F8C78;
 }
 .article-section h2 + h3,
 .article-section h3 + h4,
-.article-section h4 + h5 {
+.article-section h4 + h5,
+.article-section h5 + h6 {
 margin-top: 0;
 }
 .article-section em {
