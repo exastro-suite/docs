@@ -20,7 +20,8 @@
       const $h = $( this ),
             t = $h.text(),
             n = Number( $h.prop('tagName').slice( -1 ) ),
-            nDiff = n - pN;
+            nDiff = n - pN,
+            id = $h.attr('id');
 
       // 段落番号
       naviCount[n-1]++;
@@ -31,13 +32,13 @@
       }
 
       // 段落番号連結
-      let id = 'h' + naviCount[1];
+      let dataId = 'h' + naviCount[1];
       if ( n > 2 ) {
         for ( let i = 3; i <= n; i++ ) {
-          if ( naviCount[i-1] !== undefined ) id += '-' + naviCount[i-1];
+          if ( naviCount[i-1] !== undefined ) dataId += '-' + naviCount[i-1];
         }
       }
-      $h.attr('id', id );
+      $h.attr('data-id', dataId );
       pN = n;
 
       // HTML
@@ -58,7 +59,7 @@
           naviHTML += '</ol></li>';
         }
       }
-      naviHTML += '<li id="anker-' + id + '" class="article-navi-item" data-level="' + n + '">'
+      naviHTML += '<li id="anker-' + dataId + '" class="article-navi-item" data-level="' + n + '">'
       + '<a class="article-navi-link" href="#' + id + '">' + t + '</a>';
 
       // position top
