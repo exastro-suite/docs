@@ -21,9 +21,9 @@ article,aside,details,figcaption,figure,footer,header,hgroup,hr,menu,nav,section
 .highlight table pre {
     margin: 0
 }
-
-.highlight,.highlight .w {
-    color: #586e75
+.highlight,
+.highlight .w {
+    color: #333
 }
 
 .highlight .err {
@@ -77,9 +77,7 @@ article,aside,details,figcaption,figure,footer,header,hgroup,hr,menu,nav,section
     color: #cb4b16
 }
 
-.highlight .kd {
-    color: #cb4b16
-}
+.highlight .kd { color: #cf222e }
 
 .highlight .s,.highlight .sb,.highlight .sc,.highlight .sd,.highlight .s2,.highlight .sh,.highlight .sx,.highlight .s1 {
     color: #859900
@@ -454,14 +452,14 @@ color: #333;
 }
 .article-section .highlighter-rouge {
 overflow: auto;
-margin: 0 -32px 24px; padding: 16px 32px;
-background-color: #f3f6fa;
-border-top: solid 1px #dce6f0;
-border-bottom: solid 1px #dce6f0;
+margin: 0 -32px 24px; padding: 8px 32px;
+background-color: #DCE6F0;
+border-top: solid 1px #C5C6C8;
+border-bottom: solid 1px #C5C6C8;
 line-height: 1.75;
 font-size: 14px;
 font-family: Consolas, "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", "sans-serif";
-color: #567482;
+color: #7B7C7D;
 }
 .article-section table {
 margin: 0 0 24px;
@@ -482,11 +480,11 @@ margin: 0;
 .highlighter-rouge td {
 padding: 4px;
 border: none;
-line-height: 1.1;
 }
 .highlighter-rouge .lineno {
-padding: 0 8px;
+padding: 0 16px 0 8px;
 border-right: 1px solid #dce6f0;
+color: #9AA1A8;
 }
 .article-section th {
 white-space: nowrap;
