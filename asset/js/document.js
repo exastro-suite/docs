@@ -32,7 +32,7 @@
       }
 
       // 段落番号連結
-      let dataId = 'h' + naviCount[1];
+      let dataId = naviCount[1];
       if ( n > 2 ) {
         for ( let i = 3; i <= n; i++ ) {
           if ( naviCount[i-1] !== undefined ) dataId += '-' + naviCount[i-1];
@@ -65,7 +65,7 @@
       // position top
       if ( n <= maxHeadingNum ) {
         pTop.push({
-          'id': id,
+          'id': dataId,
           'top':  Math.floor( $h.position().top ),
           'type': n
         });
