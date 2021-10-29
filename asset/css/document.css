@@ -475,6 +475,19 @@ line-height: 1.9;
 font-size: 14px;
 color: #333;
 }
+.highlighter-rouge table {
+margin: 0;
+}
+.highlighter-rouge th,
+.highlighter-rouge td {
+padding: 4px;
+border: none;
+line-height: 1.1;
+}
+.highlighter-rouge .lineno {
+padding: 0 8px;
+border-right: 1px solid #dce6f0;
+}
 .article-section th {
 white-space: nowrap;
 vertical-align: middle;
