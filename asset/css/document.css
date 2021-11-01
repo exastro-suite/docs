@@ -461,7 +461,7 @@ font-size: 14px;
 font-family: Consolas, "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", "sans-serif";
 color: #7B7C7D;
 }
-.highlighter-rouge .line {
+.highlighter-rouge .linemarker {
 float: left;
 padding-right: 24px;
 border-right: 1px solid #dce6f0;
