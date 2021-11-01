@@ -463,7 +463,7 @@ color: #7B7C7D;
 }
 .highlighter-rouge .linemarker {
 float: left;
-padding-right: 24px;
+margin-right: 16px; padding-right: 8px;
 border-right: 1px solid #dce6f0;
 color: #9AA1A8;
 }
