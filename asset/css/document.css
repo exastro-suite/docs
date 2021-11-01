@@ -461,28 +461,9 @@ font-size: 14px;
 font-family: Consolas, "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", "sans-serif";
 color: #7B7C7D;
 }
-.article-section table {
-margin: 0 0 24px;
-border-collapse: collapse;
-}
-.article-section th,
-.article-section td {
-padding: 8px 16px;
-border: 1px solid #333;
-line-height: 1.9;
-font-size: 14px;
-color: #333;
-}
-.highlighter-rouge table {
-margin: 0;
-}
-.highlighter-rouge th,
-.highlighter-rouge td {
-padding: 4px;
-border: none;
-}
-.highlighter-rouge .lineno {
-padding: 0 16px 0 8px;
+.highlighter-rouge .line {
+float: left;
+padding-right: 24px;
 border-right: 1px solid #dce6f0;
 color: #9AA1A8;
 }
