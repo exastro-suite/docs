@@ -8,7 +8,7 @@
   
   
   
-  $(function(){
+  $(document).ready(function(){
   
     // Rows mark
     $article.find('.line').each(function(){console.log('!');
