@@ -15,11 +15,11 @@
       
       // Line type
       const typeCheck = function(){
-        if ( $code.id('.d') ) {
+        if ( $code.is('.d') ) {
           return ['d','$'];
-        } else if ( $code.id('.s') ) {
+        } else if ( $code.is('.s') ) {
           return ['s','#'];
-        } else if ( $code.id('.g') ) {
+        } else if ( $code.is('.g') ) {
           return ['g','&gt;'];
         } else {
           const numClass = $code.attr('class').split(' ').filter(function(v){return v.match(/^n[0-9]+$/);}),
