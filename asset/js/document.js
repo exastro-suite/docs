@@ -2,7 +2,50 @@
 
 (function(){
 
-  const $window = $( window );
+  const $window = $( window ),
+        $article = $('#article');
+  
+  
+  
+  
+  $(function(){
+  
+    // Rows mark
+    $article.find('.highlighter-rouge.line').each(function(){
+      const $code = $( this ),
+            rowLength = $code.text().match(/\r?\n/g).length;
+      
+      // Line type
+      const typeCheck = function(){
+        if ( $code.id('.d') ) {
+          return ['d','$'];
+        } else if ( $code.id('.s') ) {
+          return ['s','#'];
+        } else if ( $code.id('.g') ) {
+          return ['g','&gt;'];
+        } else {
+          const numClass = $code.attr('class').split(' ').filter(function(v){return v.match(/^n[0-9]+$/);}),
+                startNum = ( numClass.length === 0 )? 1: Number( numClass[0].slice(1) );
+          return ['n', startNum ];
+        }
+      };
+      const mark = typeCheck();
+      
+      // HTML
+      let html = '<div class="linemarker">';
+      for ( let i = 0; i < rowLength; i++ ) {
+        if ( mark[0] === 'n') {
+          html += ( mark[1] + i ) + '<br>';
+        } else {
+          html += mark[1] + '<br>';
+        }
+      }
+      html += '</div>';
+      $code.prepend( html );
+    });
+    
+  });
+  
   $window.on('load', function(){
     const $navi = $('#navi'),
           $doc = $('#article'),
