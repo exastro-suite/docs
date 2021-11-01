@@ -2,16 +2,14 @@
 
 (function(){
 
-  const $window = $( window ),
-        $article = $('#article');
+  const $window = $( window );
   
-  
-  
-  
-  $(document).ready(function(){
-  
+  $(function(){
+    
+    const $article = $('#article');
+    
     // Rows mark
-    $article.find('.line').each(function(){console.log('!');
+    $article.find('.line').each(function(){
       const $code = $( this ),
             rowLength = $code.text().match(/\r?\n/g).length;
       
