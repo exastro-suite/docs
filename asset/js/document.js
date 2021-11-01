@@ -11,7 +11,7 @@
   $(function(){
   
     // Rows mark
-    $article.find('.highlighter-rouge.line').each(function(){
+    $article.find('.line').each(function(){console.log('!');
       const $code = $( this ),
             rowLength = $code.text().match(/\r?\n/g).length;
       
