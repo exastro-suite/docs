@@ -11,6 +11,7 @@ const suiteListEn =  (function(){/*
   <li class="ita"><a href="/it-automation-docs/index.html">IT Automation</a></li>
   <li class="pc"><a href="https://github.com/exastro-suite/playbook-collection-docs/blob/master/README.md" target="_blank" rel="noopener">Playbook Collection</a></li>
   <li class="oase"><a href="/oase-docs/index.html">Operation Autonomy Support Engine</a></li>
+  <li class="epoch"><a href="/epoch-docs/index.html">EPOCH</a></li>
 </ul>
 */}).toString().match(/[^]*\/\*([^]*)\*\/\}$/)[1];
 
