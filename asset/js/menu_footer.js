@@ -45,6 +45,17 @@ const footerMenuEn =  (function(){/*
       <li><a href="/oase-docs/faq.html" class="faq">FAQ</a></li>
     </ul>
   </li>
+  <li id="footerEpoch">
+    <div class="footerMainMenuHome">
+      <a href="/epoch-docs/index.html"><img src="/epoch-docs/asset/img/epoch.svg" alt="EPOCH"></a>
+    </div>
+    <ul class="footerMainMenuChildren">
+      <li><a href="/epoch-docs/overview.html" class="overview">Overview</a></li>
+      <li><a href="/epoch-docs/learn.html" class="learn">Learn</a></li>
+      <li><a href="/epoch-docs/documents.html" class="documents">Documents</a></li>
+      <li><a href="/epoch-docs/downloads.html" class="downloads">Downloads</a></li>
+    </ul>
+  </li>
 </ul>
 <ul id="footerSubMenu">
   <li><a href="https://twitter.com/ExastroSuite" class="twitter" target="_blank" rel="noopener"><i class="fab fa-twitter-square"></i></a><span>Twitter</span></li>
