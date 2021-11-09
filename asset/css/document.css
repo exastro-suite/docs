@@ -224,7 +224,7 @@ margin: 0 auto;
 }
 #footer {
 position: relative;
-z-index: 9998;
+z-index: 7998;
 display: block;
 height: 40px;
 margin-left: 320px;
@@ -579,6 +579,15 @@ p.alert::before {
 content: "\f057";
 color: #DD0000;
 }
+.article-image-link {
+overflow: hidden;
+display: block;
+position: relative;
+}
+.article-image-link img {
+position: absolute;
+left: 0; top: 0;
+}
 
 /* 1-1-1-1-1 Heading counter */
 article {
@@ -614,6 +623,39 @@ h5::before {
 content: counter(heading2) '-' counter(heading3) '-' counter(heading4) '-' counter(heading5) '. ';
 }
 */
+
+#topMove {
+position: fixed;
+bottom: -64px; right: 8px;
+z-index: 8999;
+width: 48px; height: 48px;
+line-height: 48px;
+transition-duration: 0.3s;
+}
+#topMove a {
+display: block;
+width: 100%; height: 100%;
+background-color: #333;
+border-radius: 4px;
+box-shadow: 0 0 1px 2px rgba( 255,255,255,0.8 );
+text-align: center;
+vertical-align: bottom;
+font-size: 24px;
+color: #FFF;
+}
+#topMove a.hover {
+background-color: #4D4D4D;
+}
+#topMove a span {
+display: none;
+}
+#topMove a i {
+transition-duration: 0.3s;
+line-height: inherit;
+}
+#topMove a.hover i {
+transform: translateY(-2px);
+}
 
 
 

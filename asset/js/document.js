@@ -87,7 +87,7 @@
         let   pN = 2,
               naviHTML = '';    
 
-        naviHTML += '<div id="anker-ht" class="article-title"><a class="article-title-link" href="#article">' + $article.find('h1').text() + '</a></div>'
+        naviHTML += '<div id="anker-ht" class="article-title"><a class="article-title-link" href="#article">' + $article.find('h1 > .article-header-title').text() + '</a></div>'
         + '<ol class="article-navi-list" data-level="1">';
         $article.find( naviTarget ).each(function(index){
           const $h = $( this ),
@@ -149,6 +149,36 @@
       smoothScroll( $(( href === '#')? 'html': href ) );
     });
     
+    // Page top
+    const pageTopShow = function() {
+        const windowScrollTop = $window.scrollTop(),
+              windowHeight = $window.height();
+        if ( windowScrollTop < windowHeight ){
+            $('#topMove').css('bottom', '-64px' );
+        } else {
+            $('#topMove').css('bottom', '8px' );
+        }
+    };
+    pageTopShow();
+    
+    // スクロールイベント
+    $window.on('scroll', function(){
+        pageTopShow();
+    });
+    
+    // イメージリンク lazyload対応
+    $article.find('img').not(':eq(0)').each(function(){
+      const $img = $( this ),
+            url = $img.attr('src'),
+            width = $img.attr('width'),
+            height = $img.attr('height'),
+            ratio = Math.round( height / width * 10000000 ) / 100000;
+      $img.attr({'src': '', 'data-src': url }).addClass('lazyload');
+      $img.wrap('<a style="padding-bottom:' + ratio + '%" class="article-image-link" href="' + url + '" target="_blank" />')
+    });
+    
+    $article.find("img.lazyload").lazyload();
+    
   });
   
   $window.one('load, pageshow', function(){
@@ -189,7 +219,7 @@
       }
       if ( tId === '') tId = tId = 'ht';
       $navi.find('.focus').removeClass('focus');
-      
+      //console.log($('#anker-' + tId ));
       const $anker = $('#anker-' + tId ),
             naviHeight = $navi.outerHeight(),
             ankerTop = $anker.position().top;
