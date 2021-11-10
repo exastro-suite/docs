@@ -3,8 +3,8 @@
 (function(){
 
   // Anker HASH
-  const locationHash = window.location.hash;
-  if ( locationHash ) window.location.hash = ''; 
+  // const locationHash = window.location.hash;
+  // if ( locationHash ) window.location.hash = ''; 
 
   const $window = $( window ),
         naviTarget = 'h2,h3,h4,h5,h6',
@@ -34,7 +34,7 @@
     });
         
     // ハイライター追加処理
-    $article.find('.highlighter-rouge').each(function(){
+    $article.find('div.highlighter-rouge').each(function(){
       const $code = $( this );
       
       // 行マーク付与
@@ -174,10 +174,12 @@
             height = $img.attr('height'),
             ratio = Math.round( height / width * 10000000 ) / 100000;
       $img.attr({'src': '', 'data-src': url }).addClass('lazyload');
-      $img.wrap('<a style="padding-bottom:' + ratio + '%" class="article-image-link" href="' + url + '" target="_blank" />')
+      $img.wrap('<a style="padding-bottom:' + ratio + '%" class="article-image-link lazyloading" href="' + url + '" target="_blank" />')
     });
     
-    $article.find("img.lazyload").lazyload();
+    $article.find("img.lazyload").lazyload().on('load', function(){
+      $( this ).cloasest('.article-image-link').removeClass('lazyloading');
+    });
     
   });
   
