@@ -359,8 +359,13 @@ width: 100%; height: auto;
 vertical-align: top;
 }
 .article-section ul,
-.article-section ol {
+.article-section ol,
+.article-section dl {
 margin: 0 0 24px 2em;
+}
+.article-section ul:last-child,
+.article-section ol:last-child {
+margin-bottom: 0;
 }
 .article-section li {
 margin: 0.5em 0;
@@ -368,8 +373,20 @@ line-height: 1.75;
 font-size: 16px;
 color: #333;
 }
+.article-section dt,
+.article-section dd {
+line-height: 1.75;
+font-size: 16px;
+color: #333;
+}
+.article-section dt {
+font-weight: bold;
+}
+.article-section dd {
+margin-left: 1em;
+}
 .article-section code.highlighter-rouge {
-margin: 0 .3em; padding: 0 .5em;
+margin: 0 .3em; padding: 0 .3em;
 background-color: #F6F8FA;
 border: solid 1px #dce6f0;
 font-family: Consolas, "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", "sans-serif";
