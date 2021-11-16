@@ -14,104 +14,6 @@ Twitter: @rich_clark
 ** -------------------------------------------------- */
 article,aside,details,figcaption,figure,footer,header,hgroup,hr,menu,nav,section{display:block}a,hr{padding:0}abbr,address,article,aside,audio,b,blockquote,body,canvas,caption,cite,code,dd,del,details,dfn,div,dl,dt,em,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,p,pre,q,samp,section,small,span,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,ul,var,video{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:0 0}ins,mark{background-color:#ff9;color:#000}body{line-height:1}nav ul{list-style:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:'';content:none}a{margin:0;font-size:100%;vertical-align:baseline;background:0 0}ins{text-decoration:none}mark{font-style:italic;font-weight:700}del{text-decoration:line-through}abbr[title],dfn[title]{border-bottom:1px dotted;cursor:help}table{border-collapse:collapse;border-spacing:0}hr{height:1px;border:0;border-top:1px solid #ccc;margin:1em 0}input,select{vertical-align:middle}*,::after,::before{box-sizing:border-box}
 
-.highlight,
-.highlight .w {
-    color: #333
-}
-
-.highlight .err {
-    color: #002b36;
-    background-color: #dc322f
-}
-
-.highlight .c,.highlight .cd,.highlight .cm,.highlight .c1,.highlight .cs {
-    color: #657b83
-}
-
-.highlight .cp {
-    color: #b58900
-}
-
-.highlight .nt {
-    color: #b58900
-}
-
-.highlight .o,.highlight .ow {
-    color: #93a1a1
-}
-
-.highlight .p,.highlight .pi {
-    color: #93a1a1
-}
-
-.highlight .gi {
-    color: #859900
-}
-
-.highlight .gd {
-    color: #dc322f
-}
-
-.highlight .gh {
-    color: #268bd2;
-    background-color: #002b36;
-    font-weight: bold
-}
-
-.highlight .k,.highlight .kn,.highlight .kp,.highlight .kr,.highlight .kv {
-    color: #6c71c4
-}
-
-.highlight .kc {
-    color: #cb4b16
-}
-
-.highlight .kt {
-    color: #cb4b16
-}
-
-.highlight .kd { color: #cf222e }
-
-.highlight .s,.highlight .sb,.highlight .sc,.highlight .sd,.highlight .s2,.highlight .sh,.highlight .sx,.highlight .s1 {
-    color: #859900
-}
-
-.highlight .sr {
-    color: #2aa198
-}
-
-.highlight .si {
-    color: #d33682
-}
-
-.highlight .se {
-    color: #d33682
-}
-
-.highlight .nn {
-    color: #b58900
-}
-
-.highlight .nc {
-    color: #b58900
-}
-
-.highlight .no {
-    color: #b58900
-}
-
-.highlight .na {
-    color: #268bd2
-}
-
-.highlight .m,.highlight .mf,.highlight .mh,.highlight .mi,.highlight .il,.highlight .mo,.highlight .mb,.highlight .mx {
-    color: #859900
-}
-
-.highlight .ss {
-    color: #859900
-}
-
 /* -------------------------------------------------- **
 
    Exastro documents css
@@ -461,12 +363,19 @@ vertical-align: top;
 margin: 0 0 24px 2em;
 }
 .article-section li {
-margin-bottom: 0.5em;
+margin: 0.5em 0;
 line-height: 1.75;
 font-size: 16px;
 color: #333;
 }
-.article-section .highlighter-rouge {
+.article-section code.highlighter-rouge {
+margin: 0 .3em; padding: 0 .5em;
+background-color: #F6F8FA;
+border: solid 1px #dce6f0;
+font-family: Consolas, "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", "sans-serif";
+color: #7B7C7D;
+}
+.article-section div.highlighter-rouge {
 overflow: auto;
 margin: 0 -32px 24px; padding: 8px 32px;
 background-color: #F6F8FA;
@@ -662,9 +571,11 @@ line-height: inherit;
 transform: translateY(-2px);
 }
 
+/* -------------------------------------------------- **
 
+   1220px
 
-
+** -------------------------------------------------- */
 @media screen and ( max-width: 1220px ){
 
 #header {
@@ -794,6 +705,11 @@ margin: 0;
 
 }
 
+/* -------------------------------------------------- **
+
+   640px
+
+** -------------------------------------------------- */
 @media screen and ( max-width: 640px ){
 
 .article-header {
@@ -903,3 +819,10 @@ font-size: 10px;
 }
 
 }
+
+/* -------------------------------------------------- **
+
+   Highlight
+
+** -------------------------------------------------- */
+.highlight,.highlight.w{color:#333}.highlight.err{color:#002b36;background-color:#dc322f}.highlight.c,.highlight.cd,.highlight.cm,.highlight.c1,.highlight.cs{color:#657b83}.highlight.cp{color:#b58900}.highlight.nt{color:#b58900}.highlight.o,.highlight.ow{color:#93a1a1}.highlight.p,.highlight.pi{color:#93a1a1}.highlight.gi{color:#859900}.highlight.gd{color:#dc322f}.highlight.gh{color:#268bd2;background-color:#002b36;font-weight:bold}.highlight.k,.highlight.kn,.highlight.kp,.highlight.kr,.highlight.kv{color:#6c71c4}.highlight.kc{color:#cb4b16}.highlight.kt{color:#cb4b16}.highlight.kd{color:#cf222e}.highlight.s,.highlight.sb,.highlight.sc,.highlight.sd,.highlight.s2,.highlight.sh,.highlight.sx,.highlight.s1{color:#859900}.highlight.sr{color:#2aa198}.highlight.si{color:#d33682}.highlight.se{color:#d33682}.highlight.nn{color:#b58900}.highlight.nc{color:#b58900}.highlight.no{color:#b58900}.highlight.na{color:#268bd2}.highlight.m,.highlight.mf,.highlight.mh,.highlight.mi,.highlight.il,.highlight.mo,.highlight.mb,.highlight.mx{color:#859900}.highlight.ss{color:#859900}
