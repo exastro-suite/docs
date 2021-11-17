@@ -178,7 +178,7 @@
     });
     
     $article.find("img.lazyload").lazyload().on('load', function(){
-      $( this ).cloasest('.article-image-link').removeClass('lazyloading');
+      $( this ).closest('.article-image-link').removeClass('lazyloading');
     });
     
   });
@@ -221,7 +221,7 @@
       }
       if ( tId === '') tId = tId = 'ht';
       $navi.find('.focus').removeClass('focus');
-      //console.log($('#anker-' + tId ));
+      console.log($('#anker-' + tId ));
       const $anker = $('#anker-' + tId ),
             naviHeight = $navi.outerHeight(),
             ankerTop = $anker.position().top;
