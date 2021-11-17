@@ -85,7 +85,7 @@
         const naviCount = [0,0,0,0,0,0],
               naviCountLength = naviCount.length;
         let   pN = 2,
-              naviHTML = '';    
+              naviHTML = '';
 
         naviHTML += '<div id="anker-ht" class="article-title"><a class="article-title-link" href="#article">' + $article.find('h1 > .article-header-title').text() + '</a></div>'
         + '<ol class="article-navi-list" data-level="1">';
@@ -181,13 +181,9 @@
       $( this ).closest('.article-image-link').removeClass('lazyloading');
     });
     
-  });
-  
-  $window.one('load, pageshow', function(){
-  
-    const $navi = $('#navi'),
-          $article = $('#article'),
-          hTop = [];
+    
+    // 見出し強調
+    const hTop = [];
     
     // 見出しの位置を取得
     const getHeadingPositon = function(){
@@ -221,7 +217,6 @@
       }
       if ( tId === '') tId = tId = 'ht';
       $navi.find('.focus').removeClass('focus');
-      console.log($('#anker-' + tId ));
       const $anker = $('#anker-' + tId ),
             naviHeight = $navi.outerHeight(),
             ankerTop = $anker.position().top;
