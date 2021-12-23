@@ -24,6 +24,7 @@ const footerMenuEn =  (function(){/*
       <a href="/it-automation-docs/index.html"><img src="/it-automation-docs/asset/img/ita.svg" alt="IT Automation"></a>
     </div>
     <ul class="footerMainMenuChildren">
+      <li><a href="/it-automation-docs/index.html" class="home">Home</a></li>
       <li><a href="/it-automation-docs/overview.html" class="overview">Overview</a></li>
       <li><a href="/it-automation-docs/install.html" class="install">Install</a></li>
       <li><a href="/it-automation-docs/learn.html" class="learn">Learn</a></li>
@@ -37,6 +38,7 @@ const footerMenuEn =  (function(){/*
       <a href="/oase-docs/index.html"><img src="/oase-docs/asset/img/oase.svg" alt="OASE | Operation Autonomy Support Engine"></a>
     </div>
     <ul class="footerMainMenuChildren">
+      <li><a href="/oase-docs/index.html" class="home">Home</a></li>
       <li><a href="/oase-docs/overview.html" class="overview">Overview</a></li>
       <li><a href="/oase-docs/learn.html" class="learn">Learn</a></li>
       <li><a href="/oase-docs/case.html" class="case">Case</a></li>
@@ -50,6 +52,7 @@ const footerMenuEn =  (function(){/*
       <a href="/epoch-docs/index.html"><img src="/epoch-docs/asset/img/epoch.svg" alt="EPOCH"></a>
     </div>
     <ul class="footerMainMenuChildren">
+      <li><a href="/epoch-docs/index.html" class="home">Home</a></li>
       <li><a href="/epoch-docs/overview.html" class="overview">Overview</a></li>
       <li><a href="/epoch-docs/learn.html" class="learn">Learn</a></li>
       <li><a href="/epoch-docs/documents.html" class="documents">Documents</a></li>
@@ -86,6 +89,7 @@ const footerMenuJa =  (function(){/*
       <a href="/it-automation-docs/index_ja.html"><img src="/it-automation-docs/asset/img/ita.svg" alt="IT Automation"></a>
     </div>
     <ul class="footerMainMenuChildren">
+      <li><a href="/it-automation-docs/index_ja.html" class="home">Home</a></li>
       <li><a href="/it-automation-docs/overview_ja.html" class="overview">Overview</a></li>
       <li><a href="/it-automation-docs/install_ja.html" class="install">Install</a></li>
       <li><a href="/it-automation-docs/learn_ja.html" class="learn">Learn</a></li>
@@ -101,6 +105,7 @@ const footerMenuJa =  (function(){/*
       <a href="/oase-docs/index_ja.html"><img src="/oase-docs/asset/img/oase.svg" alt="OASE | Operation Autonomy Support Engine"></a>
     </div>
     <ul class="footerMainMenuChildren">
+      <li><a href="/oase-docs/index_ja.html" class="home">Home</a></li>
       <li><a href="/oase-docs/overview_ja.html" class="overview">Overview</a></li>
       <li><a href="/oase-docs/learn_ja.html" class="learn">Learn</a></li>
       <li><a href="/oase-docs/webinar_ja.html" class="webinar">Webinar</a></li>
@@ -115,11 +120,13 @@ const footerMenuJa =  (function(){/*
       <a href="/epoch-docs/index_ja.html"><img src="/epoch-docs/asset/img/epoch.svg" alt="EPOCH"></a>
     </div>
     <ul class="footerMainMenuChildren">
+      <li><a href="/epoch-docs/index_ja.html" class="home">Home</a></li>
       <li><a href="/epoch-docs/overview_ja.html" class="overview">Overview</a></li>
       <li><a href="/epoch-docs/learn_ja.html" class="learn">Learn</a></li>
       <li><a href="/epoch-docs/webinar_ja.html" class="learn">Webinar</a></li>
       <li><a href="/epoch-docs/documents_ja.html" class="documents">Documents</a></li>
       <li><a href="/epoch-docs/downloads_ja.html" class="downloads">Downloads</a></li>
+      <li><a href="/epoch-docs/faq_ja.html" class="faq">FAQ</a></li>
     </ul>
   </li>
 </ul>
