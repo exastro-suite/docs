@@ -56,7 +56,7 @@ $( window ).one('load', function(){
       subMenuWidth = $('#subMenu').outerWidth(),
       menuOpenButtonWidth = 40;
   var menuWidthCheck = function() {
-    var headerWidth = $('#header').outerWidth();
+    var headerWidth = $('#header').outerWidth() - 16;
     if ( headerWidth < titleAreaWidth + mainMenuWidth + subMenuWidth ) {
       $header.addClass('snsHide');
       if ( headerWidth < titleAreaWidth + mainMenuWidth + menuOpenButtonWidth ) {
@@ -155,14 +155,20 @@ $('body').on( enterEvent, '.touch', function(){
 });
 
 // Anker scroll
-$('a[href^="#"].anker').on('click', function( e ){
+$('a[href^="#"].anker, .article-navi-button.anker').on('click', function( e ){
   e.preventDefault();
-  var href = $( this ).attr('href'),
-      headerHeight = $('header').outerHeight(),
+  var $anker = $( this ),
+      href = $anker.attr('href');
+  if ( $( this ).is('.article-navi-button') ) {
+    href = '#' + $anker.attr('data-id');
+  } else {
+    href = $anker.attr('href');
+  }
+  var headerHeight = $('header').outerHeight(),
       menuHeight = $('#contentsMenu').outerHeight(),
       speed = 300,
       target = $( ( href == '#' || href == '' ) ? 'html' : href ),
-      position = target.offset().top - headerHeight - menuHeight;
+      position = target.offset().top - headerHeight - menuHeight;console.log(target)
   $('body, html').animate({ scrollTop : position }, speed, 'swing' );
 });
 
