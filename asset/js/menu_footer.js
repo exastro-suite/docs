@@ -55,7 +55,7 @@ const footerMenuEn =  (function(){/*
       <li><a href="/epoch-docs/index.html" class="home">Home</a></li>
       <li><a href="/epoch-docs/overview.html" class="overview">Overview</a></li>
       <li><a href="/epoch-docs/learn.html" class="learn">Learn</a></li>
-      <li><a href="/epoch-docs/documents.html" class="documents">Documents</a></li>
+      <li><a href="/epoch-docs/reference.html" class="reference">Reference</a></li>
       <li><a href="/epoch-docs/downloads.html" class="downloads">Downloads</a></li>
     </ul>
   </li>
@@ -124,7 +124,7 @@ const footerMenuJa =  (function(){/*
       <li><a href="/epoch-docs/overview_ja.html" class="overview">Overview</a></li>
       <li><a href="/epoch-docs/learn_ja.html" class="learn">Learn</a></li>
       <li><a href="/epoch-docs/webinar_ja.html" class="learn">Webinar</a></li>
-      <li><a href="/epoch-docs/documents_ja.html" class="documents">Documents</a></li>
+      <li><a href="/epoch-docs/reference_ja.html" class="reference">Reference</a></li>
       <li><a href="/epoch-docs/downloads_ja.html" class="downloads">Downloads</a></li>
       <li><a href="/epoch-docs/faq_ja.html" class="faq">FAQ</a></li>
     </ul>

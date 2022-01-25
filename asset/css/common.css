@@ -355,6 +355,7 @@ background-color: #4D4D4D;
 #article.webinar #mainMenu a.webinar,
 #article.case #mainMenu a.case,
 #article.documents #mainMenu a.documents,
+#article.reference #mainMenu a.reference,
 #article.downloads #mainMenu a.downloads,
 #article.install #mainMenu a.install,
 #article.faq #mainMenu a.faq {
@@ -369,6 +370,7 @@ text-shadow: none;
 #article.webinar #mainMenu a.webinar:hover,
 #article.case #mainMenu a.case:hover,
 #article.documents #mainMenu a.documents:hover,
+#article.reference #mainMenu a.reference:hover,
 #article.downloads #mainMenu a.downloads:hover,
 #article.install #mainMenu a.install:hover,
 #article.faq #mainMenu a.faq:hover {
