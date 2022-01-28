@@ -57,6 +57,7 @@ const footerMenuEn =  (function(){/*
       <li><a href="/epoch-docs/learn.html" class="learn">Learn</a></li>
       <li><a href="/epoch-docs/reference.html" class="reference">Reference</a></li>
       <li><a href="/epoch-docs/downloads.html" class="downloads">Downloads</a></li>
+      <li><a href="/epoch-docs/faq.html" class="faq">FAQ</a></li>
     </ul>
   </li>
 </ul>
