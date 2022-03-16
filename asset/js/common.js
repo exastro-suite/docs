@@ -2,7 +2,7 @@
 
 // HASH
 var locationHash = window.location.hash;
-if ( locationHash.match === '^#/') {
+if ( locationHash.match('^#\/') ) {
     locationHash = undefined;
 } else if ( locationHash ) {
     window.location.hash = '';
