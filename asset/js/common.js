@@ -2,7 +2,8 @@
 
 // HASH
 var locationHash = window.location.hash;
-if( locationHash ) window.location.hash = ''; 
+if ( locationHash === '#') locationHash = undefined;
+if ( locationHash ) window.location.hash = ''; 
 
 // LOAD
 $('html').addClass('loadWait');
@@ -199,16 +200,17 @@ if( $('.scrollShow').length ){
 
 
 // hash open tab check.
-var $hashTab = $( locationHash );
-if ( $hashTab.is('.tabContent') ){
-  var $tabContents = $hashTab.closest('.tabContents');
-  $tabContents.attr('data-open-tab', $hashTab.closest('.tabContents').children('.tabContent').index( $hashTab ) );
-  if ( $tabContents.closest('.tabContent').length ) {
-    var $parentTabContents = $tabContents.closest('.tabContent').closest('.tabContents');
-    $parentTabContents.attr('data-open-tab', $parentTabContents.children('.tabContent').index( $tabContents.closest('.tabContent') ) );
+if ( locationHash !== '#' && locationHash !== '') {
+  var $hashTab = $( locationHash );
+  if ( $hashTab.is('.tabContent') ){
+    var $tabContents = $hashTab.closest('.tabContents');
+    $tabContents.attr('data-open-tab', $hashTab.closest('.tabContents').children('.tabContent').index( $hashTab ) );
+    if ( $tabContents.closest('.tabContent').length ) {
+      var $parentTabContents = $tabContents.closest('.tabContent').closest('.tabContents');
+      $parentTabContents.attr('data-open-tab', $parentTabContents.children('.tabContent').index( $tabContents.closest('.tabContent') ) );
+    }
   }
 }
-
 
 // Tab Contents
 $('.tabContents, .webinarContainer').each( function(){
