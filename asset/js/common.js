@@ -2,8 +2,11 @@
 
 // HASH
 var locationHash = window.location.hash;
-if ( locationHash === '#') locationHash = undefined;
-if ( locationHash ) window.location.hash = ''; 
+if ( locationHash.match === '^#/') {
+    locationHash = undefined;
+} else if ( locationHash ) {
+    window.location.hash = '';
+}
 
 // LOAD
 $('html').addClass('loadWait');
@@ -200,7 +203,7 @@ if( $('.scrollShow').length ){
 
 
 // hash open tab check.
-if ( locationHash !== '#' && locationHash !== '') {
+if ( locationHash ) {
   var $hashTab = $( locationHash );
   if ( $hashTab.is('.tabContent') ){
     var $tabContents = $hashTab.closest('.tabContents');
