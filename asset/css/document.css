@@ -330,7 +330,6 @@ color: #333;
 word-break: break-all;
 }
 .article-section th {
-white-space: nowrap;
 vertical-align: middle;
 }
 .article-section thead th {
