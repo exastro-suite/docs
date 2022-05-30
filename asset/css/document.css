@@ -745,6 +745,9 @@ font-size: 20px;
 .copyright {
 font-size: 10px;
 }
+.article-section div.highlighter-rouge {
+margin: 0 0 24px;
+}
 
 }
 
