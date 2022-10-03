@@ -1153,6 +1153,7 @@ font-size: 12px;
 .eventTag.ita { background-color: #002B62; }
 .eventTag.pc { background-color: #C80000; }
 .eventTag.oase { background-color: #00B5B8; }
+.eventTag.epoch { background-color: #1F8C78; }
 .eventTag.other { background-color: #BBB; }
 
 #articleBody .sectionInner .eventListMetaList {
