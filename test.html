@@ -1,5 +1,372 @@
----
----
-<div>{{site.url}}</div>
-<div>{{page.url}}</div>
-<div>{{page.path}}</div>
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="format-detection" content="telephone=no">
+<meta name="theme-color" content="#002B62">
+<meta http-equiv="content-language" content="ja">
+<meta http-equiv="Refresh" content="0; url=https://exastro-suite.github.io/index_ja.html">
+
+<title>Exastro</title>
+<!-- Stylesheet and JavaScript -->
+<link rel="stylesheet" type="text/css" href="asset/css/common.css">
+<noscript><link rel="stylesheet" type="text/css" href="asset/css/noscript.css"></noscript>
+
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,900" rel="stylesheet">
+<link href="asset/font/fontawesome/css/all.min.css" rel="stylesheet">
+<script src="asset/js/jquery-1.11.3.js"></script>
+<script src="asset/js/common.js"></script>
+<link rel="stylesheet" type="text/css" href="../docs/asset/css/home.css">
+
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+
+<link rel="alternate" hreflang="en" href="https://exastro-suite.github.io/docs/index.html">
+<link rel="alternate" hreflang="ja" href="https://exastro-suite.github.io/docs/index_ja.html">
+
+<meta name="keywords" content="Exastro, Exastro Suite, OSS, IT Automation">
+<meta name="description" content="Exastroはシステムライフサイクル(設計・開発・設定・運用)をデジタル化・自動化・省力化することを目的としたオープンソースのソフトウェアスイートです。">
+<meta name="thumbnail" content="https://exastro-suite.github.io/docs/asset/img/ogp_twitter_image.jpg" />
+<meta property="og:description" content="Exastroはシステムライフサイクル(設計・開発・設定・運用)をデジタル化・自動化・省力化することを目的としたオープンソースのソフトウェアスイートです。">
+<link rel="image_src" href="https://exastro-suite.github.io/docs/asset/img/ogp_image.jpg">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://exastro-suite.github.io/docs/index_ja.html">
+<meta property="og:title" content="Exastro Suite">
+<meta property="og:image" content="https://exastro-suite.github.io/docs/asset/img/ogp_image.jpg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Exastro Suite">
+<meta name="twitter:image" content="https://exastro-suite.github.io/docs/asset/img/ogp_twitter_image.jpg">
+
+<script src="./asset/js/view_documents.js"></script>
+<script>
+$(function(){
+  var url = 'https://exastro-suite.github.io/docs/asset/json/documents.json';
+  viewDocuments( url );
+});
+</script>
+</head>
+
+<body id="terminal" class="exastro Exastro ja">
+
+<div id="container">
+
+<!-- Facebook SDK -->
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v4.0"></script>
+
+
+<header>
+<div id="header">
+
+<div id="titleArea">
+
+<div id="logo">
+<a href="#"><img src="asset/img/exastro.svg" alt="Exastro"></a>
+</div>
+<div id="suiteList">
+  <script src="asset/js/menu_suite.js"></script>
+</div>
+</div>
+
+<nav>
+
+<ul id="mainMenu">
+<li><a href="#why" class="anker"><i class="fas fa-question-circle"></i><span>Why Exastro</span></a></li>
+<li><a href="#overview" class="anker"><i class="fas fa-list"></i><span>Overview</span></a></li>
+<li><a href="#suite" class="anker"><i class="far fa-list-alt"></i><span>Exastro Suite</span></a></li>
+<li><a href="newsroom_ja.html" class="newsroom"><i class="fas fa-clipboard-check"></i><span>News Room</span></a></li>
+<li><a href="event_ja.html" class="event"><i class="far fa-calendar-alt"></i><span>Event</span></a></li>
+<li><a href="asset_ja.html" class="asset"><i class="fas fa-toolbox"></i><span>Asset</span></a></li>
+</ul>
+
+<ul id="subMenu">
+<li><a href="https://twitter.com/ExastroSuite" class="twitter" target="_blank" rel="noopener"><i class="fab fa-twitter-square"></i></a><span>Twitter</span></li>
+<li><a href="https://www.facebook.com/ExastroSuite/" class="facebook" target="_blank" rel="noopener"><i class="fab fa-facebook-square"></i></a><span>Facebook</span></li>
+<li><a href="https://www.youtube.com/channel/UC-kwQiXQfmYXTPbrGR-8qxw" class="youtube" target="_blank" rel="noopener"><i class="fab fa-youtube-square"></i></a><span>YouTube</span></li>
+<li><a href="https://github.com/exastro-suite" class="github" target="_blank" rel="noopener"><i class="fab fa-github-square"></i></a><span>GitHub</span></li>
+<li><span class="share subMenuPlus touch"><i class="fas fa-share-alt"></i></span><span>Share</span></li>
+<li><span class="language subMenuPlus touch"><i class="fas fa-globe"></i></span><span>Language</span></li>
+</ul>
+
+<ul id="shareMenu">
+<li><a href="https://twitter.com/intent/tweet?text=Exastro&amp;url=https%3a%2f%2fexastro%2dsuite%2egithub%2eio%2fdocs&amp;hashtags=Exastro" target="_blank" rel="noopener"><i class="fab fa-twitter"></i><span>Tweet</span></a></li>
+  <li><a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fexastro%2dsuite%2egithub%2eio%2fdocs&amp;src=sdkpreparse" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i><span>Facebook</span></a></li>
+  <li><a href="https://social-plugins.line.me/lineit/share?url=https%3a%2f%2fexastro%2dsuite%2egithub%2eio%2fdocs" target="_blank" rel="noopener"><i class="fab fa-line"></i><span>LINE</span></a></li>
+</ul>
+
+<ul id="languageMenu">
+<li><a href="./index.html" class="en">English</a></li>
+<li><span>Japanese</span></li>
+</ul>
+
+</nav>
+</div>
+</header>
+
+
+
+
+
+<main>
+
+<article>
+<div id="startArea">
+  <section>
+
+    <div id="title">
+      <div class="titleInner">
+        <h1><img src="./asset/img/exastro.png" alt="Exastro"></h1>
+        <p>Automated tasks simplify operation.</p>
+      </div>
+    </div>
+
+    <div id="startLogo">
+      <div class="startLogoInner">
+        <img src="./asset/img/start_logo1.png" alt="Exastro Image">
+      </div>
+    </div>
+
+    <div id="startMenu">
+      <ul>
+        <li class="main"><a href="#why" class="touch anker">Why Exastro ?</a></li>
+        <li class="main"><a href="#overview" class="touch anker">Exastro Overview</a></li>
+        <li class="main"><a href="#suite" class="touch anker">Exastro Suite</a></li>
+        <li class="sub"><a href="newsroom_ja.html" class="touch"><span class="title"><i class="far fa-newspaper"></i> Exastro News Room</span><span class="update">Update:2021/12/08</span></a></li>
+      </ul>
+    </div>
+
+  </section>
+</div>
+
+
+
+<div id="terminalBody">
+
+  <section id="why">
+    <div class="sectionInner">
+    
+      <h2><span><em>Exastro</em> とは何ですか？</span></h2>
+      
+      <div class="whyContent">
+      
+        <div class="systemLifeCycle scrollShow">
+          <div class="systemLifeCycleInner">
+            <div class="systemLifeCycleSystem">
+              <div class="gear"><img src="asset/img/exastro_system_life_cycle_gear.png" alt="Gear"></div>
+              <div class="system"><img src="asset/img/exastro_system_life_cycle_system.png" alt="System"></div>
+            </div>
+            <div class="systemLifeCycleCircle">
+              <img src="asset/img/exastro_system_life_cycle_circle.png" alt="System life cycle circle">
+            </div>
+            <div class="systemLifeCycleText">
+              <div class="design"><img src="asset/img/exastro_system_life_cycle_design_ja.png" alt="設計"></div>
+              <div class="development"><img src="asset/img/exastro_system_life_cycle_development_ja.png" alt="開発"><a href="#epoch" class="anker"><img src="asset/img/exastro_system_life_cycle_development_epoch.png" alt="EPOCH"></a></div>
+              <div class="setting"><img src="asset/img/exastro_system_life_cycle_setting_ja.png" alt="設定"><a href="#itAutomation" class="anker"><img src="asset/img/exastro_system_life_cycle_setting_ita.png" alt="IT Automation"></a><a href="#playbookCollection" class="anker"><img src="asset/img/exastro_system_life_cycle_setting_pbc.png" alt="Playbook Collection"></a></div>
+              <div class="operation"><img src="asset/img/exastro_system_life_cycle_operation_ja.png" alt="運用"><a href="#OASE" class="anker"><img src="asset/img/exastro_system_life_cycle_operation_oase.png" alt="Operation Autonomy Support Engine"></a></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="whyText">
+          <p>Exastroはシステムライフサイクル<br>
+          （設計・開発・設定・運用）を<br>
+          デジタル化・自動化・省力化することを目的とした<br>
+          オープンソースのソフトウェアスイートです。</p>
+          <p class="link"><a href="#overview" class="touch anker">Exastro 概要</a> <a href="#suite" class="touch anker">Exastro Suite</a></p>
+        </div>
+      
+      </div>
+    </div>
+  </section>
+  
+  <section id="overview">
+    <div class="sectionInner">
+      <h2><span><em>Exastro</em> 概要</span></h2>
+      <div class="viewDocument only wide pdf" data-document="outline"></div>
+      <p class="center"><a href="asset/pdf/exastro_outline_ja.pdf" class="download" download="Exastro概要"><i class="fas fa-file-pdf"></i> 概要をダウンロード<i class="note">(PDF)</i></a></p>
+    </div>
+  </section>
+
+  <section id="suite">
+    <div class="sectionInner">
+
+      <h2><span><em>Exastro</em> Suite</span></h2>
+
+      <ul class="suiteList">
+        <li id="itAutomation" class="scrollShow suiteItem">
+          <a href="../it-automation-docs/index_ja.html" class="touch suiteItemLink">
+            <div class="suiteContent">
+              <dl>
+                <dt><em>Exastro</em> IT Automation <span class="series setting"><span>設定</span></span></dt>
+                <dd class="image"><img src="./asset/img/series_ita_ja.jpg" alt="IT Automation Image"></dd>
+                <dd class="text">Exastro IT Automationはシステムライフサイクルにおける以下の問題に対する解決策を提供します。<br>
+                ・データ多重管理による設計ミス<br>
+                ・複雑な人手作業によるオペレーションミス<br>
+                ・作業記録不足による障害対応遅延
+                </dd>
+                <dd class="link"><span class="link-a" data-text="詳細はこちら"><span class="link-i">詳細はこちら</span></span></dd>
+              </dl>
+            </div>
+          </a>
+        </li>
+        <li id="playbookCollection" class="scrollShow suiteItem">
+          <a href="https://github.com/exastro-suite/playbook-collection-docs/blob/master/README.ja.md" class="touch suiteItemLink" target="_blank" rel="noopener">
+            <div class="suiteContent">
+              <dl>
+                <dt><em>Exastro</em> Playbook Collection <span class="series setting"><span>設定</span></span></dt>
+                <dd class="image"><img src="./asset/img/series_pc.jpg" alt="Playbook Collection Image"></dd>
+                <dd class="text">Exastro Playbook Collectionはシステム構築で利用されるOSやMiddleware用のAnsible Playbook集です。<br>
+                実機からパラメータを収集するPlaybookが含まれており、構築後の設定確認時などに活用できます。</dd>
+                <dd class="link"><span class="link-a" data-text="詳細はこちら"><span class="link-i">詳細はこちら</span></span></dd>
+              </dl>
+            </div>
+          </a>
+        </li>
+        <li id="OASE" class="scrollShow suiteItem">
+          <a href="../oase-docs/index_ja.html" class="touch suiteItemLink">
+            <div class="suiteContent">
+              <dl>
+                <dt><em>Exastro</em> Operation Autonomy Support Engine <span class="series operation"><span>運用</span></span></dt>
+                <dd class="image"><img src="./asset/img/series_oase_ja.jpg" alt="OASE Image"></dd>
+                <dd class="text">Exastro Operation Autonomy Support Engineは、システム運用業務の自動化・効率化・省力化を実現するためのソフトウェアです。<br>
+                システム運用におけるノウハウやドキュメントをルールとして一元管理し、運用情報から対処方法を自動で判断します。<br>
+                さらにExastro IT Automation等の自動化ソフトウェアをコントロールできるため、対処を自動で実行することも可能です。</dd>
+                <dd class="link"><span class="link-a" data-text="詳細はこちら"><span class="link-i">詳細はこちら</span></span></dd>
+              </dl>
+            </div>
+          </a>
+        </li>
+        <li id="epoch" class="scrollShow suiteItem">
+          <a href="../epoch-docs/index_ja.html" class="touch suiteItemLink">
+            <div class="suiteContent">
+              <dl>
+                <dt><em>Exastro</em> EPOCH <span class="series development"><span>開発</span></span></dt>
+                <dd class="image"><img src="./asset/img/series_epoch.jpg" alt="EPOCH Image"></dd>
+                <dd class="text">Exastro EPOCHは、高速なアプリケーション開発・デプロイ環境を提供するためのフレームワークです。<br>
+                コンテナベースのアプリケーション開発を支援するためのプロセス及び環境をセットで提供します。</dd>
+                <dd class="link"><span class="link-a" data-text="詳細はこちら"><span class="link-i">詳細はこちら</span></span></dd>
+              </dl>
+            </div>
+          </a>
+        </li>
+        <li id="andMore" class="scrollShow">
+          <div class="suiteItemLink">
+            <div class="suiteContent">
+              <dl>
+                <dt>and more</dt>
+                <dd class="image"><img src="./asset/img/series_and_more_en.jpg" alt="and more Image"></dd>
+                <dd class="text"><span><em>Exastro</em>はさらなる<br>可能性を準備しています...</span></dd>
+              </dl>
+            </div>
+          </div>
+        </li>
+      </ul>
+
+    </div>
+  </section>
+  
+  <section>
+    <div id="handout" class="sectionInner">
+    
+    <h2><span>Handout</span></h2>
+
+    <ul class="handoutList">
+      <li>
+        <a href="asset/handout_ja/Exastro_Leaflet_ja.pdf" target="_blank">
+          <img src="asset/handout_ja/Exastro_Leaflet_ja_tmb01.png" alt="Exastroリーフレット 2021.09.01 表"><img src="asset/handout_ja/Exastro_Leaflet_ja_tmb02.png" alt="Exastroリーフレット 2021.09.01 裏">
+        </a>
+      </li>
+      <li>
+        <a href="asset/handout_ja/Exastro_wh_21_02_ja.pdf" target="_blank">
+          <img src="asset/handout_ja/Exastro_wh_20_11_tmb01_ja.jpg" alt="Exastroホワイトペーパー P01"><img src="asset/handout_ja/Exastro_wh_20_11_tmb02_ja.jpg" alt="Exastroホワイトペーパー P02">
+        </a>
+      </li>
+    </ul>
+
+    </div>
+  </section>
+  
+  <section>
+    <div id="snsArea" class="sectionInner">
+
+      <div id="twitterTimeline">
+        <a class="twitter-timeline" href="https://twitter.com/ExastroSuite?ref_src=twsrc%5Etfw" data-width="474" data-height="480" data-chrome="nofooter" >Tweets by Exastro Suite</a>
+      </div>
+
+      <div id="facebookTimeline">
+        <div class="fb-page" data-href="https://www.facebook.com/ExastroSuite" data-tabs="timeline" data-width="474" data-height="480" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/ExastroSuite" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/ExastroSuite">Exastro Suite</a></blockquote></div>
+      </div>
+
+    </div>
+  </section>
+
+</div><!-- / #terminalBody -->
+
+</article>
+
+</main>
+
+
+
+
+
+<!-- Go To TOP -->
+<div id="topMove"><a href="#" class="touch anker"><i class="fas fa-arrow-up"></i><span>Page Top</span></a></div>
+
+
+
+
+
+<!-- FOOTER -->
+<footer>
+
+  <div id="footerInner">
+
+    <div id="footerAbout">
+      <div id="footerLogo"><img src="asset/img/exastro.svg" alt="Exastro"></div>
+      <p>Exastro is an open source software suite for digitizing, automating and labor saving the system life cycle.</p>
+    </div>
+
+    <div id="footerMenu">
+
+      <script src="asset/js/menu_footer.js"></script>
+
+      <div id="footerShareMenu">
+        <dl>
+          <dt><i class="fas fa-share-alt"></i><span>Share</span></dt>
+          <dd>
+            <ul>
+<li><a href="https://twitter.com/intent/tweet?text=Exastro&amp;url=https%3a%2f%2fexastro%2dsuite%2egithub%2eio%2fdocs&amp;hashtags=Exastro" target="_blank" rel="noopener"><i class="fab fa-twitter"></i><span>Tweet</span></a></li>
+              <li><a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fexastro%2dsuite%2egithub%2eio%2fdocs&amp;src=sdkpreparse" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i><span>Facebook</span></a></li>
+              <li><a href="https://social-plugins.line.me/lineit/share?url=https%3a%2f%2fexastro%2dsuite%2egithub%2eio%2fdocs" target="_blank" rel="noopener"><i class="fab fa-line"></i><span>LINE</span></a></li>
+            </ul>
+          </dd>
+        </dl>
+      </div>
+
+    </div><!-- /#footerMenu -->
+
+  </div><!-- /#footerInner -->
+
+  <div id="copyright">
+    <p><small><script src="asset/js/copyright.js"></script></small></p>
+  </div>
+
+</footer>
+<!-- Background Canvas -->
+<div id="backgroundFull">
+  <canvas id="backgroundCanvas"></canvas>
+</div>
+<script src="./asset/js/home.js"></script>
+<script src="./asset/js/banner.js"></script>
+</div><!-- /#container -->
+
+
+
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+</body>
+</html>
