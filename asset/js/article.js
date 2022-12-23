@@ -1,42 +1,45 @@
 // JavaScript Document
 
 $(function(){
-    var topMoveHeight;
+    const $articleTitle = $('#articleTitle');
+    if ( $articleTitle.length ) {
+        let topMoveHeight;
 
-    // Title background image.
-    $('#articleTitle').append('<div class="background"></div>');
-    if( $('#website.index').length ) $('.background').after('<div class="backgroundMonitor"><div class="monitor"><div><ul><li></li><li></li><li></li></ul></div></div></div>');
-    
-    // Resize window.
-    var resizeWindow = function() {
-        if ( $('#articleBody').length ) {
-          topMoveHeight = $('#articleBody').offset();
-        } else if ( $('#eventBody').length ) {
-          topMoveHeight = $('#eventBody').offset();
+        // Title background image.
+        $articleTitle.append('<div class="background"></div>');
+        if( $('#website.index').length ) $('.background').after('<div class="backgroundMonitor"><div class="monitor"><div><ul><li></li><li></li><li></li></ul></div></div></div>');
+
+        // Resize window.
+        const resizeWindow = function() {
+            if ( $('#articleBody').length ) {
+              topMoveHeight = $('#articleBody').offset();
+            } else if ( $('#eventBody').length ) {
+              topMoveHeight = $('#eventBody').offset();
+            }
         }
+        let timer = false;    
+        $( window ).resize( function() {
+            if ( timer !== false ) {
+                clearTimeout( timer );
+            }
+            timer = setTimeout( function(){
+                resizeWindow();
+            }, 500 );
+        });
+
+        resizeWindow();
+
+        $( window ).scroll( function(){
+            const windowScrollTop = $( this ).scrollTop();
+            const windowBackgroundPosition = windowScrollTop / 2;
+            if ( windowScrollTop < topMoveHeight.top ){
+                $('#topMove').css('bottom', '-64px' );
+                $('#articleTitle .background').css('transform', 'translate3d(0,' + windowBackgroundPosition + 'px,0)');
+            } else {
+                $('#topMove').css('bottom', '8px' );
+            }
+        });
     }
-    var timer = false;    
-    $( window ).resize( function() {
-        if ( timer !== false ) {
-            clearTimeout( timer );
-        }
-        timer = setTimeout( function(){
-            resizeWindow();
-        }, 500 );
-    });
-    
-    resizeWindow();
-    
-    $( window ).scroll( function(){
-        var windowScrollTop = $( this ).scrollTop();
-        var windowBackgroundPosition = windowScrollTop / 2;
-        if ( windowScrollTop < topMoveHeight.top ){
-            $('#topMove').css('bottom', '-64px' );
-            $('#articleTitle .background').css('transform', 'translate3d(0,' + windowBackgroundPosition + 'px,0)');
-        } else {
-            $('#topMove').css('bottom', '8px' );
-        }
-    });
 
 /* -------------------------------------------------- **
 

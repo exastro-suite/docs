@@ -803,6 +803,9 @@ function faqLoading( jsonURL ) {
           //$('#frequently').find('ul').html( frequentlyHTML );
           $faqNavi.find('a').eq(0).addClass('open');
           $faqList.children().eq(0).addClass('open');
+          
+          // 指定初期表示
+          qInit();
         });
         
         $faqNavi.find('a').on('click', function( e ) {
@@ -836,7 +839,7 @@ function faqLoading( jsonURL ) {
               headerHeight = $('header').outerHeight(),
               menuHeight = $('#contentsMenu').outerHeight(),
               speed = 100;
-          console.log(linkCat)
+          
           // 別のカテゴリリンクの場合
           if ( !$link.closest( linkCat ).length ) {
             $faqNavi.find('.open').removeClass('open');
@@ -964,5 +967,51 @@ function faqLoading( jsonURL ) {
 			window.console.error('Failed to get language.');
 			
 		}
+    
+    const qInit = function() {
+        // 指定のQを開く
+        const openQ = function( targetQ ){
+              var href = '#' + targetQ,
+                  linkCat = href.replace(/[0-9]+$/,''),
+                  headerHeight = $('header').outerHeight(),
+                  menuHeight = $('#contentsMenu').outerHeight(),
+                  speed = 100;
+              
+              $faqNavi.find('.open').removeClass('open');
+              $faqList.find('.faqItem.open').removeClass('open');
+
+              $faqNavi.find('a[href="' + linkCat + '"]').addClass('open');
+              $faqList.find( linkCat ).addClass('open');
+
+              const $target = $( ( href == '#' || href == '' ) ? 'html' : href );
+
+              if ( $target.length ) {
+                  const position = $target.offset().top - headerHeight - menuHeight;                    
+
+                  $('body, html').animate({ scrollTop : position }, speed, 'swing' );
+                  if ( !$target.find('.a').is(':visible') ) {
+                    $target.find('dt').click();
+                  }
+              }
+        };
+
+        // パラメータ取得
+        const getParams = function() {
+            const searchParams = ( new URL( document.location ) ).searchParams.entries(),
+                  params = {};
+            for ( const [ key, val ] of searchParams ) {
+                params[ key ] = val;
+            }
+            return params;
+        };
+
+        const params = getParams();
+
+        if ( params['q'] ) {
+            setTimeout( function(){
+                openQ( params['q'] );
+            }, 500 );
+        }
+    };
 
 }
