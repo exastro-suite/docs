@@ -9,12 +9,12 @@ const footerMenuEn =  (function(){/*
 <ul id="footerMainMenu">
   <li id="footerExastro">
     <div class="footerMainMenuHome">
-      <a href="https://www.exastro.org/"><img src="/docs/asset/img/exastro_logotype.svg" alt="Exastro"></a>
+      <a href="https://www.exastro.org/index_en.html"><img src="/docs/asset/img/exastro_logotype.svg" alt="Exastro"></a>
     </div>
     <ul class="footerMainMenuChildren">
-      <li><a href="https://www.exastro.org/">Home</a></li>
-      <li><a href="https://www.exastro.org/newsroom.html">News Room</a></li>
-      <li><a href="https://www.exastro.org/asset.html">Asset</a></li>
+      <li><a href="https://www.exastro.org/index_en.html">Home</a></li>
+      <li><a href="https://www.exastro.org/newsroom_en.html">News Room</a></li>
+      <li><a href="https://www.exastro.org/asset_en.html">Asset</a></li>
     </ul>
   </li>
   <li id="footerIta">
@@ -72,13 +72,13 @@ const footerMenuJa =  (function(){/*
 <ul id="footerMainMenu">
   <li id="footerExastro">
     <div class="footerMainMenuHome">
-      <a href="https://www.exastro.org/index_ja.html"><img src="/docs/asset/img/exastro_logotype.svg" alt="Exastro"></a>
+      <a href="https://www.exastro.org/"><img src="/docs/asset/img/exastro_logotype.svg" alt="Exastro"></a>
     </div>
     <ul class="footerMainMenuChildren">
-      <li><a href="https://www.exastro.org/index_ja.html">Home</a></li>
-      <li><a href="https://www.exastro.org/newsroom_ja.html">News Room</a></li>
-      <li><a href="https://www.exastro.org/event_ja.html">Event</a></li>
-      <li><a href="https://www.exastro.org/asset_ja.html">Asset</a></li>
+      <li><a href="https://www.exastro.org/">Home</a></li>
+      <li><a href="https://www.exastro.org/newsroom.html">News Room</a></li>
+      <li><a href="https://www.exastro.org/event.html">Event</a></li>
+      <li><a href="https://www.exastro.org/asset.html">Asset</a></li>
     </ul>
   </li>
   <li id="footerIta">
