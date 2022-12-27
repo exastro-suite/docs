@@ -9,14 +9,12 @@ const footerMenuEn =  (function(){/*
 <ul id="footerMainMenu">
   <li id="footerExastro">
     <div class="footerMainMenuHome">
-      <a href="/docs/index.html"><img src="/docs/asset/img/exastro_logotype.svg" alt="Exastro"></a>
+      <a href="https://www.exastro.org/index_en.html"><img src="/docs/asset/img/exastro_logotype.svg" alt="Exastro"></a>
     </div>
     <ul class="footerMainMenuChildren">
-      <li><a href="/docs/index.html#why">Why Exastro</a></li>
-      <li><a href="/docs/index.html#overview">Overview</a></li>
-      <li><a href="/docs/index.html#suite">Exastro Suite</a></li>
-      <li><a href="/docs/newsroom.html">News Room</a></li>
-      <li><a href="/docs/asset.html">Asset</a></li>
+      <li><a href="https://www.exastro.org/index_en.html">Home</a></li>
+      <li><a href="https://www.exastro.org/newsroom_en.html">News Room</a></li>
+      <li><a href="https://www.exastro.org/asset_en.html">Asset</a></li>
     </ul>
   </li>
   <li id="footerIta">
@@ -74,15 +72,13 @@ const footerMenuJa =  (function(){/*
 <ul id="footerMainMenu">
   <li id="footerExastro">
     <div class="footerMainMenuHome">
-      <a href="/docs/index_ja.html"><img src="/docs/asset/img/exastro_logotype.svg" alt="Exastro"></a>
+      <a href="https://www.exastro.org/"><img src="/docs/asset/img/exastro_logotype.svg" alt="Exastro"></a>
     </div>
     <ul class="footerMainMenuChildren">
-      <li><a href="/docs/index_ja.html#why">Why Exastro</a></li>
-      <li><a href="/docs/index_ja.html#overview">Overview</a></li>
-      <li><a href="/docs/index_ja.html#suite">Exastro Suite</a></li>
-      <li><a href="/docs/newsroom_ja.html">News Room</a></li>
-      <li><a href="/docs/event_ja.html">Event</a></li>
-      <li><a href="/docs/asset_ja.html">Asset</a></li>
+      <li><a href="https://www.exastro.org/">Home</a></li>
+      <li><a href="https://www.exastro.org/newsroom.html">News Room</a></li>
+      <li><a href="https://www.exastro.org/event.html">Event</a></li>
+      <li><a href="https://www.exastro.org/asset.html">Asset</a></li>
     </ul>
   </li>
   <li id="footerIta">
