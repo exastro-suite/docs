@@ -248,10 +248,23 @@ border-radius: 4px;
 box-shadow: 0 2px 8px rgba( 0,0,0,0.2 );
 }
 #suiteList li {
+background-color: #FFF;
 border-bottom: 1px solid #CCC;
+list-style: none;
 }
 #suiteList li:last-child {
 border-bottom: none;
+}
+#suiteList .menuBarExastroMenuVersionTitle {
+padding: 16px 48px 16px 24px;
+line-height: 1;
+font-size: 150%;
+color: #666;
+}
+#suiteList .menuBarExastroMenuVersionList {
+margin-left: 24px;
+border-top: 1px solid #CCC;
+border-left: 1px solid #CCC;
 }
 #suiteList a,
 #suiteList span {
@@ -4952,4 +4965,11 @@ font-size: 2vw;
 .settingSamplesComingSoon::after {
 font-size: 4vw;
 }
+}
+
+.footerSuiteVersion {
+margin-left: 0.5em;
+vertical-align: sub;
+font-size: 10px;
+color: #AAA;
 }

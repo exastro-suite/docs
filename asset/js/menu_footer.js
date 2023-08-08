@@ -83,7 +83,7 @@ const footerMenuJa =  (function(){/*
   </li>
   <li id="footerIta">
     <div class="footerMainMenuHome">
-      <a href="/it-automation-docs/index_ja.html"><img src="/it-automation-docs/asset/img/ita.svg" alt="IT Automation"></a>
+      <a href="/it-automation-docs/index_ja.html"><img src="/it-automation-docs/asset/img/ita.svg" alt="IT Automation"><span class="footerSuiteVersion">Ver.<span>1</span></span></a>
     </div>
     <ul class="footerMainMenuChildren">
       <li><a href="/it-automation-docs/index_ja.html" class="home">Home</a></li>
@@ -95,6 +95,15 @@ const footerMenuJa =  (function(){/*
       <li><a href="/it-automation-docs/documents_ja.html" class="documents">Documents</a></li>
       <li><a href="/it-automation-docs/setting-samples_ja.html" class="setting-samples">Setting samples</a></li>
       <li><a href="/it-automation-docs/faq_ja.html" class="faq">FAQ</a></li>
+    </ul>
+  </li>
+  <li id="footerIta2">
+    <div class="footerMainMenuHome">
+      <a href="https://ita.exastro.org/"><img src="/it-automation-docs/asset/img/ita.svg" alt="IT Automation"><span class="footerSuiteVersion">Ver.<span>2</span></span></a>
+    </div>
+    <ul class="footerMainMenuChildren">
+      <li><a href="https://ita.exastro.org/" class="home">Home</a></li>
+      <li><a href="https://ita-docs.exastro.org/" class="overview">Documents</a></li>
     </ul>
   </li>
   <li id="footerOase">
