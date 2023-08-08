@@ -4953,3 +4953,10 @@ font-size: 2vw;
 font-size: 4vw;
 }
 }
+
+.footerSuiteVersion {
+margin-left: 0.5em;
+vertical-align: sub;
+font-size: 10px;
+color: #AAA;
+}
