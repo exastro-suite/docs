@@ -22,7 +22,7 @@ const suiteListJa =  (function(){/*
   <li>
     <div class="menuBarExastroMenuVersionTitle">IT Automation</div>
     <ul class="menuBarExastroMenuVersionList">
-      <li class="ita1 menuBarExastroMenuVersionItem"><a href="/it-automation-docs/index_ja.html">Version 1</a></li>
+      <li class="ita menuBarExastroMenuVersionItem"><a href="/it-automation-docs/index_ja.html">Version 1</a></li>
       <li class="ita2 menuBarExastroMenuVersionItem"><a href="https://ita.exastro.org/">Version 2</a></li>
     </ul>
   </li>
